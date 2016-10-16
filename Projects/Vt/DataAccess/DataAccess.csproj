@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C53DE250-2688-42F0-824B-4CAAC5A10419}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Content.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentFile.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentHelpSite.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContentProblem.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailBank.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="File.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpSite.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Level.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Option.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Problem.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuizQuestion.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trainee.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraineeHistory.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraineeQuizAnswerHistory.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraineeQuizHistory.cs">
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualTraineesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualTraineesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualTraineesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualTraineesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualTraineesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VirtualTraineesModel.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="VirtualTraineesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VirtualTraineesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VirtualTraineesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VirtualTraineesModel.edmx</DependentUpon>
+      <LastGenOutput>VirtualTraineesModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="VirtualTraineesModel.edmx.diagram">
+      <DependentUpon>VirtualTraineesModel.edmx</DependentUpon>
+    </None>
+    <None Include="VirtualTraineesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VirtualTraineesModel.edmx</DependentUpon>
+      <LastGenOutput>VirtualTraineesModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

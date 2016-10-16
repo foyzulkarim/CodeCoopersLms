@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D7E7EF4-15D1-4506-8B4C-C68FF0D0A442}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <NuGetPackageImportStamp>13e60d80</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/f469677e-7238-402d-bf0e-20ec0d3d0c47/resourcegroups/virtualtrainees/providers/microsoft.insights/components/modernwebclient</ApplicationInsightsResourceId>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\account\account.config.min.js">
+      <DependentUpon>account.config.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\auth\auth.service.js" />
+    <Content Include="app\account\auth\auth.service.min.js">
+      <DependentUpon>auth.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signin\signin.ctrl.js" />
+    <Content Include="app\account\signin\signin.ctrl.min.js">
+      <DependentUpon>signin.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signin\signin.service.js" />
+    <Content Include="app\account\signin\signin.service.min.js">
+      <DependentUpon>signin.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signin\signin.tpl.html" />
+    <Content Include="app\account\account.config.js" />
+    <Content Include="app\account\signin\signin.tpl.min.html">
+      <DependentUpon>signin.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\account\signup\signup.ctrl.js" />
+    <Content Include="app\account\signup\signup.ctrl.min.js">
+      <DependentUpon>signup.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signup\signup.service.js" />
+    <Content Include="app\account\signup\signup.service.min.js">
+      <DependentUpon>signup.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signup\signup.tpl.html" />
+    <Content Include="app\account\signup\signup.tpl.min.html">
+      <DependentUpon>signup.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\account\trainee\trainee.service.js" />
+    <Content Include="app\account\trainee\trainee.ctrl.js" />
+    <Content Include="app\account\trainee\trainee.ctrl.min.js">
+      <DependentUpon>trainee.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\trainee\trainee.service.min.js">
+      <DependentUpon>trainee.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\trainee\trainee.tpl.html" />
+    <Content Include="app\account\trainee\trainee.tpl.min.html">
+      <DependentUpon>trainee.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\app.config.min.js">
+      <DependentUpon>app.config.js</DependentUpon>
+    </Content>
+    <Content Include="app\app.ctrl.js" />
+    <Content Include="app\app.ctrl.min.js">
+      <DependentUpon>app.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\app.service.js" />
+    <Content Include="app\app.service.min.js">
+      <DependentUpon>app.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\class\class.ctrl.js" />
+    <Content Include="app\course\class\class.ctrl.min.js">
+      <DependentUpon>class.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\class\class.service.js" />
+    <Content Include="app\course\class\class.service.min.js">
+      <DependentUpon>class.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\class\class.tpl.html" />
+    <Content Include="app\course\class\class.tpl.min.html">
+      <DependentUpon>class.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\course\course-detail\course-detail.ctrl.min.js">
+      <DependentUpon>course-detail.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\course-detail\course-detail.service.min.js">
+      <DependentUpon>course-detail.service.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\course-detail\course-detail.tpl.html" />
+    <Content Include="app\course\course-detail\course-detail.tpl.min.html">
+      <DependentUpon>course-detail.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\course\course.config.js" />
+    <Content Include="app\course\course-detail\course-detail.ctrl.js" />
+    <Content Include="app\course\course-detail\course-detail.service.js" />
+    <Content Include="app\course\course.config.min.js">
+      <DependentUpon>course.config.js</DependentUpon>
+    </Content>
+    <Content Include="app\faq\faq.tpl.min.html">
+      <DependentUpon>faq.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\home\home.config.js" />
+    <Content Include="app\home\home.config.min.js">
+      <DependentUpon>home.config.js</DependentUpon>
+    </Content>
+    <Content Include="app\home\home.ctrl.js" />
+    <Content Include="app\home\home.ctrl.min.js">
+      <DependentUpon>home.ctrl.js</DependentUpon>
+    </Content>
+    <Content Include="app\home\home.tpl.html" />
+    <Content Include="app\faq\faq.tpl.html" />
+    <Content Include="app\home\home.tpl.min.html">
+      <DependentUpon>home.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\prism.css" />
+    <Content Include="css\prism.min.css">
+      <DependentUpon>prism.css</DependentUpon>
+    </Content>
+    <Content Include="css\style.css" />
+    <Content Include="css\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="css\sweet-alert.css" />
+    <Content Include="css\text-rotator.css" />
+    <Content Include="css\text-rotator.min.css">
+      <DependentUpon>text-rotator.css</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\angularjs.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\lead_mentor_foyzul.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\lead_mentor_foyzul_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\lead_mentor_foyzul_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\lead_mentor_fozul_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\logo-with-text.png" />
+    <Content Include="img\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\logo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\modern_web_intro_cover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ms_dot_net.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ms_dot_net_r.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\papin.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\papin_prod.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\sabbir.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\sabbir_prod.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Slice 1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_4.5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\success_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ta_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ta_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\ta_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="index.min.html">
+      <DependentUpon>index.html</DependentUpon>
+    </Content>
+    <Content Include="js\app.js" />
+    <Content Include="js\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\fck_integration.min.js">
+      <DependentUpon>fck_integration.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-cycle-definition.min.js">
+      <DependentUpon>jquery-cycle-definition.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-cycle-plugin.min.js">
+      <DependentUpon>jquery-cycle-plugin.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.form.min.js">
+      <DependentUpon>jquery.form.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.jcarousel.min.js">
+      <DependentUpon>jquery.jcarousel.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.prettyPhoto.min.js">
+      <DependentUpon>jquery.prettyPhoto.js</DependentUpon>
+    </Content>
+    <Content Include="js\js_integration.min.js">
+      <DependentUpon>js_integration.js</DependentUpon>
+    </Content>
+    <Content Include="js\prism.js" />
+    <Content Include="js\prism.min.js">
+      <DependentUpon>prism.js</DependentUpon>
+    </Content>
+    <Content Include="js\simplecaptcha.min.js">
+      <DependentUpon>simplecaptcha.js</DependentUpon>
+    </Content>
+    <Content Include="js\specific.min.js">
+      <DependentUpon>specific.js</DependentUpon>
+    </Content>
+    <Content Include="js\text-rotator.min.js" />
+    <Content Include="js\util.min.js">
+      <DependentUpon>util.js</DependentUpon>
+    </Content>
+    <Content Include="lib\angularjs 1.3.14\angular-animate.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-aria.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-cookies.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-loader.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-messages.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-resource.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-route.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-sanitize.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular-touch.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\angular.min.js.map" />
+    <Content Include="lib\angularjs 1.3.14\errors.json" />
+    <Content Include="lib\angularjs 1.3.14\version.json" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="less\.csscomb.json" />
+    <Content Include="less\.csslintrc" />
+    <Content Include="less\bootstrap\alerts.less" />
+    <Content Include="less\bootstrap\badges.less" />
+    <Content Include="less\bootstrap\bootstrap.less" />
+    <Content Include="less\bootstrap\breadcrumbs.less" />
+    <Content Include="less\bootstrap\button-groups.less" />
+    <Content Include="less\bootstrap\buttons.less" />
+    <Content Include="less\bootstrap\carousel.less" />
+    <Content Include="less\bootstrap\close.less" />
+    <Content Include="less\bootstrap\code.less" />
+    <Content Include="less\bootstrap\component-animations.less" />
+    <Content Include="less\bootstrap\dropdowns.less" />
+    <Content Include="less\bootstrap\forms.less" />
+    <Content Include="less\bootstrap\glyphicons.less" />
+    <Content Include="less\bootstrap\grid.less" />
+    <Content Include="less\bootstrap\input-groups.less" />
+    <Content Include="less\bootstrap\jumbotron.less" />
+    <Content Include="less\bootstrap\labels.less" />
+    <Content Include="less\bootstrap\list-group.less" />
+    <Content Include="less\bootstrap\media.less" />
+    <Content Include="less\bootstrap\mixins.less" />
+    <Content Include="less\bootstrap\mixins\alerts.less" />
+    <Content Include="less\bootstrap\mixins\background-variant.less" />
+    <Content Include="less\bootstrap\mixins\border-radius.less" />
+    <Content Include="less\bootstrap\mixins\buttons.less" />
+    <Content Include="less\bootstrap\mixins\center-block.less" />
+    <Content Include="less\bootstrap\mixins\clearfix.less" />
+    <Content Include="less\bootstrap\mixins\forms.less" />
+    <Content Include="less\bootstrap\mixins\gradients.less" />
+    <Content Include="less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="less\bootstrap\mixins\grid.less" />
+    <Content Include="less\bootstrap\mixins\hide-text.less" />
+    <Content Include="less\bootstrap\mixins\image.less" />
+    <Content Include="less\bootstrap\mixins\labels.less" />
+    <Content Include="less\bootstrap\mixins\list-group.less" />
+    <Content Include="less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="less\bootstrap\mixins\opacity.less" />
+    <Content Include="less\bootstrap\mixins\pagination.less" />
+    <Content Include="less\bootstrap\mixins\panels.less" />
+    <Content Include="less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="less\bootstrap\mixins\resize.less" />
+    <Content Include="less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="less\bootstrap\mixins\size.less" />
+    <Content Include="less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="less\bootstrap\mixins\table-row.less" />
+    <Content Include="less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="less\bootstrap\modals.less" />
+    <Content Include="less\bootstrap\navbar.less" />
+    <Content Include="less\bootstrap\navs.less" />
+    <Content Include="less\bootstrap\normalize.less" />
+    <Content Include="less\bootstrap\pager.less" />
+    <Content Include="less\bootstrap\pagination.less" />
+    <Content Include="less\bootstrap\panels.less" />
+    <Content Include="less\bootstrap\popovers.less" />
+    <Content Include="less\bootstrap\print.less" />
+    <Content Include="less\bootstrap\progress-bars.less" />
+    <Content Include="less\bootstrap\responsive-embed.less" />
+    <Content Include="less\bootstrap\responsive-utilities.less" />
+    <Content Include="less\bootstrap\scaffolding.less" />
+    <Content Include="less\bootstrap\tables.less" />
+    <Content Include="less\bootstrap\theme.less" />
+    <Content Include="less\bootstrap\thumbnails.less" />
+    <Content Include="less\bootstrap\tooltip.less" />
+    <Content Include="less\bootstrap\type.less" />
+    <Content Include="less\bootstrap\utilities.less" />
+    <Content Include="less\bootstrap\variables.less" />
+    <Content Include="less\bootstrap\wells.less" />
+    <Content Include="less\spaces.less" />
+    <Content Include="less\style.less" />
+    <Content Include="less\utilities.less" />
+    <Content Include="less\variables.less" />
+    <Content Include="img\logo.sketch">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\app.config.min.js.map">
+      <DependentUpon>app.config.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\app.ctrl.min.js.map">
+      <DependentUpon>app.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\app.service.min.js.map">
+      <DependentUpon>app.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\account.config.min.js.map">
+      <DependentUpon>account.config.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\auth\auth.service.min.js.map">
+      <DependentUpon>auth.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signin\signin.ctrl.min.js.map">
+      <DependentUpon>signin.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signin\signin.service.min.js.map">
+      <DependentUpon>signin.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signup\signup.ctrl.min.js.map">
+      <DependentUpon>signup.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\signup\signup.service.min.js.map">
+      <DependentUpon>signup.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\course.config.min.js.map">
+      <DependentUpon>course.config.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\class\class.ctrl.min.js.map">
+      <DependentUpon>class.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\class\class.service.min.js.map">
+      <DependentUpon>class.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\course-detail\course-detail.ctrl.min.js.map">
+      <DependentUpon>course-detail.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\course\course-detail\course-detail.service.min.js.map">
+      <DependentUpon>course-detail.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\home\home.config.min.js.map">
+      <DependentUpon>home.config.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\home\home.ctrl.min.js.map">
+      <DependentUpon>home.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\app.min.js.map">
+      <DependentUpon>app.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\fck_integration.min.js.map">
+      <DependentUpon>fck_integration.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-cycle-definition.min.js.map">
+      <DependentUpon>jquery-cycle-definition.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery-cycle-plugin.min.js.map">
+      <DependentUpon>jquery-cycle-plugin.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.form.min.js.map">
+      <DependentUpon>jquery.form.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.jcarousel.min.js.map">
+      <DependentUpon>jquery.jcarousel.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\jquery.prettyPhoto.min.js.map">
+      <DependentUpon>jquery.prettyPhoto.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\js_integration.min.js.map">
+      <DependentUpon>js_integration.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\prism.min.js.map">
+      <DependentUpon>prism.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\simplecaptcha.min.js.map">
+      <DependentUpon>simplecaptcha.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\specific.min.js.map">
+      <DependentUpon>specific.min.js</DependentUpon>
+    </Content>
+    <Content Include="js\util.min.js.map">
+      <DependentUpon>util.min.js</DependentUpon>
+    </Content>
+    <Content Include="css\sweet-alert.scss" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="app\account\trainee\trainee.ctrl.min.js.map">
+      <DependentUpon>trainee.ctrl.min.js</DependentUpon>
+    </Content>
+    <Content Include="app\account\trainee\trainee.service.min.js.map">
+      <DependentUpon>trainee.service.min.js</DependentUpon>
+    </Content>
+    <Content Include="mincom\config.min.js" />
+    <Content Include="mincom\ctrl.min.js" />
+    <Content Include="mincom\svc.min.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.config.js" />
+    <Content Include="index.html" />
+    <Content Include="js\fck_integration.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery-1.8.0.min.js" />
+    <Content Include="js\jquery-cycle-definition.js" />
+    <Content Include="js\jquery-cycle-plugin.js" />
+    <Content Include="js\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="js\jquery.form.js" />
+    <Content Include="js\jquery.jcarousel.js" />
+    <Content Include="js\jquery.jSuggest.1.0.min.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\js_integration.js" />
+    <Content Include="js\simplecaptcha.js" />
+    <Content Include="js\specific.js" />
+    <Content Include="js\util.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-animate.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-animate.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-aria.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-aria.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-cookies.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-cookies.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-csp.css" />
+    <Content Include="lib\angularjs 1.3.14\angular-loader.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-loader.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-messages.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-messages.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-mocks.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-resource.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-resource.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-route.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-route.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-sanitize.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-sanitize.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-scenario.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-touch.js" />
+    <Content Include="lib\angularjs 1.3.14\angular-touch.min.js" />
+    <Content Include="lib\angularjs 1.3.14\angular.js" />
+    <Content Include="lib\angularjs 1.3.14\angular.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\icons\" />
+    <Folder Include="images\mobile\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6969</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1665/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

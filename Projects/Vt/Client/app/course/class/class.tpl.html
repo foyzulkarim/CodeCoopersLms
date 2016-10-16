@@ -1,0 +1,157 @@
+﻿<div class="row" ng-switch="content.Type">
+    <div class="col-md-12">
+        <ol class="breadcrumb pln mvl">
+            <li>
+                <a href="/#/">Home</a>
+            </li>
+            <li>
+                <a href="/#/course-detail">{{content.Level.Name}}</a>
+            </li>
+            <li class="active">{{content.Level.No}}.{{content.No}} {{content.Name}}</li>
+        </ol>
+        <div ng-switch-when="1">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>
+                        <a href="javascript:void(0)">{{content.Level.No}}.{{content.No}} {{content.Name}}</a>
+                    </h1>
+                    <div class="course-class-details-short mbl">
+                        <span class="course-class-mentor">
+                            <img class="img-circle" src="img/lead_mentor_foyzul_3.jpg"> Foyzul Karim
+                        </span>
+                        <span class="course-class-duration"><i class="glyphicon glyphicon-time"></i> {{content.Length}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8" ng-show="showVideo">
+                    <div class="panel-body">
+                        <!-- video starts -->
+                        <div class="embed-responsive embed-responsive-16by9 mbs">
+                            <div id="wistia_{{content.VideoUrl}}" class="wistia_embed" style="width: 640px; height: 360px;">&nbsp;</div>
+                        </div>
+                        <ul class="pager mbl">
+                            <li class="previous" ng-hide="content.No==1"><a href="javascript:void(0)" ng-click="gotoPrevious()">&larr; Previous Class</a></li>
+                            <li class="btn"><button type="button" ng-click="showVideo=false; loadQuiz();">Load the quiz</button></li>
+
+                            <li class="next" ng-hide="content.Level.Count==content.No"><a title="Next class" href="javascript:void(0)" ng-click="gotoNext()">Next Class &rarr;</a></li>
+                        </ul>
+                        <!-- /video ends -->
+                    </div>
+                </div>
+                <div class="col-md-8" ng-hide="showVideo">
+                    <div class="panel-body">
+                        <div class="form-group form-group-quiz-item" ng-repeat="q in quiz.Questions">
+                            <label class="label-quiz-item">{{q.No}}. {{q.Name}}</label>
+                            <div ng-show="q.Type==1" class="radio" ng-repeat="o in q.Options" ng-disabled="quiz.IsCompleted">
+                                <label>
+                                    <input type="radio" name="{{q.No}}" id="{{o.Id}}" value="{{o.Id}}" ng-model="q.IsSelected">
+                                    {{o.Name}}
+                                </label>
+                            </div>
+                            <div ng-show="q.Type==2" class="radio" ng-disabled="quiz.IsCompleted">
+                                <label>
+                                    <input type="text" name="{{q.No}}" id="{{o.Id}}" ng-model="q.IsSelected">
+                                    {{o.Name}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="button" ng-hide="quiz.IsCompleted" ng-click="submitQuizAnswers()">Submit Quiz Answers</button> <span ng-show="quiz.IsCompleted">Already submitted once</span>
+                        <button type="button" ng-click="showVideo=true;">Show me the video</button>
+                    </div>
+
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <div class="list-group">
+                        <a href="javascript:void(0)" class="list-group-item" ng-class="{'active':c.Id==content.Id}" ng-repeat="c in content.Level.Contents" ng-click="gotoDetails(c)">{{content.Level.No}}.{{c.No}} {{c.Name}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Description</h3>
+                        </div>
+                        <div class="panel-body">
+                            {{content.VideoDescription}}
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Files</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled">
+                                <li ng-repeat="f in content.Files">
+                                    <span class="fa fa-file-powerpoint-o"></span><a href="{{f.SourceUrl}}">{{f.No}}.{{f.Name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Helpful Resources</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled">
+                                <li ng-repeat="h in content.HelpfulSites"><a href="{{h.Url}}" target="_blank">{{h.Name}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" style="display: none">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Short Quiz</h3>
+                            <button type="button" ng-click="loadQuiz()">Load Quiz</button>
+                        </div>
+                        <div class="panel-body">
+                            <form name="quizForm">
+                                <div class="form-group form-group-quiz-item" ng-repeat="q in quiz.Questions">
+                                    <label class="label-quiz-item">{{q.No}}. {{q.Name}}</label>
+                                    <div class="radio" ng-repeat="o in q.Options" ng-disabled="quiz.IsCompleted">
+                                        <label>
+                                            <input type="radio" name="{{q.No}}" id="{{o.Id}}" value="{{o.Id}}" ng-model="q.IsSelected">
+                                            {{o.Name}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer" ng-hide="quiz.IsCompleted">
+                            <button type="button" ng-click="submitQuizAnswers()">Submit Quiz Answers</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="2">
+            <div class="col-md-8" ng-disabled="quiz.IsCompleted">
+                <h2>Quiz {{quiz.Name}}</h2>
+                <div class="form-group form-group-quiz-item" ng-repeat="q in quiz.Questions">
+                    <label class="label-quiz-item" for="">{{q.No}}. {{q.Name}}</label>
+                    <div class="radio" ng-repeat="o in q.Options">
+                        <label>
+                            <input type="radio" name="{{q.No}}" id="{{o.Id}}" value="{{o.Id}}" ng-model="q.IsSelected">
+                            {{o.Name}}
+                        </label>
+                    </div>
+                </div>
+
+                <button ng-hide="quiz.IsCompleted" type="submit" class="btn btn-primary btn-lg" ng-click="submitQuizAnswers()">Submit Answers</button>
+                <ul class="pager mbl">
+                    <li class="previous" ng-hide="content.No==1"><a href="javascript:void(0)" ng-click="gotoPrevious()">&larr; Previous Class</a></li>
+                    <li class="next" ng-hide="content.Level.Count==content.No"><a title="Next Class" href="javascript:void(0)" ng-click="gotoNext()">Next Class &rarr;</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 hidden-sm hidden-xs">
+                <div class="list-group">
+                    <a href="javascript:void(0)" class="list-group-item" ng-class="{'active':c.Id==content.Id}" ng-repeat="c in content.Level.Contents" ng-click="gotoDetails(c)">{{content.Level.No}}.{{c.No}} {{c.Name}}</a>
+                </div>
+            </div>
+        </div>
+        <div ng-switch-when="0">Loading</div>
+    </div>
+</div>

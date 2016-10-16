@@ -1,0 +1,44 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-3">
+                <ol class="breadcrumb pln mtl">
+                    <li>
+                        <a href="javascript:void(0)">Home</a>
+                    </li>
+                    <li class="active">Introduction to Modern Web</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-unstyled mvl menu-secondary-course-details">
+                    <li class="active"><a href="javascript:void(0)">Course Home</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <h2>Introduction to Modern Web</h2>
+                <div class="embed-responsive embed-responsive-16by9 mbs" style="display: none">
+                    <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gLc7-yS9U44" frameborder="0" allowfullscreen></iframe>-->
+                    <!--<iframe src="//fast.wistia.net/embed/iframe/pe4vi0rfxt?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+                    <script src="//fast.wistia.net/assets/external/E-v1.js"></script>-->
+                </div>
+                <h3>Course Outline</h3>
+                <div ng-repeat="l in levels">
+                    <p class="course-sprint-title">Level {{l.No}}: {{l.Name}}</p>
+                    <ul class="list-unstyled course-class-list">
+                        <li ng-repeat="c in l.Contents">
+                            <a class="l-block pvm phs" href="javascript:void(0)" ng-click="gotoDetails(c,l)">
+                                <div class="class-item-status-lc l-inline-block mrs text-center">
+                                    <i class="fa" ng-class="{'fa-lock':c.Id=='00000000-0000-0000-0000-000000000000','fa-code':c.Type=='2', 'fa-unlock':c.Id!='00000000-0000-0000-0000-000000000000'}"></i>
+                                </div>
+                                <span class="course-class-title mrm l-inline-block">{{l.No}}.{{c.No}} {{c.Name}}</span>                                
+                                <span class="label label-success" ng-show="c.IsPublic">FREE</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

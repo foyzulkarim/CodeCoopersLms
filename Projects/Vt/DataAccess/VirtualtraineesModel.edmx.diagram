@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb2a03d3aebf40d2b7747fbe861699c1" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualtraineesModel.Content" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.ContentFile" Width="1.5" PointX="5.25" PointY="13" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.ContentHelpSite" Width="1.5" PointX="5.25" PointY="10.125" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.ContentProblem" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.EmailBank" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.File" Width="1.5" PointX="3" PointY="18.5" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.HelpSite" Width="1.5" PointX="3" PointY="15" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Level" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Option" Width="1.5" PointX="9.75" PointY="26" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Payment" Width="1.5" PointX="8.25" PointY="2.75" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Problem" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Question" Width="1.5" PointX="7.5" PointY="25.625" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Quiz" Width="1.5" PointX="5.25" PointY="22" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.QuizQuestion" Width="1.5" PointX="7.5" PointY="22.25" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.Trainee" Width="1.5" PointX="6" PointY="2.25" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.TraineeHistory" Width="1.5" PointX="8.25" PointY="10" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.TraineeQuizAnswerHistory" Width="1.5" PointX="9.75" PointY="15.5" />
+        <EntityTypeShape EntityType="VirtualtraineesModel.TraineeQuizHistory" Width="1.5" PointX="7.5" PointY="15.25" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_Content_Level" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentHelpSite_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentProblem_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentVideo_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_Quiz_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeHistory_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizHistory_Content" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentFile_File" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentHelpSite_HelpSite" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_ContentProblem_Problem" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_Option_Question" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_Payment_Trainee" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_QuizQuestion_Question" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizAnswerHistory_Question" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_QuizQuestion_Quiz" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizHistory_Quiz" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeHistory_Trainee" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizAnswerHistory_Trainee" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizHistory_Trainee" />
+        <AssociationConnector Association="VirtualtraineesModel.FK_TraineeQuizAnswerHistory_Quiz" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
