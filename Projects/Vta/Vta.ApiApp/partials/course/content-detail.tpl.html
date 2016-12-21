@@ -1,0 +1,91 @@
+﻿<div class="content content-class-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb pln mvl">
+                    <li>
+                        <a href="/#/">Courses</a>
+                    </li>
+                    <li>
+                        <a href="/#/coursedetail/{{vm.Content.Course.Id}}">{{vm.Content.Course.Name}}</a>
+                    </li>
+                    <li class="active">{{vm.Content.Level.No}} {{vm.Content.Level.Name}}</li>
+                </ol>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            <a href="javascript:void(0)">{{vm.Content.Level.No}}.{{vm.Content.No}} {{vm.Content.Name}}</a>
+                        </h1>
+                        <div class="course-class-details-short mbl">
+                            <span class="course-class-duration"><i class="glyphicon glyphicon-time"></i> {{vm.Content.Duration}}m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- video starts -->
+                        <div class="embed-responsive embed-responsive-16by9 mbs">
+                            <video style="height: 100%; width: 100%" controls="" autoplay="" type='video/mp4' id="video1">
+                                 <source type='video/mp4'>
+                            </video>
+                        </div>
+                        <ul class="pager mbl">
+
+                            <li ng-hide="vm.Content.PreviousContentId==null" class="previous">
+                                <a href="/#/contentdetail/{{vm.Content.PreviousContentId}}">&larr; Previous Class</a>
+                            </li>
+                            <li ng-hide="vm.Content.NextContentId==null" class="next">
+                                <a title="Looping, Condition" href="/#/contentdetail/{{vm.Content.NextContentId}}">Next Class &rarr;</a>
+                            </li>
+                        </ul>
+                        <!-- /video ends -->
+                    </div>
+                    <div class="col-md-4 hidden-sm hidden-xs">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">1.1 Visual Studio</a>
+                            <a href="#" class="list-group-item">Looping, Condition</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Description</h3>
+                            </div>
+                            <div class="panel-body">
+                                {{vm.Content.Description}}
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Files</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="f in vm.Content.Files">
+                                        <span class="fa fa-file"></span>
+                                        <a href="javascript:void(0)" ng-click="vm.download(f.Id)"> {{vm.Content.Level.No}}.{{vm.Content.No}}.{{f.No}} {{f.Name}} ({{f.Size}}MB)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Helpful Websites</h3>
+                            </div>
+                            <div class="panel-body">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="w in vm.Content.Websites">
+                                        <a target="_blank" href="{{w.Url}}">{{w.Name}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Vta.Admin.Mvc.MvcApplication" Language="C#" %>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Vta.Models.File>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Courses : @Html.DropDownList("CourseId")
+        Levels : @Html.DropDownList("LevelId")
+        Contents : @Html.DropDownList("ContentId")
+        Keyword : @Html.TextBox("Keyword", ViewBag.Keyword as string)
+        Orderby : @Html.DropDownList("OrderBy")
+        IsAsc : @Html.DropDownList("IsAscending")
+        <input type="submit" value="Load" class="btn btn-primary" />
+    </p>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Content.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsUploaded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsConverted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConvertedUrl)
+        </th>               
+        <th>
+            @Html.DisplayNameFor(model => model.Modified)
+        </th>
+    
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsUploaded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsConverted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConvertedUrl)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Modified)
+            </td>          
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                @Html.ActionLink("Upload", "Create", "FileUpload", new { fileId = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

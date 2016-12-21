@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Virtual Tech Academy</h1>    
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @{
+            List<string> controllers = ViewBag.Controllers;
+            foreach (string c in controllers)
+            {
+                    @Html.ActionLink(c,"Index",c ,null, new { @class = "btn btn-default btn-primary" })
+            }
+      }
+    </div>    
+</div>

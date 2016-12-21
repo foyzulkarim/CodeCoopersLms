@@ -1,0 +1,34 @@
+﻿@model Vta.ApiApp.Models.FileUploadViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+ <form action="" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true);
+
+    <div class="form-group hidden">
+        @Html.LabelFor(m => m.FileId)
+        <div class="col-md-10">
+            @Html.EditorFor(m => m.FileId)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ImageUpload)
+        <div class=""><input type="file" name="ImageUpload" /></div>
+    </div>
+    <button type="submit">Upload</button>
+</form>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

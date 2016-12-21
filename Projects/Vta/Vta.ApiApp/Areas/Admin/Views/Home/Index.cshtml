@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+ 
+
+<div class="row">
+    @foreach (var c in (List<string>)ViewBag.Controllers)
+    {
+        <a href="/admin/@c">
+            <div class="col-md-4 table-bordered" style="background: cornsilk">
+                <h1>@c</h1>
+            </div>
+        </a>
+    }
+     
+</div>

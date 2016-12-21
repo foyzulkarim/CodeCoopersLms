@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA12C37B-5754-466D-A3DD-B7E4107AF9BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>NewVta</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\account\account.models.js" />
+    <Content Include="app\account\auth.service.js" />
+    <Content Include="app\account\authInterceptorService.js" />
+    <Content Include="app\account\BaseService.js" />
+    <Content Include="app\account\permission.service.js" />
+    <Content Include="app\account\register.controller.js" />
+    <Content Include="app\account\signin.controller.js" />
+    <Content Include="app\account\signin.service.js" />
+    <Content Include="app\account\url.service.js" />
+    <Content Include="app\account\web.service.js" />
+    <Content Include="app\admin\course\course-create.controller.js" />
+    <Content Include="app\app.config.js" />
+    <Content Include="app\chat\chat.controller.js" />
+    <Content Include="app\chat\chat.service.js" />
+    <Content Include="app\chat\chat.service2.js" />
+    <Content Include="app\course\content-detail.controller.js" />
+    <Content Include="app\course\course-detail.controller.js" />
+    <Content Include="app\course\course.controller.js" />
+    <Content Include="app\course\course.service.js" />
+    <Content Include="app\models\request.models.js" />
+    <Content Include="app\models\response.models.js" />
+    <Content Include="app\models\view.models.js" />
+    <Content Include="app\nav.controller.js" />
+    <Content Include="app\utility\request-interceptor.factory.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\prism.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\text-rotator.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\angularjs.jpg" />
+    <Content Include="img\lead_mentor_foyzul.jpg" />
+    <Content Include="img\lead_mentor_foyzul_3.jpg" />
+    <Content Include="img\lead_mentor_foyzul_4.jpg" />
+    <Content Include="img\lead_mentor_fozul_2.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo.svg" />
+    <Content Include="img\modern_web_intro_cover.png" />
+    <Content Include="img\ms_dot_net.jpg" />
+    <Content Include="img\ms_dot_net_r.png" />
+    <Content Include="img\Slice 1.png" />
+    <Content Include="img\success_1.jpg" />
+    <Content Include="img\success_2.jpg" />
+    <Content Include="img\success_3.jpg" />
+    <Content Include="img\success_4.5.jpg" />
+    <Content Include="img\success_4.jpg" />
+    <Content Include="img\success_5.jpg" />
+    <Content Include="img\ta_1.jpg" />
+    <Content Include="img\ta_2.jpg" />
+    <Content Include="img\ta_3.jpg" />
+    <Content Include="index.html" />
+    <Content Include="partials\account\register.tpl.html" />
+    <Content Include="partials\account\signin.tpl.html" />
+    <Content Include="partials\chat\chat.html" />
+    <Content Include="partials\course\content-detail.tpl.html" />
+    <Content Include="partials\course\course-detail.tpl.html" />
+    <Content Include="partials\course\courses.tpl.html" />
+    <Content Include="Project_Readme.html" />
+    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\text-rotator.min.js" />
+    <Content Include="Scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ControllerHelper.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContentsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CoursesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FilesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LevelsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OptionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuestionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\WebsitesController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationResourcesController.cs" />
+    <Compile Include="Controllers\CommandController.cs" />
+    <Compile Include="Controllers\ContentDetailQueryController.cs" />
+    <Compile Include="Controllers\CourseCommandController.cs" />
+    <Compile Include="Controllers\CourseDetailQueryController.cs" />
+    <Compile Include="Controllers\CourseQueryController.cs" />
+    <Compile Include="Controllers\DownloadQueryController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Filters\CommandFilter.cs" />
+    <Compile Include="Filters\CustomAuthzFilter.cs" />
+    <Compile Include="Filters\FilterHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Hubs\VtaConnectionHub.cs" />
+    <Compile Include="Migrations\201511101222183_InitialState.cs" />
+    <Compile Include="Migrations\201511101222183_InitialState.Designer.cs">
+      <DependentUpon>201511101222183_InitialState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthBearerAuthenticationProvider.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\QueryStringBearerAuthorizeAttribute.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app\account\account.models.js.map" />
+    <None Include="app\account\auth.service.js.map" />
+    <None Include="app\account\BaseService.js.map" />
+    <None Include="app\account\permission.service.js.map" />
+    <None Include="app\account\register.controller.js.map" />
+    <None Include="app\account\signin.controller.js.map" />
+    <None Include="app\account\signin.service.js.map" />
+    <None Include="app\account\url.service.js.map" />
+    <None Include="app\account\web.service.js.map" />
+    <None Include="app\admin\course\course-create.controller.js.map" />
+    <None Include="app\app.config.js.map" />
+    <None Include="app\chat\chat.controller.js.map" />
+    <None Include="app\chat\chat.service.js.map" />
+    <None Include="app\course\content-detail.controller.js.map" />
+    <None Include="app\course\course-detail.controller.js.map" />
+    <None Include="app\course\course.controller.js.map" />
+    <None Include="app\course\course.service.js.map" />
+    <None Include="app\models\request.models.js.map" />
+    <None Include="app\models\response.models.js.map" />
+    <None Include="app\models\view.models.js.map" />
+    <None Include="app\nav.controller.js.map" />
+    <None Include="app\utility\request-interceptor.factory.js.map" />
+    <None Include="Areas\Admin\Views\Contents\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Contents\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Contents\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Contents\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Contents\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Courses\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Courses\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Courses\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Courses\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Courses\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Files\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Files\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Files\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Files\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Files\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Home\About.cshtml" />
+    <None Include="Areas\Admin\Views\Home\Contact.cshtml" />
+    <None Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Levels\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Levels\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Levels\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Levels\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Levels\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Options\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Options\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Options\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Options\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Options\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Questions\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Questions\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Questions\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Questions\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Questions\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Error.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Lockout.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\_UserSignature.cshtml" />
+    <None Include="Areas\Admin\Views\web.config" />
+    <None Include="Areas\Admin\Views\Websites\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Websites\Delete.cshtml" />
+    <None Include="Areas\Admin\Views\Websites\Details.cshtml" />
+    <None Include="Areas\Admin\Views\Websites\Edit.cshtml" />
+    <None Include="Areas\Admin\Views\Websites\Index.cshtml" />
+    <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\FontAwesome.otf" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="img\.picasa.ini" />
+    <None Include="img\logo.sketch" />
+    <None Include="packages.config" />
+    <None Include="Scripts\angular-resource.min.js.map" />
+    <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\angular.min.js.map" />
+    <None Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Web.config" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config" />
+    <None Include="Web.Release.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="app\account\auth.service.ts" />
+    <TypeScriptCompile Include="app\account\BaseService.ts" />
+    <TypeScriptCompile Include="app\account\permission.service.ts" />
+    <TypeScriptCompile Include="app\account\register.controller.ts" />
+    <TypeScriptCompile Include="app\account\signin.controller.ts" />
+    <TypeScriptCompile Include="app\account\url.service.ts" />
+    <TypeScriptCompile Include="app\account\web.service.ts" />
+    <TypeScriptCompile Include="app\admin\course\course-create.controller.ts" />
+    <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\chat\chat.controller.ts" />
+    <TypeScriptCompile Include="app\chat\chat.service.ts" />
+    <TypeScriptCompile Include="app\course\content-detail.controller.ts" />
+    <TypeScriptCompile Include="app\course\course-detail.controller.ts" />
+    <TypeScriptCompile Include="app\course\course.controller.ts" />
+    <TypeScriptCompile Include="app\course\course.service.ts" />
+    <TypeScriptCompile Include="app\models\request.models.ts" />
+    <TypeScriptCompile Include="app\models\response.models.ts" />
+    <TypeScriptCompile Include="app\models\view.models.ts" />
+    <TypeScriptCompile Include="app\nav.controller.ts" />
+    <TypeScriptCompile Include="app\utility\request-interceptor.factory.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-local-storage\angular-local-storage.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\uuid\UUID.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511101222183_InitialState.resx">
+      <DependentUpon>201511101222183_InitialState.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

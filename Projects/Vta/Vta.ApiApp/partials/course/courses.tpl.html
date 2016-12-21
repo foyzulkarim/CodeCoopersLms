@@ -1,0 +1,44 @@
+﻿<!-- Courses List -->
+<!-- content will be preview video, course title, course description, enrol btn, fees, course schedule, details -->
+<section class="section section-courses pal">
+    <div class="container">
+        <h1 class="mbl">Courses</h1>
+        <div class="row">
+            <div class="col-md-6 col-lg-6" ng-repeat="c in vm.Courses">
+                <div class="thumbnail">
+                    <div class="caption pam">
+                        <h3>{{c.Name}}</h3>
+                        <p>
+                            {{c.Description}}
+                        </p>
+                        <p>
+                            <b>Prerequisities:</b> {{c.Prerequisite}}
+                        </p>
+                        <p>
+                            <b>Fees:</b> {{c.Fee}} TK<br>
+                        </p>
+                        <p>
+                            <b>Duration:</b> {{c.Duration}} hours
+                        </p>
+                        <p class="text-right mtl section-btn">
+                            <a class="btn btn-default mrm" ui-sref="course-detail({courseId: '{{c.Id}}'})">Details</a>
+
+                            <a href="#" class="btn btn-primary">Enrol Now</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Each course includes:</h2>
+                <ul class="list-unstyled list-common-benefits pal">
+                    <li><i class="fa fa-search"></i>Personal review on your assignments</li>
+                    <li><i class="fa fa-support"></i>Support from mentor and teaching assistants</li>
+                    <li><i class="fa fa-certificate"></i> Certification on successul completion</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Courses List -->

@@ -1,0 +1,41 @@
+﻿<div class="section section-signup mvl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 div col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sign Up</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="userForm" role="form" ng-submit="vm.register()" novalidate>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email Address" ng-model="vm.user.Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.user.Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmpassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmpassword" placeholder="Password" ng-model="vm.user.confirmPassword">
+                            </div>
+                            <div class="alert alert-danger" ng-show="vm.notification.isError">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="vm.isErrorOccurred=false">&times;</button>
+                                {{vm.errorMessage}}
+                            </div>
+                            <div class="alert alert-info" ng-show="vm.notification.isInfo">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Thankyou Foyzul Karim. We will send you an email with the details of the course after the bKash transaction is verified.
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
