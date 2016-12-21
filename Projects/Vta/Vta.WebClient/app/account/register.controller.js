@@ -27,7 +27,7 @@ var Vta;
         };
         RegisterController.$inject = ["authService", "$state"];
         return RegisterController;
-    })();
+    }());
     Vta.RegisterController = RegisterController;
     angular.module("vta").controller("RegisterController", RegisterController);
 })(Vta || (Vta = {}));

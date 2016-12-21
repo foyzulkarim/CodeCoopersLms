@@ -62,7 +62,7 @@ var Vta;
         };
         AuthService.$inject = ["$q", "localStorageService", "urlService", "webService"];
         return AuthService;
-    })(Vta.BaseService);
+    }(Vta.BaseService));
     Vta.AuthService = AuthService;
     angular.module("vta").service("authService", AuthService);
 })(Vta || (Vta = {}));

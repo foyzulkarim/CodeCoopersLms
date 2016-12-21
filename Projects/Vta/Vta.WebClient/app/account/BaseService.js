@@ -8,7 +8,7 @@ var Vta;
             this.web = webService;
         }
         return BaseService;
-    })();
+    }());
     Vta.BaseService = BaseService;
 })(Vta || (Vta = {}));
 //# sourceMappingURL=BaseService.js.map

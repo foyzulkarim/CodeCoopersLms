@@ -31,7 +31,7 @@ var Vta;
         // private state: angular.ui.IStateService;
         RequestInterceptor.$inject = ["$q", "localStorage"];
         return RequestInterceptor;
-    })();
+    }());
     Vta.RequestInterceptor = RequestInterceptor;
     angular.module("vta").service("requestInterceptor", RequestInterceptor);
 })(Vta || (Vta = {}));

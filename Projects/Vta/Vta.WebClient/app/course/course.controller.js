@@ -20,7 +20,7 @@ var Vta;
         };
         CourseController.$inject = ["courseService"];
         return CourseController;
-    })();
+    }());
     Vta.CourseController = CourseController;
     angular.module("vta").controller("CourseController", CourseController);
 })(Vta || (Vta = {}));

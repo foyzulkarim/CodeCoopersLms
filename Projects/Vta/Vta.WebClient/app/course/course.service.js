@@ -55,7 +55,7 @@ var Vta;
         };
         CourseService.$inject = ["$q", "urlService", "webService"];
         return CourseService;
-    })(Vta.BaseService);
+    }(Vta.BaseService));
     Vta.CourseService = CourseService;
     angular.module("vta").service("courseService", CourseService);
 })(Vta || (Vta = {}));

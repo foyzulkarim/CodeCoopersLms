@@ -29,7 +29,7 @@ var Vta;
         };
         NavController.$inject = ["authService", "$state", "$rootScope"];
         return NavController;
-    })();
+    }());
     Vta.NavController = NavController;
     angular.module("vta").controller("NavController", NavController);
 })(Vta || (Vta = {}));

@@ -13,7 +13,7 @@ var Vta;
         };
         CourseCreateController.$inject = ["courseService"];
         return CourseCreateController;
-    })();
+    }());
     Vta.CourseCreateController = CourseCreateController;
     angular.module("vta").controller("CourseCreateController", CourseCreateController);
 })(Vta || (Vta = {}));

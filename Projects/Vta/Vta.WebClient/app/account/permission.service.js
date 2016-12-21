@@ -22,7 +22,7 @@ var Vta;
         };
         PermissionService.$inject = ["$q", "urlService", "webService"];
         return PermissionService;
-    })();
+    }());
     Vta.PermissionService = PermissionService;
     angular.module("vta").service("permissionService", PermissionService);
 })(Vta || (Vta = {}));

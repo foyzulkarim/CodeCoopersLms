@@ -23,7 +23,7 @@ var Vta;
         };
         SigninController.$inject = ["authService", "$state", "$rootScope"];
         return SigninController;
-    })();
+    }());
     Vta.SigninController = SigninController;
     angular.module("vta").controller("SigninController", SigninController);
 })(Vta || (Vta = {}));

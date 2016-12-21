@@ -12,7 +12,7 @@ var Vta;
             this.password = password;
         }
         return SigninRequest;
-    })();
+    }());
     Vta.SigninRequest = SigninRequest;
     var RegisterRequest = (function () {
         function RegisterRequest(email, password, confirmPassword) {
@@ -21,26 +21,26 @@ var Vta;
             this.confirmPassword = confirmPassword;
         }
         return RegisterRequest;
-    })();
+    }());
     Vta.RegisterRequest = RegisterRequest;
     var AccountInfo = (function () {
         function AccountInfo() {
         }
         return AccountInfo;
-    })();
+    }());
     Vta.AccountInfo = AccountInfo;
     var PermissionRequest = (function () {
         function PermissionRequest(name) {
             this.name = name;
         }
         return PermissionRequest;
-    })();
+    }());
     Vta.PermissionRequest = PermissionRequest;
     var Notification = (function () {
         function Notification() {
         }
         return Notification;
-    })();
+    }());
     Vta.Notification = Notification;
     var DataRequest = (function () {
         function DataRequest() {
@@ -52,7 +52,7 @@ var Vta;
             return queryString;
         };
         return DataRequest;
-    })();
+    }());
     Vta.DataRequest = DataRequest;
     var CourseListRequest = (function (_super) {
         __extends(CourseListRequest, _super);
@@ -67,13 +67,13 @@ var Vta;
             return _super.prototype.getBaseQueryString.call(this);
         };
         return CourseListRequest;
-    })(DataRequest);
+    }(DataRequest));
     Vta.CourseListRequest = CourseListRequest;
     var CourseSaveRequest = (function () {
         function CourseSaveRequest() {
         }
         return CourseSaveRequest;
-    })();
+    }());
     Vta.CourseSaveRequest = CourseSaveRequest;
 })(Vta || (Vta = {}));
 //# sourceMappingURL=request.models.js.map

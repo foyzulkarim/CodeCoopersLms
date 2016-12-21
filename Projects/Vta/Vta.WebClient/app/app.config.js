@@ -46,7 +46,7 @@ var Vta;
         }
         AppConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
         return AppConfig;
-    })();
+    }());
     Vta.AppConfig = AppConfig;
     angular.module("vta", ["ngResource", "ui.router", "LocalStorageModule"]);
     angular.module("vta").config(AppConfig);

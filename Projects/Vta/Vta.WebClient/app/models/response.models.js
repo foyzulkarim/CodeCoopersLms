@@ -13,7 +13,7 @@ var Vta;
             this.message = message == null ? "Success" : message;
         }
         return BaseResponse;
-    })();
+    }());
     Vta.BaseResponse = BaseResponse;
     var PermissionResponse = (function (_super) {
         __extends(PermissionResponse, _super);
@@ -21,7 +21,7 @@ var Vta;
             _super.apply(this, arguments);
         }
         return PermissionResponse;
-    })(BaseResponse);
+    }(BaseResponse));
     Vta.PermissionResponse = PermissionResponse;
     var RegisterResponse = (function (_super) {
         __extends(RegisterResponse, _super);
@@ -29,7 +29,7 @@ var Vta;
             _super.apply(this, arguments);
         }
         return RegisterResponse;
-    })(BaseResponse);
+    }(BaseResponse));
     Vta.RegisterResponse = RegisterResponse;
     var ErrorResponse = (function (_super) {
         __extends(ErrorResponse, _super);
@@ -37,7 +37,7 @@ var Vta;
             _super.apply(this, arguments);
         }
         return ErrorResponse;
-    })(BaseResponse);
+    }(BaseResponse));
     Vta.ErrorResponse = ErrorResponse;
     var CourseListResponse = (function (_super) {
         __extends(CourseListResponse, _super);
@@ -45,7 +45,7 @@ var Vta;
             _super.apply(this, arguments);
         }
         return CourseListResponse;
-    })(BaseResponse);
+    }(BaseResponse));
     Vta.CourseListResponse = CourseListResponse;
     var CourseResponse = (function (_super) {
         __extends(CourseResponse, _super);
@@ -53,7 +53,7 @@ var Vta;
             _super.apply(this, arguments);
         }
         return CourseResponse;
-    })(BaseResponse);
+    }(BaseResponse));
     Vta.CourseResponse = CourseResponse;
 })(Vta || (Vta = {}));
 //# sourceMappingURL=response.models.js.map

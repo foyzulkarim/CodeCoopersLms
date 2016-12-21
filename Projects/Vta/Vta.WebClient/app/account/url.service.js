@@ -11,7 +11,7 @@ var Vta;
             this.courseUrl = baseApi + "/CourseQuery";
         }
         return UrlService;
-    })();
+    }());
     Vta.UrlService = UrlService;
     angular.module("vta").service("urlService", UrlService);
 })(Vta || (Vta = {}));

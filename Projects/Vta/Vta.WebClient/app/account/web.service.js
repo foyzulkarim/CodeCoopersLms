@@ -69,7 +69,7 @@ var Vta;
         };
         WebService.$inject = ["$q", "$http"];
         return WebService;
-    })();
+    }());
     Vta.WebService = WebService;
     angular.module("vta").service("webService", WebService);
 })(Vta || (Vta = {}));

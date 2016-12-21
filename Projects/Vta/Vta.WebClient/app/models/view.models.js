@@ -5,7 +5,7 @@ var Vta;
         function CourseViewModel() {
         }
         return CourseViewModel;
-    })();
+    }());
     Vta.CourseViewModel = CourseViewModel;
 })(Vta || (Vta = {}));
 //# sourceMappingURL=view.models.js.map
