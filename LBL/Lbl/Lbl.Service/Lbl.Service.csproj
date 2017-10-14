@@ -41,6 +41,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
+      <Project>{0745ffaf-85a6-471a-af6a-4044d89ee72b}</Project>
+      <Name>Lbl.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbl.Repository\Lbl.Repository.csproj">
+      <Project>{5589f646-a562-46e6-87da-cb93a64aceb4}</Project>
+      <Name>Lbl.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbl.RequestModel\Lbl.RequestModel.csproj">
+      <Project>{b4b6a0f6-2651-4ce2-bb42-4085f00e7deb}</Project>
+      <Name>Lbl.RequestModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbl.ViewModel\Lbl.ViewModel.csproj">
+      <Project>{52599bea-5571-4b76-9b21-3cef06b77302}</Project>
+      <Name>Lbl.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
