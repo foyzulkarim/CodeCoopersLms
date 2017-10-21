@@ -15,8 +15,7 @@ namespace Lbl.Server.Controllers
     {
 
         public IHttpActionResult Post(StudentRequestModel request)
-        {
-            // searching mechanism
+        {         
             StudentService service = new StudentService();
             List<Student> students = service.Search(request);
             return this.Ok(students);
