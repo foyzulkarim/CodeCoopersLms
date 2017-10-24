@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace Lbl.Server.Controllers
 {
-    using Lbl.Model.Students;
+    using Lbl.Model;
     using Lbl.RequestModel;
     using Lbl.Service;
 
@@ -17,7 +17,7 @@ namespace Lbl.Server.Controllers
         public IHttpActionResult Post(StudentRequestModel request)
         {         
             StudentService service = new StudentService();
-            List<Student> students = service.Search(request);
+            var students = service.Search(request);
             return this.Ok(students);
         }
 

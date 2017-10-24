@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentViewModel.cs" />
+    <Compile Include="StudentDetailViewModel.cs" />
+    <Compile Include="StudentGridViewModel.cs" />
+    <Compile Include="TeacherDetailViewModel.cs" />
+    <Compile Include="TeacherGridViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
+      <Project>{0745ffaf-85a6-471a-af6a-4044d89ee72b}</Project>
+      <Name>Lbl.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

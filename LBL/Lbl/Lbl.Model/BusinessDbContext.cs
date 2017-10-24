@@ -8,8 +8,6 @@ namespace Lbl.Model
 {
     using System.Data.Entity;
 
-    using Lbl.Model.Students;
-
     public class BusinessDbContext : DbContext
     {
         public BusinessDbContext() : base("DefaultBusinessConnection")
@@ -18,5 +16,7 @@ namespace Lbl.Model
         }
 
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<Teacher> Teachers { get; set; }
     }
 }

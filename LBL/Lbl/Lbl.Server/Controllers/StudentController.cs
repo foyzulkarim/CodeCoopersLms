@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace Lbl.Server.Controllers
 {
-    using Lbl.Model.Students;
+    using Lbl.Model;
     using Lbl.Service;
 
     public class StudentController : ApiController
@@ -18,6 +18,7 @@ namespace Lbl.Server.Controllers
             {
                 return this.BadRequest("bhai, please sob field fill up koren");
             }
+
             StudentService service = new StudentService();
             var add = service.Add(student);
             return this.Ok(add);
