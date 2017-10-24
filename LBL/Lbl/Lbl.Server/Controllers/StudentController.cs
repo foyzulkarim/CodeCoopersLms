@@ -14,6 +14,10 @@ namespace Lbl.Server.Controllers
     {
         public IHttpActionResult Post(Student student)
         {
+            if (!ModelState.IsValid)
+            {
+                return this.BadRequest("bhai, please sob field fill up koren");
+            }
             StudentService service = new StudentService();
             var add = service.Add(student);
             return this.Ok(add);
