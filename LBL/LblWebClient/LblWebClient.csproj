@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="partials\home\home.tpl.html" />
+    <Content Include="partials\teacher\teacher-entry.tpl.html" />
+    <Content Include="partials\teacher\teacher-list.tpl.html" />
     <Content Include="partials\student\student-entry.tpl.html" />
     <Content Include="partials\student\student-list.tpl.html" />
     <Content Include="Scripts\angular-resource.js" />
@@ -98,9 +100,13 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\common\BaseRepository.ts" />
     <TypeScriptCompile Include="app\home\HomeControllers.ts" />
     <TypeScriptCompile Include="app\student\StudentControllers.ts" />
     <TypeScriptCompile Include="app\student\StudentService.ts" />
+    <TypeScriptCompile Include="app\common\BaseService.ts" />
+    <TypeScriptCompile Include="app\teacher\TeacherControllers.ts" />
+    <TypeScriptCompile Include="app\teacher\TeacherService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />

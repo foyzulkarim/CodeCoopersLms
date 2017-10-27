@@ -1,29 +1,37 @@
 ﻿module App {
 
-    export class Student {
+
+    export  class Entity {
         id: string;
-        name: string;
-        phone: string;
+        createdBy: string;
+        modifiedBy: string;
+        created: Date;
+        modified:Date;
+
     }
 
-    export class StudentRequestModel {
+    export class Teacher extends  Entity{
+       
         name: string;
-        phone: string;
+
+    }
+
+    export class TeacherRequestModel {
+        name: string;
         orderBy: string;
         isAscending: boolean;
         page: number;
     }
 
-    class StudentController {
+    class TeacherController {
 
-        model: Student;
-        service: StudentService;
+        model: Teacher;
+        service: TeacherService;
 
-        static $inject = ["StudentService"];
-        constructor(studentService: StudentService) {
-            this.model = new Student();
-            this.service = studentService;
-            console.log("I am in student controller");
+        static $inject = ["TeacherService"];
+        constructor(service: TeacherService) {
+            this.model = new Teacher();
+            this.service = service;
         }
 
         add(): void {
@@ -42,25 +50,25 @@
         }
 
         reset(): void {
-            this.model = new Student();
+            this.model = new Teacher();
         }
     }
 
-    angular.module('app').controller("StudentController", StudentController);
+    angular.module('app').controller("TeacherController", TeacherController);
 
 
-    class StudentsController {
+    class TeachersController {
 
-        searchRequest: StudentRequestModel;
-        models: Student[];
-        service: StudentService;
+        searchRequest: TeacherRequestModel;
+        models: Teacher[];
+        service: TeacherService;
 
-        static $inject = ["StudentService"];
-        constructor(studentService: StudentService) {
-            this.service = studentService;
+        static $inject = ["TeacherService"];
+        constructor(service: TeacherService) {
+            this.service = service;
             let self = this;
             self.models = [];
-            self.searchRequest = new StudentRequestModel();
+            self.searchRequest = new TeacherRequestModel();
             self.searchRequest.page = 1;
 
             let success = function (response) {
@@ -72,7 +80,7 @@
                 alert(errorReason);
             }
 
-            console.log('i am in Students controller constructor');
+            console.log('i am in Teachers controller constructor');
             this.service.search(self.searchRequest).then(success, error);
 
         }
@@ -113,5 +121,5 @@
         }
     }
 
-    angular.module('app').controller("StudentsController", StudentsController);
+    angular.module('app').controller("TeachersController", TeachersController);
 }

@@ -14,8 +14,8 @@ var App;
     App.StudentRequestModel = StudentRequestModel;
     var StudentController = (function () {
         function StudentController(studentService) {
-            this.student = new Student();
-            this.studentService = studentService;
+            this.model = new Student();
+            this.service = studentService;
             console.log("I am in student controller");
         }
         StudentController.prototype.add = function () {
@@ -27,10 +27,10 @@ var App;
             var error = function (errorReason) {
                 console.error(errorReason);
             };
-            this.studentService.save(self.student).then(success, error);
+            this.service.save(self.model).then(success, error);
         };
         StudentController.prototype.reset = function () {
-            this.student = new Student();
+            this.model = new Student();
         };
         return StudentController;
     }());
@@ -38,31 +38,31 @@ var App;
     angular.module('app').controller("StudentController", StudentController);
     var StudentsController = (function () {
         function StudentsController(studentService) {
-            this.studentService = studentService;
+            this.service = studentService;
             var self = this;
-            self.students = [];
+            self.models = [];
             self.searchRequest = new StudentRequestModel();
             self.searchRequest.page = 1;
             var success = function (response) {
-                self.students = response.data;
-                console.log(self.students);
+                self.models = response.data;
+                console.log(self.models);
             };
             var error = function (errorReason) {
                 alert(errorReason);
             };
             console.log('i am in Students controller constructor');
-            this.studentService.search(self.searchRequest).then(success, error);
+            this.service.search(self.searchRequest).then(success, error);
         }
         StudentsController.prototype.search = function () {
             var self = this;
             var success = function (response) {
                 console.log(response);
-                self.students = response.data;
+                self.models = response.data;
             };
             var error = function (errorReason) {
                 console.error(errorReason);
             };
-            this.studentService.search(self.searchRequest).then(success, error);
+            this.service.search(self.searchRequest).then(success, error);
         };
         StudentsController.prototype.sort = function (property) {
             var self = this;

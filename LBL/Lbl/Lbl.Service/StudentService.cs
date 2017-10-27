@@ -9,6 +9,7 @@ namespace Lbl.Service
     using System.Data;
 
     using Lbl.Model;
+    
     using Lbl.Repository;
     using Lbl.RequestModel;
     using Lbl.ViewModel;
@@ -16,10 +17,10 @@ namespace Lbl.Service
     public class StudentService
     {
         private BaseRepository<Student> repository;
-
+        
         public StudentService()
         {
-            repository = new BaseRepository<Student>();
+            repository = new BaseRepository<Student>();            
         }
 
         public bool Add(Student student)

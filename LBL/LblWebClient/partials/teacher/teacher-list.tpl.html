@@ -1,17 +1,16 @@
 ﻿<input  type="text" ng-model="vm.searchRequest.name" placeholder="name keyword"/>
-<input type="text" ng-model="vm.searchRequest.phone" placeholder="phone keyword"/>
 <button ng-click="vm.search()">Search</button>
 <table>
     <thead>
         <tr>
             <td ng-click="vm.sort('name')">Name</td>
-            <td ng-click="vm.sort('phone')">Phone</td>
+            
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="s in vm.models">
             <td>{{s.name}}</td>
-            <td>{{s.phone}}</td>
+           
         </tr>
     </tbody>
 </table>

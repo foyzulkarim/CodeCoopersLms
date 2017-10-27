@@ -10,15 +10,15 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var StudentService = (function (_super) {
-        __extends(StudentService, _super);
-        function StudentService(url, baseRepository, q) {
-            return _super.call(this, baseRepository, q, url.student) || this;
+    var TeacherService = (function (_super) {
+        __extends(TeacherService, _super);
+        function TeacherService(url, baseRepository, q) {
+            return _super.call(this, baseRepository, q, url.teacher) || this;
         }
-        return StudentService;
+        return TeacherService;
     }(App.BaseService));
-    StudentService.$inject = ["UrlService", "BaseRepository", "$q"];
-    App.StudentService = StudentService;
-    angular.module('app').service("StudentService", StudentService);
+    TeacherService.$inject = ["UrlService", "BaseRepository", "$q"];
+    App.TeacherService = TeacherService;
+    angular.module('app').service("TeacherService", TeacherService);
 })(App || (App = {}));
-//# sourceMappingURL=StudentService.js.map
+//# sourceMappingURL=TeacherService.js.map
