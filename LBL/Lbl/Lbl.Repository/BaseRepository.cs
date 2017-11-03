@@ -6,11 +6,12 @@
 
     using Lbl.Model;
 
-    public class BaseRepository<T> where T:Entity
+    public class GenericRepository<T> : IGenericRepository<T>
+        where T:Entity
     {
         protected BusinessDbContext db;
 
-        public BaseRepository()
+        public GenericRepository()
         {
             this.db=new BusinessDbContext();
         }

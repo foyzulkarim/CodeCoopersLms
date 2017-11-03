@@ -56,5 +56,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
+      <Project>{0745FFAF-85A6-471A-AF6A-4044D89EE72B}</Project>
+      <Name>Lbl.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

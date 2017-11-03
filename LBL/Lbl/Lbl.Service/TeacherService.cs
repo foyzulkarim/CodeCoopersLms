@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Lbl.Service
 {
     using System.Data;
+    using System.Linq.Expressions;
 
     using Lbl.Model;
     using Lbl.Repository;
@@ -15,11 +16,11 @@ namespace Lbl.Service
 
     public class TeacherService
     {
-        private BaseRepository<Teacher> repository;
+        private GenericRepository<Teacher> repository;
 
         public TeacherService()
         {
-            repository = new BaseRepository<Teacher>();
+            repository = new GenericRepository<Teacher>();
         }
 
         public bool Add(Teacher teacher)
@@ -29,11 +30,9 @@ namespace Lbl.Service
 
         public List<TeacherGridViewModel> Search(TeacherRequestModel request)
         {
+            Expression<Func<Teacher, bool>> expression = request.GetExpression();
             IQueryable<Teacher> teachers = this.repository.Get();
-            if (!string.IsNullOrWhiteSpace(request.Name))
-            {
-                teachers = teachers.Where(x => x.Name.ToLower().Contains(request.Name.ToLower()));
-            }
+            teachers = teachers.Where(expression);
             
             teachers = teachers.OrderBy(x => x.Modified);
 
@@ -42,11 +41,11 @@ namespace Lbl.Service
                 if (request.OrderBy.ToLower() == "name")
                 {
                     teachers = request.IsAscending ? teachers.OrderBy(x => x.Name) : teachers.OrderByDescending(x => x.Name);
-                }                 
+                }               
             }
 
-            teachers = teachers.Skip((request.Page - 1) * 10).Take(request.PerPageCount);
-
+            teachers = request.SkipAndTake(teachers);
+            // offset 
             var list = teachers.ToList().ConvertAll(x => new TeacherGridViewModel(x));
             return list;
         }

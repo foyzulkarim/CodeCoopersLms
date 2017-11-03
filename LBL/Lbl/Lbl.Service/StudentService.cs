@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Lbl.Service
 {
     using System.Data;
+    using System.Linq.Expressions;
 
     using Lbl.Model;
     
@@ -16,11 +17,11 @@ namespace Lbl.Service
 
     public class StudentService
     {
-        private BaseRepository<Student> repository;
+        private GenericRepository<Student> repository;
         
         public StudentService()
         {
-            repository = new BaseRepository<Student>();            
+            repository = new GenericRepository<Student>();            
         }
 
         public bool Add(Student student)
@@ -31,16 +32,11 @@ namespace Lbl.Service
         public List<StudentGridViewModel> Search(StudentRequestModel request)
         {
             IQueryable<Student> students = this.repository.Get();
-            if (!string.IsNullOrWhiteSpace(request.Name))
-            {
-                students = students.Where(x => x.Name.ToLower().Contains(request.Name.ToLower()));
-            }
-
-            if (!string.IsNullOrWhiteSpace(request.Phone))
-            {
-                students = students.Where(x => x.Phone.ToLower().Contains(request.Phone.ToLower()));
-            }
-
+            Expression<Func<Student, bool>> expression = request.GetExpression();
+            students = students.Where(expression);
+            // select * from studens where expression 
+            
+            // order by
             students = students.OrderBy(x => x.Modified);
 
             if (!string.IsNullOrWhiteSpace(request.OrderBy))
@@ -49,15 +45,15 @@ namespace Lbl.Service
                 {
                     students = request.IsAscending ? students.OrderBy(x => x.Name) : students.OrderByDescending(x => x.Name);
                 }
-
+                
                 if (request.OrderBy.ToLower() == "phone")
                 {
                     students = request.IsAscending ? students.OrderBy(x => x.Phone) : students.OrderByDescending(x => x.Phone);
                 }
             }
-
-            students = students.Skip((request.Page - 1) * 10).Take(request.PerPageCount);
-
+            
+            // taking 
+            students = request.SkipAndTake(students);
             var list = students.ToList().ConvertAll(x => new StudentGridViewModel(x));
             return list;
         }

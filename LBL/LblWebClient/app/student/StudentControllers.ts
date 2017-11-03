@@ -6,12 +6,11 @@
         phone: string;
     }
 
-    export class StudentRequestModel {
-        name: string;
-        phone: string;
+    export class BaseRequestModel {
         orderBy: string;
         isAscending: boolean;
         page: number;
+        keyword: string;
     }
 
     class StudentController {
