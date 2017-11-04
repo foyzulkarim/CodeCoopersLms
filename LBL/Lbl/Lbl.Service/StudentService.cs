@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +6,6 @@ using System.Threading.Tasks;
 namespace Lbl.Service
 {
     using System.Data;
-    using System.Linq.Expressions;
 
     using Lbl.Model;
     
@@ -15,7 +13,7 @@ namespace Lbl.Service
     using Lbl.RequestModel;
     using Lbl.ViewModel;
 
-    public class StudentService
+    public class StudentService : BaseService<Student>
     {
         private GenericRepository<Student> repository;
         
@@ -31,29 +29,7 @@ namespace Lbl.Service
 
         public List<StudentGridViewModel> Search(StudentRequestModel request)
         {
-            IQueryable<Student> students = this.repository.Get();
-            Expression<Func<Student, bool>> expression = request.GetExpression();
-            students = students.Where(expression);
-            // select * from studens where expression 
-            
-            // order by
-            students = students.OrderBy(x => x.Modified);
-
-            if (!string.IsNullOrWhiteSpace(request.OrderBy))
-            {
-                if (request.OrderBy.ToLower() == "name")
-                {
-                    students = request.IsAscending ? students.OrderBy(x => x.Name) : students.OrderByDescending(x => x.Name);
-                }
-                
-                if (request.OrderBy.ToLower() == "phone")
-                {
-                    students = request.IsAscending ? students.OrderBy(x => x.Phone) : students.OrderByDescending(x => x.Phone);
-                }
-            }
-            
-            // taking 
-            students = request.SkipAndTake(students);
+            var students = base.SearchQueryable(request);
             var list = students.ToList().ConvertAll(x => new StudentGridViewModel(x));
             return list;
         }

@@ -1,6 +1,7 @@
 ﻿module App {
 
-    export class Student {
+    export class Student  {
+   
         id: string;
         name: string;
         phone: string;
@@ -50,7 +51,7 @@
 
     class StudentsController {
 
-        searchRequest: StudentRequestModel;
+        searchRequest: BaseRequestModel;
         models: Student[];
         service: StudentService;
 
@@ -59,8 +60,10 @@
             this.service = studentService;
             let self = this;
             self.models = [];
-            self.searchRequest = new StudentRequestModel();
+            self.searchRequest = new BaseRequestModel();
             self.searchRequest.page = 1;
+            self.searchRequest.orderBy = "name";
+            self.searchRequest.isAscending = false;
 
             let success = function (response) {
                 self.models = response.data;

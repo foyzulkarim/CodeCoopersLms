@@ -1,5 +1,6 @@
 ﻿namespace Lbl.Model
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,8 +9,6 @@
         [Index]
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
-
-
+        public string Name { get; set; }        
     }
 }

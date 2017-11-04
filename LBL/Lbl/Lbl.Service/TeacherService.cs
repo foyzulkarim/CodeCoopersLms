@@ -14,7 +14,7 @@ namespace Lbl.Service
     using Lbl.RequestModel;
     using Lbl.ViewModel;
 
-    public class TeacherService
+    public class TeacherService : BaseService<Teacher>
     {
         private GenericRepository<Teacher> repository;
 
@@ -30,23 +30,8 @@ namespace Lbl.Service
 
         public List<TeacherGridViewModel> Search(TeacherRequestModel request)
         {
-            Expression<Func<Teacher, bool>> expression = request.GetExpression();
-            IQueryable<Teacher> teachers = this.repository.Get();
-            teachers = teachers.Where(expression);
-            
-            teachers = teachers.OrderBy(x => x.Modified);
-
-            if (!string.IsNullOrWhiteSpace(request.OrderBy))
-            {
-                if (request.OrderBy.ToLower() == "name")
-                {
-                    teachers = request.IsAscending ? teachers.OrderBy(x => x.Name) : teachers.OrderByDescending(x => x.Name);
-                }               
-            }
-
-            teachers = request.SkipAndTake(teachers);
-            // offset 
-            var list = teachers.ToList().ConvertAll(x => new TeacherGridViewModel(x));
+            IQueryable<Teacher> teachers = this.SearchQueryable(request);
+            List<TeacherGridViewModel> list = teachers.ToList().ConvertAll(x => new TeacherGridViewModel(x));
             return list;
         }
 

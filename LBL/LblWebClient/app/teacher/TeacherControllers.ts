@@ -15,14 +15,7 @@
         name: string;
 
     }
-
-    export class TeacherRequestModel {
-        name: string;
-        orderBy: string;
-        isAscending: boolean;
-        page: number;
-    }
-
+     
     class TeacherController {
 
         model: Teacher;
@@ -59,7 +52,7 @@
 
     class TeachersController {
 
-        searchRequest: TeacherRequestModel;
+        searchRequest: BaseRequestModel;
         models: Teacher[];
         service: TeacherService;
 
@@ -68,7 +61,7 @@
             this.service = service;
             let self = this;
             self.models = [];
-            self.searchRequest = new TeacherRequestModel();
+            self.searchRequest = new BaseRequestModel();
             self.searchRequest.page = 1;
 
             let success = function (response) {

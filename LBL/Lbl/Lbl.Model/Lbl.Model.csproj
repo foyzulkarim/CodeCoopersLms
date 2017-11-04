@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201710241551516_TeacherAdded.Designer.cs">
       <DependentUpon>201710241551516_TeacherAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711041628446_AddedEmail.cs" />
+    <Compile Include="Migrations\201711041628446_AddedEmail.Designer.cs">
+      <DependentUpon>201711041628446_AddedEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
@@ -72,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241551516_TeacherAdded.resx">
       <DependentUpon>201710241551516_TeacherAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711041628446_AddedEmail.resx">
+      <DependentUpon>201711041628446_AddedEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

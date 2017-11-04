@@ -24,12 +24,6 @@ var App;
         return Teacher;
     }(Entity));
     App.Teacher = Teacher;
-    var TeacherRequestModel = (function () {
-        function TeacherRequestModel() {
-        }
-        return TeacherRequestModel;
-    }());
-    App.TeacherRequestModel = TeacherRequestModel;
     var TeacherController = (function () {
         function TeacherController(service) {
             this.model = new Teacher();
@@ -58,7 +52,7 @@ var App;
             this.service = service;
             var self = this;
             self.models = [];
-            self.searchRequest = new TeacherRequestModel();
+            self.searchRequest = new App.BaseRequestModel();
             self.searchRequest.page = 1;
             var success = function (response) {
                 self.models = response.data;

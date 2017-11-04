@@ -6,12 +6,12 @@ var App;
         return Student;
     }());
     App.Student = Student;
-    var StudentRequestModel = (function () {
-        function StudentRequestModel() {
+    var BaseRequestModel = (function () {
+        function BaseRequestModel() {
         }
-        return StudentRequestModel;
+        return BaseRequestModel;
     }());
-    App.StudentRequestModel = StudentRequestModel;
+    App.BaseRequestModel = BaseRequestModel;
     var StudentController = (function () {
         function StudentController(studentService) {
             this.model = new Student();
@@ -41,8 +41,10 @@ var App;
             this.service = studentService;
             var self = this;
             self.models = [];
-            self.searchRequest = new StudentRequestModel();
+            self.searchRequest = new BaseRequestModel();
             self.searchRequest.page = 1;
+            self.searchRequest.orderBy = "name";
+            self.searchRequest.isAscending = false;
             var success = function (response) {
                 self.models = response.data;
                 console.log(self.models);

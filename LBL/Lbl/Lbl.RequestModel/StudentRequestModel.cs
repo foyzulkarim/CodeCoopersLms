@@ -10,12 +10,13 @@ namespace Lbl.RequestModel
 
     using Lbl.Model;
 
-    public class StudentRequestModel : BaseRequestModel
+    public class StudentRequestModel : BaseRequestModel<Student>
     {
         Expression<Func<Student, bool>> expression;
 
-        public Expression<Func<Student, bool>> GetExpression()
+        public override Expression<Func<Student, bool>> GetExpression()
         {
+            this.expression = x => true;
             if (!string.IsNullOrWhiteSpace(Keyword))
             {
                 this.expression = x =>

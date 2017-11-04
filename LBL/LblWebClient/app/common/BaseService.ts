@@ -26,7 +26,7 @@
             this.commandUrl = url;
         }
 
-        save(data: Entity): angular.IPromise<any> {
+        save(data: any): angular.IPromise<any> {
             var self = this;
             var deffered = self.q.defer();
 

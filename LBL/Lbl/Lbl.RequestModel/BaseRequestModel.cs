@@ -5,7 +5,9 @@
     using System.Linq;
     using System.Linq.Expressions;
 
-    public class BaseRequestModel
+    using Lbl.Model;
+
+    public abstract class BaseRequestModel<T>
     {
         public BaseRequestModel()
         {
@@ -23,24 +25,24 @@
 
         public string Keyword { get; set; }
 
-        public Func<IQueryable<TSource>, IOrderedQueryable<TSource>> OrderByFunc<TSource>()
+        public Func<IQueryable<T>, IOrderedQueryable<T>> OrderByFunc()
         {
             string propertyName = OrderBy;
             bool ascending = IsAscending;
-            var source = Expression.Parameter(typeof(IQueryable<TSource>), "source");
-            var item = Expression.Parameter(typeof(TSource), "item");
+            var source = Expression.Parameter(typeof(IQueryable<T>), "source");
+            var item = Expression.Parameter(typeof(T), "item");
             var member = Expression.Property(item, propertyName);
             var selector = Expression.Quote(Expression.Lambda(member, item));
             var body = Expression.Call(
                 typeof(Queryable), @ascending ? "OrderBy" : "OrderByDescending",
                 new[] { item.Type, member.Type },
                 source, selector);
-            var expr = Expression.Lambda<Func<IQueryable<TSource>, IOrderedQueryable<TSource>>>(body, source);
+            var expr = Expression.Lambda<Func<IQueryable<T>, IOrderedQueryable<T>>>(body, source);
             var func = expr.Compile();
             return func;
         }
 
-        public IQueryable<TModel> SkipAndTake<TModel>(IQueryable<TModel> queryable)  where TModel:class 
+        public IQueryable<T> SkipAndTake(IQueryable<T> queryable)  
         {
             if (Page != -1)
             {
@@ -50,6 +52,7 @@
             return queryable;
         }
 
+        public abstract Expression<Func<T, bool>> GetExpression();        
     }
 
 
