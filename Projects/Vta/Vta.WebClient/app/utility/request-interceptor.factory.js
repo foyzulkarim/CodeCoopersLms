@@ -24,14 +24,16 @@ var Vta;
         };
         RequestInterceptor.prototype.responseError = function (rejection) {
             if (rejection.status === 401) {
+                //   this.accountService.signout();
+                // this.state.go('/signin');
             }
             return this.qService.reject(rejection);
         };
-        //  private accountService: AccountFactory;
-        // private state: angular.ui.IStateService;
-        RequestInterceptor.$inject = ["$q", "localStorage"];
         return RequestInterceptor;
     }());
+    //  private accountService: AccountFactory;
+    // private state: angular.ui.IStateService;
+    RequestInterceptor.$inject = ["$q", "localStorage"];
     Vta.RequestInterceptor = RequestInterceptor;
     angular.module("vta").service("requestInterceptor", RequestInterceptor);
 })(Vta || (Vta = {}));

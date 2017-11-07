@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Vta;
 (function (Vta) {
     "use strict";
@@ -18,7 +23,7 @@ var Vta;
     var PermissionResponse = (function (_super) {
         __extends(PermissionResponse, _super);
         function PermissionResponse() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         return PermissionResponse;
     }(BaseResponse));
@@ -26,7 +31,7 @@ var Vta;
     var RegisterResponse = (function (_super) {
         __extends(RegisterResponse, _super);
         function RegisterResponse() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         return RegisterResponse;
     }(BaseResponse));
@@ -34,7 +39,7 @@ var Vta;
     var ErrorResponse = (function (_super) {
         __extends(ErrorResponse, _super);
         function ErrorResponse() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         return ErrorResponse;
     }(BaseResponse));
@@ -42,7 +47,7 @@ var Vta;
     var CourseListResponse = (function (_super) {
         __extends(CourseListResponse, _super);
         function CourseListResponse() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         return CourseListResponse;
     }(BaseResponse));
@@ -50,7 +55,7 @@ var Vta;
     var CourseResponse = (function (_super) {
         __extends(CourseResponse, _super);
         function CourseResponse() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         return CourseResponse;
     }(BaseResponse));

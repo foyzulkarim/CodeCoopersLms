@@ -29,7 +29,7 @@ namespace Vta.ApiApp
             var builder = new ODataConventionModelBuilder();
             builder.EntitySet<ApplicationResource>("ApplicationResources");
             builder.EntitySet<ResourcePermission>("Permissions");
-            config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
+            //config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
 }

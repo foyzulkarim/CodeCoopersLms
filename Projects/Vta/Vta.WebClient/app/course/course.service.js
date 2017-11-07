@@ -1,15 +1,20 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Vta;
 (function (Vta) {
     "use strict";
     var CourseService = (function (_super) {
         __extends(CourseService, _super);
         function CourseService($q, urlService, webService) {
-            _super.call(this, $q, urlService, webService);
+            return _super.call(this, $q, urlService, webService) || this;
         }
         CourseService.prototype.getAll = function (courseRequest) {
             var self = this;
@@ -53,9 +58,9 @@ var Vta;
             });
             return deffered.promise;
         };
-        CourseService.$inject = ["$q", "urlService", "webService"];
         return CourseService;
     }(Vta.BaseService));
+    CourseService.$inject = ["$q", "urlService", "webService"];
     Vta.CourseService = CourseService;
     angular.module("vta").service("courseService", CourseService);
 })(Vta || (Vta = {}));

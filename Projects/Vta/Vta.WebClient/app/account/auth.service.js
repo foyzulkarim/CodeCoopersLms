@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Vta;
 (function (Vta) {
     "use strict";
     var AuthService = (function (_super) {
         __extends(AuthService, _super);
         function AuthService($q, localStorageService, urlService, webService) {
-            _super.call(this, $q, urlService, webService);
-            this.localStorageService = localStorageService;
+            var _this = _super.call(this, $q, urlService, webService) || this;
+            _this.localStorageService = localStorageService;
+            return _this;
         }
         AuthService.prototype.signin = function (request) {
             var self = this;
@@ -60,9 +66,9 @@ var Vta;
             });
             return deffered.promise;
         };
-        AuthService.$inject = ["$q", "localStorageService", "urlService", "webService"];
         return AuthService;
     }(Vta.BaseService));
+    AuthService.$inject = ["$q", "localStorageService", "urlService", "webService"];
     Vta.AuthService = AuthService;
     angular.module("vta").service("authService", AuthService);
 })(Vta || (Vta = {}));
