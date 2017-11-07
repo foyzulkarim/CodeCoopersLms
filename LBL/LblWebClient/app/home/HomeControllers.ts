@@ -3,8 +3,8 @@
 
         values: string[];
 
-        static $inject = ["StudentService"];
-        constructor(studentService: StudentService) {
+        static $inject = [];
+        constructor() {
             let self = this;
             console.log("I am in home controller");
             this.now = new Date().toString();            

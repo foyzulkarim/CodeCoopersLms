@@ -4,7 +4,9 @@ using Vta.ApiApp.Filters;
 
 namespace Vta.ApiApp.Controllers
 {
-    [CustomAuthzFilter]
+    using System;
+
+    //[CustomAuthzFilter]
     [RoutePrefix("api/Values")]
     public class ValuesController : ApiController
     {
@@ -12,7 +14,7 @@ namespace Vta.ApiApp.Controllers
         [Route("GetAll")]
         public IEnumerable<string> Get()
         {
-            return new[] {"value1", "value2"};
+            return new[] { "value1" + DateTime.Now, "value2" + Guid.NewGuid() };
         }
 
         // [CustomAuthzFilter(Roles = "SuperAdmin")]

@@ -5,6 +5,7 @@
         id: string;
         name: string;
         phone: string;
+        email: string;
     }
 
     export class BaseRequestModel {
@@ -17,16 +18,16 @@
     class StudentController {
 
         model: Student;
-        service: StudentService;
+        //service: StudentService;
 
-        static $inject = ["StudentService"];
-        constructor(studentService: StudentService) {
+        static $inject = [];
+        constructor() {
             this.model = new Student();
-            this.service = studentService;
+          //  this.service = studentService;
             console.log("I am in student controller");
         }
 
-        add(): void {
+        save(): void {
             var self = this;
             let success = function (response) {
                 console.log(response);
@@ -37,7 +38,9 @@
                 console.error(errorReason);
             };
 
-            this.service.save(self.model).then(success, error);
+            console.log(self.model);
+
+           // this.service.save(self.model).then(success, error);
 
         }
 

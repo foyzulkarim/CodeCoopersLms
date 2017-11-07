@@ -13,12 +13,12 @@ var App;
     }());
     App.BaseRequestModel = BaseRequestModel;
     var StudentController = (function () {
-        function StudentController(studentService) {
+        function StudentController() {
             this.model = new Student();
-            this.service = studentService;
+            //  this.service = studentService;
             console.log("I am in student controller");
         }
-        StudentController.prototype.add = function () {
+        StudentController.prototype.save = function () {
             var self = this;
             var success = function (response) {
                 console.log(response);
@@ -27,14 +27,16 @@ var App;
             var error = function (errorReason) {
                 console.error(errorReason);
             };
-            this.service.save(self.model).then(success, error);
+            console.log(self.model);
+            // this.service.save(self.model).then(success, error);
         };
         StudentController.prototype.reset = function () {
             this.model = new Student();
         };
         return StudentController;
     }());
-    StudentController.$inject = ["StudentService"];
+    //service: StudentService;
+    StudentController.$inject = [];
     angular.module('app').controller("StudentController", StudentController);
     var StudentsController = (function () {
         function StudentsController(studentService) {
