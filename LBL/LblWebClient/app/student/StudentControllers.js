@@ -39,8 +39,8 @@ var App;
     StudentController.$inject = [];
     angular.module('app').controller("StudentController", StudentController);
     var StudentsController = (function () {
-        function StudentsController(studentService) {
-            this.service = studentService;
+        function StudentsController() {
+            //  this.service = studentService;
             var self = this;
             self.models = [];
             self.searchRequest = new BaseRequestModel();
@@ -55,7 +55,7 @@ var App;
                 alert(errorReason);
             };
             console.log('i am in Students controller constructor');
-            this.service.search(self.searchRequest).then(success, error);
+            //this.service.search(self.searchRequest).then(success, error);
         }
         StudentsController.prototype.search = function () {
             var self = this;
@@ -66,7 +66,7 @@ var App;
             var error = function (errorReason) {
                 console.error(errorReason);
             };
-            this.service.search(self.searchRequest).then(success, error);
+            //this.service.search(self.searchRequest).then(success, error);
         };
         StudentsController.prototype.sort = function (property) {
             var self = this;
@@ -88,7 +88,8 @@ var App;
         };
         return StudentsController;
     }());
-    StudentsController.$inject = ["StudentService"];
+    //service: StudentService;
+    StudentsController.$inject = [];
     angular.module('app').controller("StudentsController", StudentsController);
 })(App || (App = {}));
 //# sourceMappingURL=StudentControllers.js.map

@@ -56,11 +56,11 @@
 
         searchRequest: BaseRequestModel;
         models: Student[];
-        service: StudentService;
+        //service: StudentService;
 
-        static $inject = ["StudentService"];
-        constructor(studentService: StudentService) {
-            this.service = studentService;
+        static $inject = [];
+        constructor() {
+          //  this.service = studentService;
             let self = this;
             self.models = [];
             self.searchRequest = new BaseRequestModel();
@@ -78,7 +78,7 @@
             }
 
             console.log('i am in Students controller constructor');
-            this.service.search(self.searchRequest).then(success, error);
+            //this.service.search(self.searchRequest).then(success, error);
 
         }
 
@@ -93,7 +93,7 @@
                 console.error(errorReason);
             };
 
-            this.service.search(self.searchRequest).then(success, error);
+            //this.service.search(self.searchRequest).then(success, error);
         }
 
         sort(property: string) {

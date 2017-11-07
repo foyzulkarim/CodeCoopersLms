@@ -1,19 +1,23 @@
-﻿<input  type="text" ng-model="vm.searchRequest.keyword" placeholder="name keyword"/>
-<button ng-click="vm.search()">Search</button>
-<table>
-    <thead>
-        <tr>
-            <td ng-click="vm.sort('name')">Name</td>
-            <td ng-click="vm.sort('phone')">Phone</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="s in vm.models">
-            <td>{{s.name}}</td>
-            <td>{{s.phone}}</td>
-        </tr>
-    </tbody>
-</table>
-<button ng-show="vm.searchRequest.page>1" ng-click="vm.previous()">< Previous</button>
-<label>Current Page : {{vm.searchRequest.page}}</label>
-<button ng-click="vm.next()">Next ></button>
+﻿<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+            <a href="#/student-entry" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new student</a>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Parent ID</th>
+                <th class="text-center">Action</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="s in vm.models">
+                <td>{{s.name}}</td>
+                <td>{{s.phone}}</td>
+                <td>{{s.email}}</td>
+                <td class="text-center">
+                    <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>                     
+                </td>
+            </tr>         
+        </table>
+    </div>
+</div>

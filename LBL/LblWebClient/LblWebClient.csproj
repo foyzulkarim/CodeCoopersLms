@@ -80,10 +80,11 @@
     <Content Include="partials\course\course-detail.tpl.html" />
     <Content Include="partials\course\courses.tpl.html" />
     <Content Include="partials\home\home.tpl.html" />
+    <Content Include="partials\student\student-list.tpl.html" />
     <Content Include="partials\teacher\teacher-entry.tpl.html" />
     <Content Include="partials\teacher\teacher-list.tpl.html" />
     <Content Include="partials\student\student-entry.tpl.html" />
-    <Content Include="partials\student\student-list.tpl.html" />
+    <Content Include="partials\student\student-list-backup.tpl.html" />
     <Content Include="Scripts\angular-local-storage.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-resource.js" />
