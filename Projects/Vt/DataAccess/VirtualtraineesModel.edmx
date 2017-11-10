@@ -4,562 +4,562 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VirtualtraineesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Content">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="LevelId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="No" Type="int" Nullable="false" />
-          <Property Name="Point" Type="int" Nullable="false" />
-          <Property Name="Tags" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-          <Property Name="IsPublic" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ContentFile">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="FileId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="SerialNo" Type="int" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ContentHelpSite">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="HelpSiteId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ContentProblem">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ProblemId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="EmailBank">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="EntryAt" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="File">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="SourceUrl" Type="varchar" MaxLength="500" Nullable="false" />
-          <Property Name="Length" Type="int" Nullable="false" />
-          <Property Name="Size" Type="int" Nullable="false" />
-          <Property Name="TotalViews" Type="int" Nullable="false" />
-          <Property Name="Complexity" Type="int" Nullable="false" />
-          <Property Name="Tags" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="HelpSite">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Url" Type="varchar" MaxLength="500" Nullable="false" />
-          <Property Name="Tags" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Level">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
-          <Property Name="No" Type="int" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Option">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="IsAnswer" Type="bit" Nullable="false" />
-          <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Payment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PaidDate" Type="datetimeoffset" Precision="7" Nullable="false" />
-          <Property Name="Amount" Type="float" Nullable="false" />
-          <Property Name="Method" Type="int" Nullable="false" />
-          <Property Name="Note" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TransactionNumber" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsVerified" Type="bit" Nullable="false" />
-          <Property Name="VerifiedAt" Type="datetimeoffset" Precision="7" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Problem">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Type" Type="int" Nullable="false" />
-          <Property Name="Complexity" Type="int" Nullable="false" />
-          <Property Name="Point" Type="int" Nullable="false" />
-          <Property Name="TotalSubmission" Type="int" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Question">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Description" Type="varchar" MaxLength="200" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-          <Property Name="Type" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Quiz">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Count" Type="int" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="Created" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="QuizQuestion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="QuizId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="SerialNo" Type="int" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Trainee">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="Point" Type="int" Nullable="false" />
-          <Property Name="Joined" Type="datetime" Nullable="false" />
-          <Property Name="Expired" Type="datetime" Nullable="false" />
-          <Property Name="Changed" Type="datetime" Nullable="false" />
-          <Property Name="Token" Type="varchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TraineeHistory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Unlocked" Type="datetime" Nullable="false" />
-          <Property Name="LastAccessed" Type="datetime" Nullable="false" />
-          <Property Name="Point" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TraineeQuizAnswerHistory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="QuizHistoryId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Answer" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsVerified" Type="bit" Nullable="false" />
-          <Property Name="IsCorrect" Type="bit" Nullable="false" />
-          <Property Name="AnswerDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TraineeQuizHistory">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="QuizId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Appeared" Type="datetime" Nullable="false" />
-          <Property Name="LastAccessed" Type="datetime" Nullable="false" />
-          <Property Name="IsCompleted" Type="bit" Nullable="false" />
-          <Property Name="CorrectAnswer" Type="int" Nullable="false" />
-          <Property Name="Point" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_Content_Level">
-          <End Role="Level" Type="Self.Level" Multiplicity="1" />
-          <End Role="Content" Type="Self.Content" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Level">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Content">
-              <PropertyRef Name="LevelId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentFile_File">
-          <End Role="File" Type="Self.File" Multiplicity="1" />
-          <End Role="ContentFile" Type="Self.ContentFile" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="File">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentFile">
-              <PropertyRef Name="FileId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentHelpSite_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="ContentHelpSite" Type="Self.ContentHelpSite" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentHelpSite">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentHelpSite_HelpSite">
-          <End Role="HelpSite" Type="Self.HelpSite" Multiplicity="1" />
-          <End Role="ContentHelpSite" Type="Self.ContentHelpSite" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HelpSite">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentHelpSite">
-              <PropertyRef Name="HelpSiteId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentProblem_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="ContentProblem" Type="Self.ContentProblem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentProblem">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentProblem_Problem">
-          <End Role="Problem" Type="Self.Problem" Multiplicity="1" />
-          <End Role="ContentProblem" Type="Self.ContentProblem" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Problem">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentProblem">
-              <PropertyRef Name="ProblemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ContentVideo_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="ContentFile" Type="Self.ContentFile" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ContentFile">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Option_Question">
-          <End Role="Question" Type="Self.Question" Multiplicity="1" />
-          <End Role="Option" Type="Self.Option" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Question">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Option">
-              <PropertyRef Name="QuestionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Payment_Trainee">
-          <End Role="Trainee" Type="Self.Trainee" Multiplicity="1" />
-          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trainee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Payment">
-              <PropertyRef Name="TraineeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Quiz_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="Quiz" Type="Self.Quiz" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Quiz">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_QuizQuestion_Question">
-          <End Role="Question" Type="Self.Question" Multiplicity="1" />
-          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Question">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="QuizQuestion">
-              <PropertyRef Name="QuestionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_QuizQuestion_Quiz">
-          <End Role="Quiz" Type="Self.Quiz" Multiplicity="1" />
-          <End Role="QuizQuestion" Type="Self.QuizQuestion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Quiz">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="QuizQuestion">
-              <PropertyRef Name="QuizId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeHistory_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="TraineeHistory" Type="Self.TraineeHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeHistory">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeHistory_Trainee">
-          <End Role="Trainee" Type="Self.Trainee" Multiplicity="1" />
-          <End Role="TraineeHistory" Type="Self.TraineeHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trainee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeHistory">
-              <PropertyRef Name="TraineeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizAnswerHistory_Question">
-          <End Role="Question" Type="Self.Question" Multiplicity="1" />
-          <End Role="TraineeQuizAnswerHistory" Type="Self.TraineeQuizAnswerHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Question">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizAnswerHistory">
-              <PropertyRef Name="QuestionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizAnswerHistory_Quiz">
-          <End Role="TraineeQuizHistory" Type="Self.TraineeQuizHistory" Multiplicity="1" />
-          <End Role="TraineeQuizAnswerHistory" Type="Self.TraineeQuizAnswerHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TraineeQuizHistory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizAnswerHistory">
-              <PropertyRef Name="QuizHistoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizAnswerHistory_Trainee">
-          <End Role="Trainee" Type="Self.Trainee" Multiplicity="1" />
-          <End Role="TraineeQuizAnswerHistory" Type="Self.TraineeQuizAnswerHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trainee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizAnswerHistory">
-              <PropertyRef Name="TraineeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizHistory_Content">
-          <End Role="Content" Type="Self.Content" Multiplicity="1" />
-          <End Role="TraineeQuizHistory" Type="Self.TraineeQuizHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Content">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizHistory">
-              <PropertyRef Name="ContentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizHistory_Quiz">
-          <End Role="Quiz" Type="Self.Quiz" Multiplicity="1" />
-          <End Role="TraineeQuizHistory" Type="Self.TraineeQuizHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Quiz">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizHistory">
-              <PropertyRef Name="QuizId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TraineeQuizHistory_Trainee">
-          <End Role="Trainee" Type="Self.Trainee" Multiplicity="1" />
-          <End Role="TraineeQuizHistory" Type="Self.TraineeQuizHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Trainee">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TraineeQuizHistory">
-              <PropertyRef Name="TraineeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="VirtualtraineesModelStoreContainer">
-          <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContentFile" EntityType="Self.ContentFile" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContentHelpSite" EntityType="Self.ContentHelpSite" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContentProblem" EntityType="Self.ContentProblem" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EmailBank" EntityType="Self.EmailBank" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="File" EntityType="Self.File" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HelpSite" EntityType="Self.HelpSite" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Option" EntityType="Self.Option" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Problem" EntityType="Self.Problem" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Quiz" EntityType="Self.Quiz" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="QuizQuestion" EntityType="Self.QuizQuestion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Trainee" EntityType="Self.Trainee" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TraineeHistory" EntityType="Self.TraineeHistory" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TraineeQuizAnswerHistory" EntityType="Self.TraineeQuizAnswerHistory" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TraineeQuizHistory" EntityType="Self.TraineeQuizHistory" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Content_Level" Association="Self.FK_Content_Level">
-            <End Role="Level" EntitySet="Level" />
-            <End Role="Content" EntitySet="Content" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentFile_File" Association="Self.FK_ContentFile_File">
-            <End Role="File" EntitySet="File" />
-            <End Role="ContentFile" EntitySet="ContentFile" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentHelpSite_Content" Association="Self.FK_ContentHelpSite_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="ContentHelpSite" EntitySet="ContentHelpSite" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentHelpSite_HelpSite" Association="Self.FK_ContentHelpSite_HelpSite">
-            <End Role="HelpSite" EntitySet="HelpSite" />
-            <End Role="ContentHelpSite" EntitySet="ContentHelpSite" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentProblem_Content" Association="Self.FK_ContentProblem_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="ContentProblem" EntitySet="ContentProblem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentProblem_Problem" Association="Self.FK_ContentProblem_Problem">
-            <End Role="Problem" EntitySet="Problem" />
-            <End Role="ContentProblem" EntitySet="ContentProblem" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ContentVideo_Content" Association="Self.FK_ContentVideo_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="ContentFile" EntitySet="ContentFile" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Option_Question" Association="Self.FK_Option_Question">
-            <End Role="Question" EntitySet="Question" />
-            <End Role="Option" EntitySet="Option" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Payment_Trainee" Association="Self.FK_Payment_Trainee">
-            <End Role="Trainee" EntitySet="Trainee" />
-            <End Role="Payment" EntitySet="Payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Quiz_Content" Association="Self.FK_Quiz_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="Quiz" EntitySet="Quiz" />
-          </AssociationSet>
-          <AssociationSet Name="FK_QuizQuestion_Question" Association="Self.FK_QuizQuestion_Question">
-            <End Role="Question" EntitySet="Question" />
-            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_QuizQuestion_Quiz" Association="Self.FK_QuizQuestion_Quiz">
-            <End Role="Quiz" EntitySet="Quiz" />
-            <End Role="QuizQuestion" EntitySet="QuizQuestion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeHistory_Content" Association="Self.FK_TraineeHistory_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="TraineeHistory" EntitySet="TraineeHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeHistory_Trainee" Association="Self.FK_TraineeHistory_Trainee">
-            <End Role="Trainee" EntitySet="Trainee" />
-            <End Role="TraineeHistory" EntitySet="TraineeHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizAnswerHistory_Question" Association="Self.FK_TraineeQuizAnswerHistory_Question">
-            <End Role="Question" EntitySet="Question" />
-            <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizAnswerHistory_Quiz" Association="Self.FK_TraineeQuizAnswerHistory_Quiz">
-            <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistory" />
-            <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizAnswerHistory_Trainee" Association="Self.FK_TraineeQuizAnswerHistory_Trainee">
-            <End Role="Trainee" EntitySet="Trainee" />
-            <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizHistory_Content" Association="Self.FK_TraineeQuizHistory_Content">
-            <End Role="Content" EntitySet="Content" />
-            <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizHistory_Quiz" Association="Self.FK_TraineeQuizHistory_Quiz">
-            <End Role="Quiz" EntitySet="Quiz" />
-            <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TraineeQuizHistory_Trainee" Association="Self.FK_TraineeQuizHistory_Trainee">
-            <End Role="Trainee" EntitySet="Trainee" />
-            <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistory" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="VirtualtraineesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VirtualtraineesModelStoreContainer">
+    <EntitySet Name="Contents" EntityType="VirtualtraineesModel.Store.Contents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContentFiles" EntityType="VirtualtraineesModel.Store.ContentFiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContentHelpSites" EntityType="VirtualtraineesModel.Store.ContentHelpSites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContentProblems" EntityType="VirtualtraineesModel.Store.ContentProblems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailBanks" EntityType="VirtualtraineesModel.Store.EmailBanks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Files" EntityType="VirtualtraineesModel.Store.Files" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HelpSites" EntityType="VirtualtraineesModel.Store.HelpSites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Levels" EntityType="VirtualtraineesModel.Store.Levels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Options" EntityType="VirtualtraineesModel.Store.Options" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="VirtualtraineesModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Problems" EntityType="VirtualtraineesModel.Store.Problems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Questions" EntityType="VirtualtraineesModel.Store.Questions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Quizs" EntityType="VirtualtraineesModel.Store.Quizs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuizQuestions" EntityType="VirtualtraineesModel.Store.QuizQuestions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trainees" EntityType="VirtualtraineesModel.Store.Trainees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TraineeHistories" EntityType="VirtualtraineesModel.Store.TraineeHistories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TraineeQuizAnswerHistories" EntityType="VirtualtraineesModel.Store.TraineeQuizAnswerHistories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TraineeQuizHistories" EntityType="VirtualtraineesModel.Store.TraineeQuizHistories" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Content_Level" Association="VirtualtraineesModel.Store.FK_Content_Level">
+      <End Role="Level" EntitySet="Levels" />
+      <End Role="Content" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentHelpSite_Content" Association="VirtualtraineesModel.Store.FK_ContentHelpSite_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="ContentHelpSite" EntitySet="ContentHelpSites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentProblem_Content" Association="VirtualtraineesModel.Store.FK_ContentProblem_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="ContentProblem" EntitySet="ContentProblems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentVideo_Content" Association="VirtualtraineesModel.Store.FK_ContentVideo_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="ContentFile" EntitySet="ContentFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quiz_Content" Association="VirtualtraineesModel.Store.FK_Quiz_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="Quiz" EntitySet="Quizs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeHistory_Content" Association="VirtualtraineesModel.Store.FK_TraineeHistory_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="TraineeHistory" EntitySet="TraineeHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizHistory_Content" Association="VirtualtraineesModel.Store.FK_TraineeQuizHistory_Content">
+      <End Role="Content" EntitySet="Contents" />
+      <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentFile_File" Association="VirtualtraineesModel.Store.FK_ContentFile_File">
+      <End Role="File" EntitySet="Files" />
+      <End Role="ContentFile" EntitySet="ContentFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentHelpSite_HelpSite" Association="VirtualtraineesModel.Store.FK_ContentHelpSite_HelpSite">
+      <End Role="HelpSite" EntitySet="HelpSites" />
+      <End Role="ContentHelpSite" EntitySet="ContentHelpSites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContentProblem_Problem" Association="VirtualtraineesModel.Store.FK_ContentProblem_Problem">
+      <End Role="Problem" EntitySet="Problems" />
+      <End Role="ContentProblem" EntitySet="ContentProblems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Option_Question" Association="VirtualtraineesModel.Store.FK_Option_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Option" EntitySet="Options" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Trainee" Association="VirtualtraineesModel.Store.FK_Payment_Trainee">
+      <End Role="Trainee" EntitySet="Trainees" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuizQuestion_Question" Association="VirtualtraineesModel.Store.FK_QuizQuestion_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizAnswerHistory_Question" Association="VirtualtraineesModel.Store.FK_TraineeQuizAnswerHistory_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuizQuestion_Quiz" Association="VirtualtraineesModel.Store.FK_QuizQuestion_Quiz">
+      <End Role="Quiz" EntitySet="Quizs" />
+      <End Role="QuizQuestion" EntitySet="QuizQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizHistory_Quiz" Association="VirtualtraineesModel.Store.FK_TraineeQuizHistory_Quiz">
+      <End Role="Quiz" EntitySet="Quizs" />
+      <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeHistory_Trainee" Association="VirtualtraineesModel.Store.FK_TraineeHistory_Trainee">
+      <End Role="Trainee" EntitySet="Trainees" />
+      <End Role="TraineeHistory" EntitySet="TraineeHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizAnswerHistory_Trainee" Association="VirtualtraineesModel.Store.FK_TraineeQuizAnswerHistory_Trainee">
+      <End Role="Trainee" EntitySet="Trainees" />
+      <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizHistory_Trainee" Association="VirtualtraineesModel.Store.FK_TraineeQuizHistory_Trainee">
+      <End Role="Trainee" EntitySet="Trainees" />
+      <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TraineeQuizAnswerHistory_Quiz" Association="VirtualtraineesModel.Store.FK_TraineeQuizAnswerHistory_Quiz">
+      <End Role="TraineeQuizHistory" EntitySet="TraineeQuizHistories" />
+      <End Role="TraineeQuizAnswerHistory" EntitySet="TraineeQuizAnswerHistories" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Contents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="LevelId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="No" Type="int" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+    <Property Name="Tags" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="IsPublic" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SerialNo" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentHelpSites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="HelpSiteId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContentProblems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProblemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailBanks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EntryAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="SourceUrl" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Length" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+    <Property Name="TotalViews" Type="int" Nullable="false" />
+    <Property Name="Complexity" Type="int" Nullable="false" />
+    <Property Name="Tags" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HelpSites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Url" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Tags" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Levels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="No" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Options">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsAnswer" Type="bit" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaidDate" Type="datetimeoffset" Nullable="false" Precision="7" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="Method" Type="int" Nullable="false" />
+    <Property Name="Note" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TransactionNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="VerifiedAt" Type="datetimeoffset" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Problems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Complexity" Type="int" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+    <Property Name="TotalSubmission" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="varchar" Nullable="true" MaxLength="200" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quizs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuizQuestions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuizId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SerialNo" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trainees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+    <Property Name="Joined" Type="datetime" Nullable="false" />
+    <Property Name="Expired" Type="datetime" Nullable="false" />
+    <Property Name="Changed" Type="datetime" Nullable="false" />
+    <Property Name="Token" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TraineeHistories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Unlocked" Type="datetime" Nullable="false" />
+    <Property Name="LastAccessed" Type="datetime" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TraineeQuizAnswerHistories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuizHistoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Answer" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="IsCorrect" Type="bit" Nullable="false" />
+    <Property Name="AnswerDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TraineeQuizHistories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TraineeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="QuizId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Appeared" Type="datetime" Nullable="false" />
+    <Property Name="LastAccessed" Type="datetime" Nullable="false" />
+    <Property Name="IsCompleted" Type="bit" Nullable="false" />
+    <Property Name="CorrectAnswer" Type="int" Nullable="false" />
+    <Property Name="Point" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Content_Level">
+    <End Role="Level" Type="VirtualtraineesModel.Store.Levels" Multiplicity="1" />
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Content">
+        <PropertyRef Name="LevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentHelpSite_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="ContentHelpSite" Type="VirtualtraineesModel.Store.ContentHelpSites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentHelpSite">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentProblem_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="ContentProblem" Type="VirtualtraineesModel.Store.ContentProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentProblem">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentVideo_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="ContentFile" Type="VirtualtraineesModel.Store.ContentFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentFile">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quiz_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="Quiz" Type="VirtualtraineesModel.Store.Quizs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Quiz">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeHistory_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="TraineeHistory" Type="VirtualtraineesModel.Store.TraineeHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeHistory">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizHistory_Content">
+    <End Role="Content" Type="VirtualtraineesModel.Store.Contents" Multiplicity="1" />
+    <End Role="TraineeQuizHistory" Type="VirtualtraineesModel.Store.TraineeQuizHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Content">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizHistory">
+        <PropertyRef Name="ContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentFile_File">
+    <End Role="File" Type="VirtualtraineesModel.Store.Files" Multiplicity="1" />
+    <End Role="ContentFile" Type="VirtualtraineesModel.Store.ContentFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentFile">
+        <PropertyRef Name="FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentHelpSite_HelpSite">
+    <End Role="HelpSite" Type="VirtualtraineesModel.Store.HelpSites" Multiplicity="1" />
+    <End Role="ContentHelpSite" Type="VirtualtraineesModel.Store.ContentHelpSites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HelpSite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentHelpSite">
+        <PropertyRef Name="HelpSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContentProblem_Problem">
+    <End Role="Problem" Type="VirtualtraineesModel.Store.Problems" Multiplicity="1" />
+    <End Role="ContentProblem" Type="VirtualtraineesModel.Store.ContentProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContentProblem">
+        <PropertyRef Name="ProblemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Option_Question">
+    <End Role="Question" Type="VirtualtraineesModel.Store.Questions" Multiplicity="1" />
+    <End Role="Option" Type="VirtualtraineesModel.Store.Options" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Option">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Trainee">
+    <End Role="Trainee" Type="VirtualtraineesModel.Store.Trainees" Multiplicity="1" />
+    <End Role="Payment" Type="VirtualtraineesModel.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="TraineeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuizQuestion_Question">
+    <End Role="Question" Type="VirtualtraineesModel.Store.Questions" Multiplicity="1" />
+    <End Role="QuizQuestion" Type="VirtualtraineesModel.Store.QuizQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuizQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizAnswerHistory_Question">
+    <End Role="Question" Type="VirtualtraineesModel.Store.Questions" Multiplicity="1" />
+    <End Role="TraineeQuizAnswerHistory" Type="VirtualtraineesModel.Store.TraineeQuizAnswerHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizAnswerHistory">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuizQuestion_Quiz">
+    <End Role="Quiz" Type="VirtualtraineesModel.Store.Quizs" Multiplicity="1" />
+    <End Role="QuizQuestion" Type="VirtualtraineesModel.Store.QuizQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quiz">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuizQuestion">
+        <PropertyRef Name="QuizId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizHistory_Quiz">
+    <End Role="Quiz" Type="VirtualtraineesModel.Store.Quizs" Multiplicity="1" />
+    <End Role="TraineeQuizHistory" Type="VirtualtraineesModel.Store.TraineeQuizHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quiz">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizHistory">
+        <PropertyRef Name="QuizId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeHistory_Trainee">
+    <End Role="Trainee" Type="VirtualtraineesModel.Store.Trainees" Multiplicity="1" />
+    <End Role="TraineeHistory" Type="VirtualtraineesModel.Store.TraineeHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeHistory">
+        <PropertyRef Name="TraineeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizAnswerHistory_Trainee">
+    <End Role="Trainee" Type="VirtualtraineesModel.Store.Trainees" Multiplicity="1" />
+    <End Role="TraineeQuizAnswerHistory" Type="VirtualtraineesModel.Store.TraineeQuizAnswerHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizAnswerHistory">
+        <PropertyRef Name="TraineeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizHistory_Trainee">
+    <End Role="Trainee" Type="VirtualtraineesModel.Store.Trainees" Multiplicity="1" />
+    <End Role="TraineeQuizHistory" Type="VirtualtraineesModel.Store.TraineeQuizHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizHistory">
+        <PropertyRef Name="TraineeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TraineeQuizAnswerHistory_Quiz">
+    <End Role="TraineeQuizHistory" Type="VirtualtraineesModel.Store.TraineeQuizHistories" Multiplicity="1" />
+    <End Role="TraineeQuizAnswerHistory" Type="VirtualtraineesModel.Store.TraineeQuizAnswerHistories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TraineeQuizHistory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TraineeQuizAnswerHistory">
+        <PropertyRef Name="QuizHistoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VirtualtraineesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1161,243 +1161,242 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="VirtualtraineesModelStoreContainer" CdmEntityContainer="VirtualtraineesEntities">
-          <EntitySetMapping Name="Contents">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Content">
-              <MappingFragment StoreEntitySet="Content">
-                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Tags" ColumnName="Tags" />
-                <ScalarProperty Name="Point" ColumnName="Point" />
-                <ScalarProperty Name="No" ColumnName="No" />
-                <ScalarProperty Name="LevelId" ColumnName="LevelId" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ContentFiles">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.ContentFile">
-              <MappingFragment StoreEntitySet="ContentFile">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
-                <ScalarProperty Name="FileId" ColumnName="FileId" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ContentHelpSites">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.ContentHelpSite">
-              <MappingFragment StoreEntitySet="ContentHelpSite">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="HelpSiteId" ColumnName="HelpSiteId" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ContentProblems">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.ContentProblem">
-              <MappingFragment StoreEntitySet="ContentProblem">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="ProblemId" ColumnName="ProblemId" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EmailBanks">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.EmailBank">
-              <MappingFragment StoreEntitySet="EmailBank">
-                <ScalarProperty Name="EntryAt" ColumnName="EntryAt" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Files">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.File">
-              <MappingFragment StoreEntitySet="File">
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Tags" ColumnName="Tags" />
-                <ScalarProperty Name="Complexity" ColumnName="Complexity" />
-                <ScalarProperty Name="TotalViews" ColumnName="TotalViews" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Length" ColumnName="Length" />
-                <ScalarProperty Name="SourceUrl" ColumnName="SourceUrl" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HelpSites">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.HelpSite">
-              <MappingFragment StoreEntitySet="HelpSite">
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Tags" ColumnName="Tags" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Levels">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Level">
-              <MappingFragment StoreEntitySet="Level">
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="No" ColumnName="No" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Options">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Option">
-              <MappingFragment StoreEntitySet="Option">
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="IsAnswer" ColumnName="IsAnswer" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Payments">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Payment">
-              <MappingFragment StoreEntitySet="Payment">
-                <ScalarProperty Name="VerifiedAt" ColumnName="VerifiedAt" />
-                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
-                <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
-                <ScalarProperty Name="Method" ColumnName="Method" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
-                <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Problems">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Problem">
-              <MappingFragment StoreEntitySet="Problem">
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="TotalSubmission" ColumnName="TotalSubmission" />
-                <ScalarProperty Name="Point" ColumnName="Point" />
-                <ScalarProperty Name="Complexity" ColumnName="Complexity" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Questions">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Question">
-              <MappingFragment StoreEntitySet="Question">
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Quizs">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Quiz">
-              <MappingFragment StoreEntitySet="Quiz">
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="QuizQuestions">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.QuizQuestion">
-              <MappingFragment StoreEntitySet="QuizQuestion">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="QuizId" ColumnName="QuizId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Trainees">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.Trainee">
-              <MappingFragment StoreEntitySet="Trainee">
-                <ScalarProperty Name="Token" ColumnName="Token" />
-                <ScalarProperty Name="Changed" ColumnName="Changed" />
-                <ScalarProperty Name="Expired" ColumnName="Expired" />
-                <ScalarProperty Name="Joined" ColumnName="Joined" />
-                <ScalarProperty Name="Point" ColumnName="Point" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TraineeHistories">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.TraineeHistory">
-              <MappingFragment StoreEntitySet="TraineeHistory">
-                <ScalarProperty Name="Point" ColumnName="Point" />
-                <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
-                <ScalarProperty Name="Unlocked" ColumnName="Unlocked" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TraineeQuizAnswerHistories">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.TraineeQuizAnswerHistory">
-              <MappingFragment StoreEntitySet="TraineeQuizAnswerHistory">
-                <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
-                <ScalarProperty Name="IsCorrect" ColumnName="IsCorrect" />
-                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
-                <ScalarProperty Name="Answer" ColumnName="Answer" />
-                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
-                <ScalarProperty Name="QuizHistoryId" ColumnName="QuizHistoryId" />
-                <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TraineeQuizHistories">
-            <EntityTypeMapping TypeName="VirtualtraineesModel.TraineeQuizHistory">
-              <MappingFragment StoreEntitySet="TraineeQuizHistory">
-                <ScalarProperty Name="Point" ColumnName="Point" />
-                <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
-                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
-                <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
-                <ScalarProperty Name="Appeared" ColumnName="Appeared" />
-                <ScalarProperty Name="QuizId" ColumnName="QuizId" />
-                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
-                <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VirtualtraineesModelStoreContainer" CdmEntityContainer="VirtualtraineesEntities">
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Content)">
+        <MappingFragment StoreEntitySet="Contents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+          <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentFiles">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.ContentFile)">
+        <MappingFragment StoreEntitySet="ContentFiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentHelpSites">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.ContentHelpSite)">
+        <MappingFragment StoreEntitySet="ContentHelpSites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="HelpSiteId" ColumnName="HelpSiteId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContentProblems">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.ContentProblem)">
+        <MappingFragment StoreEntitySet="ContentProblems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="ProblemId" ColumnName="ProblemId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailBanks">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.EmailBank)">
+        <MappingFragment StoreEntitySet="EmailBanks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EntryAt" ColumnName="EntryAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.File)">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SourceUrl" ColumnName="SourceUrl" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="TotalViews" ColumnName="TotalViews" />
+          <ScalarProperty Name="Complexity" ColumnName="Complexity" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HelpSites">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.HelpSite)">
+        <MappingFragment StoreEntitySet="HelpSites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levels">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Level)">
+        <MappingFragment StoreEntitySet="Levels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Options">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Option)">
+        <MappingFragment StoreEntitySet="Options">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAnswer" ColumnName="IsAnswer" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="VerifiedAt" ColumnName="VerifiedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Problems">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Problem)">
+        <MappingFragment StoreEntitySet="Problems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Complexity" ColumnName="Complexity" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="TotalSubmission" ColumnName="TotalSubmission" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Question)">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quizs">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Quiz)">
+        <MappingFragment StoreEntitySet="Quizs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuizQuestions">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.QuizQuestion)">
+        <MappingFragment StoreEntitySet="QuizQuestions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainees">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.Trainee)">
+        <MappingFragment StoreEntitySet="Trainees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Joined" ColumnName="Joined" />
+          <ScalarProperty Name="Expired" ColumnName="Expired" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TraineeHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.TraineeHistory)">
+        <MappingFragment StoreEntitySet="TraineeHistories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="Unlocked" ColumnName="Unlocked" />
+          <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TraineeQuizAnswerHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.TraineeQuizAnswerHistory)">
+        <MappingFragment StoreEntitySet="TraineeQuizAnswerHistories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+          <ScalarProperty Name="QuizHistoryId" ColumnName="QuizHistoryId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="IsCorrect" ColumnName="IsCorrect" />
+          <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TraineeQuizHistories">
+      <EntityTypeMapping TypeName="IsTypeOf(VirtualtraineesModel.TraineeQuizHistory)">
+        <MappingFragment StoreEntitySet="TraineeQuizHistories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="Appeared" ColumnName="Appeared" />
+          <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="CorrectAnswer" ColumnName="CorrectAnswer" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -1411,7 +1410,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Bitbucket\VirtualTrainees\Main\Projects\Source\Server\Vt\DataAccess\VirtualTraineesModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Github\CodeCoopersLms\Projects\Vt\DataAccess\VirtualTraineesModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
