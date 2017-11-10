@@ -7,12 +7,15 @@
 
     using Lbl.Model;
 
-    public abstract class BaseRequestModel<T>
+    public abstract class BaseRequestModel<T> where T: Entity
     {
+        protected Expression<Func<T, bool>> ExpressionObject = e => true;
+     
         public BaseRequestModel()
         {
             this.PerPageCount = 10;
             this.Page = 1;
+            this.ExpressionObject = x => true;
         }
 
         public int Page { get; set; }
@@ -52,7 +55,28 @@
             return queryable;
         }
 
-        public abstract Expression<Func<T, bool>> GetExpression();        
+        public abstract Expression<Func<T, bool>> GetExpression();
+
+
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
+
+        protected Expression<Func<T, bool>> GenerateBaseExpression()
+        {
+            Expression<Func<T, bool>> expression = e => true;
+
+            if (Start != new DateTime())
+            {
+                if (End == new DateTime())
+                {
+                    End = Start.Date.AddDays(1).AddMinutes(-1);
+                }
+
+                expression = expression.And(x => x.Modified >= Start && x.Modified <= End);
+            }
+
+            return expression;
+        }
     }
 
 

@@ -18,7 +18,7 @@
     class StudentController {
 
         model: Student;
-        //service: StudentService;
+        service: StudentService;
 
         static $inject = [];
         constructor() {
@@ -40,7 +40,7 @@
 
             console.log(self.model);
 
-           // this.service.save(self.model).then(success, error);
+            this.service.save(self.model).then(success, error);
 
         }
 

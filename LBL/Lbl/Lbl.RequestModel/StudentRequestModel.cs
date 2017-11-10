@@ -12,19 +12,36 @@ namespace Lbl.RequestModel
 
     public class StudentRequestModel : BaseRequestModel<Student>
     {
-        Expression<Func<Student, bool>> expression;
+        public string Name { get; set; }
+
+        public string Phone { get; set; }
+
+  
 
         public override Expression<Func<Student, bool>> GetExpression()
         {
-            this.expression = x => true;
+
             if (!string.IsNullOrWhiteSpace(Keyword))
             {
-                this.expression = x =>
+                this.ExpressionObject = x =>
                     x.Name.Contains(Keyword) || x.Phone.Contains(Keyword) || x.Email.Contains(Keyword);
             }
-         
-            return this.expression;
-        } 
+
+            if (!string.IsNullOrWhiteSpace(Name))
+            {
+                this.ExpressionObject = ExpressionObject.And(x => x.Name.Contains(Name));
+            }
+
+            if (!string.IsNullOrWhiteSpace(Phone))
+            {
+                this.ExpressionObject = ExpressionObject.And(x => x.Phone.Contains(Phone));
+            }
+
+            Expression<Func<Student, bool>> baseExpression = this.GenerateBaseExpression();
+            ExpressionObject = ExpressionObject.And(baseExpression);
+            
+            return this.ExpressionObject;
+        }
     }
 
 

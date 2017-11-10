@@ -28,14 +28,13 @@ var App;
                 console.error(errorReason);
             };
             console.log(self.model);
-            // this.service.save(self.model).then(success, error);
+            this.service.save(self.model).then(success, error);
         };
         StudentController.prototype.reset = function () {
             this.model = new Student();
         };
         return StudentController;
     }());
-    //service: StudentService;
     StudentController.$inject = [];
     angular.module('app').controller("StudentController", StudentController);
     var StudentsController = (function () {

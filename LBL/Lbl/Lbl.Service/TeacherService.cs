@@ -30,8 +30,8 @@ namespace Lbl.Service
 
         public List<TeacherGridViewModel> Search(TeacherRequestModel request)
         {
-            IQueryable<Teacher> teachers = this.SearchQueryable(request);
-            List<TeacherGridViewModel> list = teachers.ToList().ConvertAll(x => new TeacherGridViewModel(x));
+            var teachers = this.SearchQueryable(request);
+            var list = teachers.ToList().ConvertAll(x => new TeacherGridViewModel(x));
             return list;
         }
 

@@ -7,13 +7,13 @@
     using Lbl.Model;
 
     public class GenericRepository<T> : IGenericRepository<T>
-        where T:Entity
+        where T : Entity
     {
         protected BusinessDbContext db;
 
         public GenericRepository()
         {
-            this.db=new BusinessDbContext();
+            this.db = new BusinessDbContext();
         }
 
         public bool Add(T entity)
@@ -32,7 +32,7 @@
 
         public T GetDetail(string id)
         {
-            return this.db.Set<T>().Find(id);            
+            return this.db.Set<T>().Find(id);
         }
 
         public bool Edit(T entity)
