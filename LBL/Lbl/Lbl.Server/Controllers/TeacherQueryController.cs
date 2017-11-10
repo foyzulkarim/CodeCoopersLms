@@ -7,17 +7,15 @@ using System.Web.Http;
 
 namespace Lbl.Server.Controllers
 {
+    using Lbl.Model;
     using Lbl.RequestModel;
     using Lbl.Service;
+    using Lbl.ViewModel;
 
-    public class TeacherQueryController : ApiController
+    [RoutePrefix("api/TeacherQuery")]
+    public class TeacherQueryController : BaseQueryController<Teacher, TeacherRequestModel, TeacherViewModel>
     {
-        public IHttpActionResult Post(TeacherRequestModel request)
-        {
-            var service = new TeacherService();
-            var students = service.Search(request);
-            return this.Ok(students);
-        }
+     
 
     }
 }

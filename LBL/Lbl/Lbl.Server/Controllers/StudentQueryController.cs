@@ -10,16 +10,12 @@ namespace Lbl.Server.Controllers
     using Lbl.Model;
     using Lbl.RequestModel;
     using Lbl.Service;
+    using Lbl.ViewModel;
 
-    public class StudentQueryController : ApiController
+    [RoutePrefix("api/StudentQuery")]
+    public class StudentQueryController : BaseQueryController<Teacher, TeacherRequestModel, TeacherViewModel>
     {
 
-        public IHttpActionResult Post(StudentRequestModel request)
-        {         
-            StudentService service = new StudentService();
-            var students = service.Search(request);
-            return this.Ok(students);
-        }
-
+        
     }
 }

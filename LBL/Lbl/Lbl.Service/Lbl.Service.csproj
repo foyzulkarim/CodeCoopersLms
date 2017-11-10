@@ -43,8 +43,6 @@
   <ItemGroup>
     <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentService.cs" />
-    <Compile Include="TeacherService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">

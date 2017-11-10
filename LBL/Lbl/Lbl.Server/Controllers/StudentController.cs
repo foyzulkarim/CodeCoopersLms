@@ -8,20 +8,13 @@ using System.Web.Http;
 namespace Lbl.Server.Controllers
 {
     using Lbl.Model;
+    using Lbl.RequestModel;
     using Lbl.Service;
+    using Lbl.ViewModel;
 
-    public class StudentController : ApiController
+    [RoutePrefix("api/Student")]
+    public class StudentController : BaseController<Student, StudentRequestModel, StudentViewModel>
     {
-        public IHttpActionResult Post(Student student)
-        {
-            if (!ModelState.IsValid)
-            {
-                return this.BadRequest("bhai, please sob field fill up koren");
-            }
 
-            StudentService service = new StudentService();
-            var add = service.Add(student);
-            return this.Ok(add);
-        }
     }
 }
