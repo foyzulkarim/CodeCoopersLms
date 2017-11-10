@@ -2,7 +2,7 @@
 {
     using Lbl.Model;
 
-    public class StudentDetailViewModel : BaseViewModel
+    public class StudentDetailViewModel : BaseViewModel<Student>
     {
         public StudentDetailViewModel(Student student) : base(student)
         {
@@ -15,5 +15,13 @@
         public string Phone { get; set; }
 
         public string Address { get; set; }
+    }
+
+    public class StudentViewModel :  BaseViewModel<Student>
+    {
+        public StudentViewModel(Entity entity)
+            : base(entity)
+        {
+        }
     }
 }

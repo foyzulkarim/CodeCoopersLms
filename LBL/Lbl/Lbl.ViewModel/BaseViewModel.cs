@@ -4,7 +4,7 @@
 
     using Lbl.Model;
 
-    public class BaseViewModel
+    public class BaseViewModel<T> where T:Entity
     {
         public BaseViewModel(Entity entity)
         {

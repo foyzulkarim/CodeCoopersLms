@@ -2,9 +2,9 @@
 {
     using Lbl.Model;
 
-    public class TeacherDetailViewModel : BaseViewModel
+    public class TeacherViewModel : BaseViewModel<Teacher>
     {
-        public TeacherDetailViewModel(Teacher teacher)
+        public TeacherViewModel(Teacher teacher)
             : base(teacher)
         {
             this.Name = teacher.Name;

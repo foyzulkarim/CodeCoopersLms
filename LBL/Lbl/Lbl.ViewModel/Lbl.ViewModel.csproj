@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentDetailViewModel.cs" />
     <Compile Include="StudentGridViewModel.cs" />
-    <Compile Include="TeacherDetailViewModel.cs" />
+    <Compile Include="TeacherViewModel.cs" />
     <Compile Include="TeacherGridViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
