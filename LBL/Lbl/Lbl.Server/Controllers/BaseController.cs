@@ -1,5 +1,6 @@
 ﻿namespace Lbl.Server.Controllers
 {
+    using System;
     using System.Web.Http;
 
     using Lbl.Model;
@@ -19,6 +20,7 @@
                 return this.BadRequest("bhai, please sob field fill up koren");
             }
 
+            model.Id = Guid.NewGuid().ToString();
             var service = new BaseService<T, TR, TV>();
             var add = service.Add(model);
             return this.Ok(add);
