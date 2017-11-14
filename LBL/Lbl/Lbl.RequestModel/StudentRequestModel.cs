@@ -16,7 +16,7 @@ namespace Lbl.RequestModel
 
         public string Phone { get; set; }
 
-  
+        public double Due { get; set; }
 
         public override Expression<Func<Student, bool>> GetExpression()
         {
@@ -37,9 +37,14 @@ namespace Lbl.RequestModel
                 this.ExpressionObject = ExpressionObject.And(x => x.Phone.Contains(Phone));
             }
 
+            if (Due > 0)
+            {
+                this.ExpressionObject = this.ExpressionObject.And(x => x.Due > Due);
+            }
+
             Expression<Func<Student, bool>> baseExpression = this.GenerateBaseExpression();
             ExpressionObject = ExpressionObject.And(baseExpression);
-            
+
             return this.ExpressionObject;
         }
     }

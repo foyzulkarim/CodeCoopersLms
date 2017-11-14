@@ -1,4 +1,16 @@
 ﻿module App {
+
+    export class Entity {
+        constructor() {
+
+        }
+        id: string;
+        createdBy: string;
+        modifiedBy: string;
+        created: Date;
+        modified: Date;
+    }
+
     export class BaseRepository {
 
         baseUrl: string;
@@ -26,8 +38,8 @@
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            
-            self.http.post(self.baseUrl+subUrl, data).then(successCallback, errorCallback);
+
+            self.http.post(self.baseUrl + subUrl, data).then(successCallback, errorCallback);
             return deffered.promise;
         }
     }

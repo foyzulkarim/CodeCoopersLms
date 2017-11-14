@@ -1,8 +1,16 @@
 ﻿<div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <a href="#/student-entry" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new student</a>
+        </div>
+        <div class="col-md-6 text-left">
+            <input type="text" ng-model="vm.searchRequest.keyword" ng-change="vm.search()" ng-model-options="{ debounce : 1000}" placeholder="keyword"/>
+            <input type="number" ng-model="vm.searchRequest.due" ng-change="vm.search()" ng-model-options="{ debounce : 1000}" placeholder="due" />
+        </div>
+    </div>
+    <div class="row col-md-12 ">
         <table class="table table-striped custab">
             <thead>
-            <a href="#/student-entry" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new student</a>
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -15,9 +23,9 @@
                 <td>{{s.phone}}</td>
                 <td>{{s.email}}</td>
                 <td class="text-center">
-                    <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>                     
+                    <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a>
                 </td>
-            </tr>         
+            </tr>
         </table>
     </div>
 </div>

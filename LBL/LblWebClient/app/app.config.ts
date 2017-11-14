@@ -21,6 +21,8 @@ module App {
                     controller: "HomeController",
                     controllerAs: "vm"
                 })
+
+                // student 
                 .state("root.student-entry",
                 {
                     url: "/student-entry",

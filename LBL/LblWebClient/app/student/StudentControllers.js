@@ -1,94 +1,42 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var App;
 (function (App) {
-    var Student = (function () {
-        function Student() {
-        }
-        return Student;
-    }());
-    App.Student = Student;
-    var BaseRequestModel = (function () {
-        function BaseRequestModel() {
-        }
-        return BaseRequestModel;
-    }());
-    App.BaseRequestModel = BaseRequestModel;
-    var StudentController = (function () {
-        function StudentController() {
-            this.model = new Student();
-            //  this.service = studentService;
+    var StudentController = (function (_super) {
+        __extends(StudentController, _super);
+        function StudentController(service) {
+            var _this = _super.call(this, service) || this;
+            _this.model = new App.Student();
             console.log("I am in student controller");
+            _this.searchRequest["due"] = 0;
+            return _this;
         }
-        StudentController.prototype.save = function () {
-            var self = this;
-            var success = function (response) {
-                console.log(response);
-                self.reset();
-            };
-            var error = function (errorReason) {
-                console.error(errorReason);
-            };
-            console.log(self.model);
-            this.service.save(self.model).then(success, error);
-        };
         StudentController.prototype.reset = function () {
-            this.model = new Student();
+            this.model = new App.Student();
         };
         return StudentController;
-    }());
-    StudentController.$inject = [];
+    }(App.BaseController));
+    StudentController.$inject = ["StudentService"];
     angular.module('app').controller("StudentController", StudentController);
-    var StudentsController = (function () {
-        function StudentsController() {
-            //  this.service = studentService;
-            var self = this;
-            self.models = [];
-            self.searchRequest = new BaseRequestModel();
-            self.searchRequest.page = 1;
-            self.searchRequest.orderBy = "name";
-            self.searchRequest.isAscending = false;
-            var success = function (response) {
-                self.models = response.data;
-                console.log(self.models);
-            };
-            var error = function (errorReason) {
-                alert(errorReason);
-            };
+    var StudentsController = (function (_super) {
+        __extends(StudentsController, _super);
+        function StudentsController(service) {
+            var _this = _super.call(this, service) || this;
             console.log('i am in Students controller constructor');
-            //this.service.search(self.searchRequest).then(success, error);
+            return _this;
         }
-        StudentsController.prototype.search = function () {
-            var self = this;
-            var success = function (response) {
-                console.log(response);
-                self.models = response.data;
-            };
-            var error = function (errorReason) {
-                console.error(errorReason);
-            };
-            //this.service.search(self.searchRequest).then(success, error);
-        };
-        StudentsController.prototype.sort = function (property) {
-            var self = this;
-            self.searchRequest.orderBy = property;
-            self.searchRequest.isAscending = !self.searchRequest.isAscending;
-            self.search();
-        };
-        StudentsController.prototype.next = function () {
-            var self = this;
-            self.searchRequest.page = self.searchRequest.page + 1;
-            self.search();
-        };
-        StudentsController.prototype.previous = function () {
-            var self = this;
-            if (self.searchRequest.page > 1) {
-                self.searchRequest.page = self.searchRequest.page - 1;
-                self.search();
-            }
-        };
+        StudentsController.prototype.reset = function () { };
         return StudentsController;
-    }());
-    //service: StudentService;
-    StudentsController.$inject = [];
+    }(App.BaseController));
+    StudentsController.$inject = ["StudentService"];
     angular.module('app').controller("StudentsController", StudentsController);
 })(App || (App = {}));
 //# sourceMappingURL=StudentControllers.js.map

@@ -115,12 +115,16 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\common\BaseController.ts" />
     <TypeScriptCompile Include="app\common\BaseRepository.ts" />
+    <TypeScriptCompile Include="app\common\Entity.ts" />
     <TypeScriptCompile Include="app\home\HomeControllers.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />
+    <TypeScriptCompile Include="app\student\Model.ts" />
     <TypeScriptCompile Include="app\student\StudentControllers.ts" />
     <TypeScriptCompile Include="app\student\StudentService.ts" />
     <TypeScriptCompile Include="app\common\BaseService.ts" />
+    <TypeScriptCompile Include="app\teacher\Model.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherControllers.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-local-storage\index.d.ts" />
