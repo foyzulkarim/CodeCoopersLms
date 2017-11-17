@@ -21,8 +21,6 @@
 
         [Index]
         [MaxLength(50)]
-        public string Email { get; set; }
-
-        public double Due { get; set; }
+        public string Email { get; set; }        
     }
 }

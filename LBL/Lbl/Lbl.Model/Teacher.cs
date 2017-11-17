@@ -10,5 +10,9 @@
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }        
+
+        // todo  other   properties
+
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }
