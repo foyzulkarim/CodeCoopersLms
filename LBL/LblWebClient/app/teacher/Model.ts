@@ -1,6 +1,10 @@
 ﻿module App {
 
    export class Teacher extends Entity {
-        name: string;
+       name: string;
+       address: string;
+       designation: string;
+       email: string;
+       phone: string;
     }
 }

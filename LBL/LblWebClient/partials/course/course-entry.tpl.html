@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Teacher:</label>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                          
+                          <select ng-options="item as item.name for item in vm.teachers track by item.id" ng-model="vm.model.teacherId"></select>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4"></div>
                     </div>

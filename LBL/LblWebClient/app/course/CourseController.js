@@ -12,37 +12,30 @@ var App;
 (function (App) {
     var CourseController = (function (_super) {
         __extends(CourseController, _super);
-        function CourseController(service) {
+        function CourseController(service, teacherService) {
             var _this = _super.call(this, service) || this;
             _this.levelOfAudiences = [];
-            _this.orderStates = [];
             console.log("I am in Course Controller");
-            for (var enumMem in App.LevelOfAudience) {
-                if (App.LevelOfAudience.hasOwnProperty(enumMem)) {
-                    var isValueProperty = parseInt(enumMem, 10) >= 0;
-                    if (isValueProperty) {
-                        var value = App.LevelOfAudience[enumMem];
-                        _this.levelOfAudiences.push(value);
-                    }
-                }
-            }
-            _this.model.publishDate = new Date();
-            _this.searchRequest["LevelOfAudience"] = _this.levelOfAudiences[0];
-            //this.save();
-            _this.loadTeachers();
-            _this.search();
+            _this.teacherService = teacherService;
             _this.model = new App.Course();
+            _this.model.publishDate = new Date();
+            _this.loadTeachers();
             return _this;
         }
         CourseController.prototype.loadTeachers = function () {
             var self = this;
             var successCallback = function (response) {
-                console.log(response);
-                self.teachers = response.Models;
+                console.log('teacher list - ', response.data);
+                self.teachers = response.data;
             };
             var errorCallback = function (error) {
                 console.log(error);
             };
+            var r = new App.BaseRequestModel();
+            r.page = -1;
+            r.orderBy = "Name";
+            r.isAscending = true;
+            self.teacherService.search(r).then(successCallback, errorCallback);
         };
         //groupChanged(): void {
         //    console.log(this.model.productGroupId);
@@ -52,7 +45,7 @@ var App;
         };
         return CourseController;
     }(App.BaseController));
-    CourseController.$inject = ["CourseService"];
+    CourseController.$inject = ["CourseService", "TeacherService"];
     App.CourseController = CourseController;
     angular.module('app').controller("CourseController", CourseController);
 })(App || (App = {}));

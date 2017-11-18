@@ -13,7 +13,7 @@ var App;
     var CourseService = (function (_super) {
         __extends(CourseService, _super);
         function CourseService(url, baseRepository, q) {
-            return _super.call(this, baseRepository, q, url.student) || this;
+            return _super.call(this, baseRepository, q, url.course) || this;
         }
         return CourseService;
     }(App.BaseService));

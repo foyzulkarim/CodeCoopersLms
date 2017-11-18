@@ -3,7 +3,7 @@ namespace Lbl.Model.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Iniateraselv1 : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,16 @@ namespace Lbl.Model.Migrations
                         Title = c.String(nullable: false, maxLength: 100),
                         Price = c.Double(nullable: false),
                         Tags = c.String(nullable: false, maxLength: 100),
+                        TotalStudentsEnrolled = c.Int(nullable: false),
+                        PublishDate = c.DateTime(nullable: false),
+                        TotalLecturesCount = c.Int(nullable: false),
+                        SubTitle = c.String(nullable: false, maxLength: 100),
+                        CourseSummary = c.String(maxLength: 150),
+                        CourseShortDescription = c.String(maxLength: 250),
+                        Language = c.String(maxLength: 50),
+                        Achieve = c.String(maxLength: 50),
+                        Requirements = c.String(maxLength: 50),
+                        FullDescription = c.String(maxLength: 500),
                         TeacherId = c.String(maxLength: 128),
                         Created = c.DateTime(nullable: false),
                         CreatedBy = c.String(nullable: false, maxLength: 50),
@@ -38,6 +48,11 @@ namespace Lbl.Model.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 50),
+                        Email = c.String(nullable: false, maxLength: 50),
+                        Phone = c.String(nullable: false, maxLength: 20),
+                        Address = c.String(nullable: false, maxLength: 100),
+                        Designation = c.String(nullable: false, maxLength: 100),
+                        Details = c.String(maxLength: 500),
                         Created = c.DateTime(nullable: false),
                         CreatedBy = c.String(nullable: false, maxLength: 50),
                         Modified = c.DateTime(nullable: false),
@@ -45,6 +60,8 @@ namespace Lbl.Model.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name)
+                .Index(t => t.Email)
+                .Index(t => t.Phone)
                 .Index(t => t.Created)
                 .Index(t => t.CreatedBy)
                 .Index(t => t.Modified)
@@ -71,8 +88,7 @@ namespace Lbl.Model.Migrations
                 .Index(t => t.Created)
                 .Index(t => t.CreatedBy)
                 .Index(t => t.Modified)
-                .Index(t => t.ModifiedBy);
-            
+                .Index(t => t.ModifiedBy);            
         }
         
         public override void Down()
@@ -89,6 +105,8 @@ namespace Lbl.Model.Migrations
             DropIndex("dbo.Teachers", new[] { "Modified" });
             DropIndex("dbo.Teachers", new[] { "CreatedBy" });
             DropIndex("dbo.Teachers", new[] { "Created" });
+            DropIndex("dbo.Teachers", new[] { "Phone" });
+            DropIndex("dbo.Teachers", new[] { "Email" });
             DropIndex("dbo.Teachers", new[] { "Name" });
             DropIndex("dbo.Courses", new[] { "ModifiedBy" });
             DropIndex("dbo.Courses", new[] { "Modified" });

@@ -4,11 +4,15 @@
         static $inject = ["TeacherService"];
         constructor(service: TeacherService) {
             super(service);
-            this.model = new Teacher();            
+            this.reset();        
         }
           
         reset(): void {
             this.model = new Teacher();
+            this.model.address = "Dhaka";
+            this.model.designation = "Trainer";
+            this.model.email = "t@codecoopers.com";
+            this.model.phone = "123";
         }
     }
 

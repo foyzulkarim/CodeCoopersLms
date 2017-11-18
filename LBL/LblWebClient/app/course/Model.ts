@@ -18,10 +18,10 @@
         requirements: string;
         fullDescription: string;
         teacherId: string;
-        teacher:string;
-
+        teacher: string;
 
     }
+
     export enum LevelOfAudience {
         Beginner,
         Intermediate,

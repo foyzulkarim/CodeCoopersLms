@@ -3,7 +3,7 @@
 
         static $inject = ["UrlService", "BaseRepository", "$q"];
         constructor(url: UrlService, baseRepository: BaseRepository, q: angular.IQService) {
-            super(baseRepository, q, url.student);
+            super(baseRepository, q, url.course);
         }
     }
 

@@ -14,11 +14,15 @@ var App;
         __extends(TeacherController, _super);
         function TeacherController(service) {
             var _this = _super.call(this, service) || this;
-            _this.model = new App.Teacher();
+            _this.reset();
             return _this;
         }
         TeacherController.prototype.reset = function () {
             this.model = new App.Teacher();
+            this.model.address = "Dhaka";
+            this.model.designation = "Trainer";
+            this.model.email = "t@codecoopers.com";
+            this.model.phone = "123";
         };
         return TeacherController;
     }(App.BaseController));
