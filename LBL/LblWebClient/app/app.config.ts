@@ -38,20 +38,27 @@ module App {
                     controllerAs: "vm"
                 })
 
-                    .state("root.teacher-entry",
-                        {
-                            url: "/teacher-entry",
-                            templateUrl: "partials/teacher/teacher-entry.tpl.html",
-                            controller: "TeacherController",
-                            controllerAs: "vm"
-                        })
-                    .state("root.teacher-list",
-                        {
-                            url: "/teacher-list",
-                            templateUrl: "partials/teacher/teacher-list.tpl.html",
-                            controller: "TeachersController",
-                            controllerAs: "vm"
-                        })
+                .state("root.teacher-entry",
+                {
+                    url: "/teacher-entry",
+                    templateUrl: "partials/teacher/teacher-entry.tpl.html",
+                    controller: "TeacherController",
+                    controllerAs: "vm"
+                })
+                .state("root.teacher-list",
+                {
+                    url: "/teacher-list",
+                    templateUrl: "partials/teacher/teacher-list.tpl.html",
+                    controller: "TeachersController",
+                    controllerAs: "vm"
+                })
+                .state("root.course-entry",
+                {
+                    url: "/course-entry",
+                    templateUrl: "partials/course/course-entry.tpl.html",
+                    controller: "CourseController",
+                    controllerAs: "vm"
+                })
 
                 ;
         }

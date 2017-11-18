@@ -1,0 +1,103 @@
+﻿<section class="content content-course-details">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-8 col-md-8 col-sm-8">
+                <h3>Create a new Course</h3><br />
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Title:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="title" name="title" ng-model="vm.model.title" required/>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Teacher:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                          
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Level Of Audians:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                           <!-- <select type="text" class="form-control " name="teacher" ng-model="vm.model.levelOfAudience" ng-options="i as i for i in vm.levelOfAudiences" required="required"></select>-->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row" ng-hide="true">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Publish Date:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="publishDate" name="publishDate" ng-model="vm.model.publishDate" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Total Lectures Count:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="number" class="form-control" id="totalLecturesCount" name="totalLecturesCount" ng-model="vm.model.totalLecturesCount" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Sub Title:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="subTitle" name="subTitle" ng-model="vm.model.subTitle" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Course Summary:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="courseSummary" name="courseSummary"  ng-model="vm.model.courseSummary" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Course Short Description:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="courseShortDescription" name="courseShortDescription" ng-model="vm.model.courseShortDescription" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Language:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="language" name="language" ng-model="vm.model.language" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Achieve:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="achieve" name="achieve" ng-model="vm.model.achieve" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Requirements:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="requirements" name="requirements" ng-model="vm.model.requirements" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Full Description:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="fullDescription" name="fullDescription" ng-model="vm.model.fullDescription" />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                            <button type="button" class="btn btn-default" ng-click="vm.search()">Save</button>
+                        </div>
+
+                        <div class="col-lg-7 col-md-7 col-sm-7"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

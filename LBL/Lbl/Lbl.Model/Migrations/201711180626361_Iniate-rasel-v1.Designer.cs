@@ -7,13 +7,13 @@ namespace Lbl.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedEmail : IMigrationMetadata
+    public sealed partial class Iniateraselv1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedEmail));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Iniateraselv1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711041628446_AddedEmail"; }
+            get { return "201711180626361_Iniate-rasel-v1"; }
         }
         
         string IMigrationMetadata.Source
