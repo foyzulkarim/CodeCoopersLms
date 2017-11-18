@@ -27,11 +27,26 @@ var App;
                 }
             }
             _this.model.publishDate = new Date();
-            //this.searchRequest["LevelOfAudience"] = this.levelOfAudiences[0]; 
-            _this.save();
+            _this.searchRequest["LevelOfAudience"] = _this.levelOfAudiences[0];
+            //this.save();
+            _this.loadTeachers();
+            _this.search();
             _this.model = new App.Course();
             return _this;
         }
+        CourseController.prototype.loadTeachers = function () {
+            var self = this;
+            var successCallback = function (response) {
+                console.log(response);
+                self.teachers = response.Models;
+            };
+            var errorCallback = function (error) {
+                console.log(error);
+            };
+        };
+        //groupChanged(): void {
+        //    console.log(this.model.productGroupId);
+        //}
         CourseController.prototype.reset = function () {
             this.model = new App.Course();
         };

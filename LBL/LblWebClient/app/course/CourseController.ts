@@ -33,7 +33,7 @@
                 console.log(error);
             };
 
-            self.search().;
+            
         }
 
         //groupChanged(): void {
