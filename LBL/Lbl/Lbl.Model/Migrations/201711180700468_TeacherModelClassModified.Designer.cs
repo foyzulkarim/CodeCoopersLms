@@ -7,13 +7,13 @@ namespace Lbl.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CourseAddedInitially : IMigrationMetadata
+    public sealed partial class TeacherModelClassModified : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CourseAddedInitially));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TeacherModelClassModified));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711171609003_CourseAddedInitially"; }
+            get { return "201711180700468_TeacherModelClassModified"; }
         }
         
         string IMigrationMetadata.Source

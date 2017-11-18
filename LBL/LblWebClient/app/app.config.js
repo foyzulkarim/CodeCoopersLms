@@ -38,6 +38,12 @@ var App;
                 templateUrl: "partials/teacher/teacher-list.tpl.html",
                 controller: "TeachersController",
                 controllerAs: "vm"
+            })
+                .state("root.course-entry", {
+                url: "/course-entry",
+                templateUrl: "partials/course/course-entry.tpl.html",
+                controller: "CourseController",
+                controllerAs: "vm"
             });
         }
         return Configuration;

@@ -50,21 +50,21 @@
     <Compile Include="BusinessDbContext.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="Migrations\201710141648109_AddedStudentV1.cs" />
-    <Compile Include="Migrations\201710141648109_AddedStudentV1.Designer.cs">
-      <DependentUpon>201710141648109_AddedStudentV1.cs</DependentUpon>
+    <Compile Include="Migrations\201711180626361_Iniate-rasel-v1.cs" />
+    <Compile Include="Migrations\201711180626361_Iniate-rasel-v1.Designer.cs">
+      <DependentUpon>201711180626361_Iniate-rasel-v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710241551516_TeacherAdded.cs" />
-    <Compile Include="Migrations\201710241551516_TeacherAdded.Designer.cs">
-      <DependentUpon>201710241551516_TeacherAdded.cs</DependentUpon>
+    <Compile Include="Migrations\201711180700468_TeacherModelClassModified.cs" />
+    <Compile Include="Migrations\201711180700468_TeacherModelClassModified.Designer.cs">
+      <DependentUpon>201711180700468_TeacherModelClassModified.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711041628446_AddedEmail.cs" />
-    <Compile Include="Migrations\201711041628446_AddedEmail.Designer.cs">
-      <DependentUpon>201711041628446_AddedEmail.cs</DependentUpon>
+    <Compile Include="Migrations\201711180725345_TeacherModelClassModified2.cs" />
+    <Compile Include="Migrations\201711180725345_TeacherModelClassModified2.Designer.cs">
+      <DependentUpon>201711180725345_TeacherModelClassModified2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711171609003_CourseAddedInitially.cs" />
-    <Compile Include="Migrations\201711171609003_CourseAddedInitially.Designer.cs">
-      <DependentUpon>201711171609003_CourseAddedInitially.cs</DependentUpon>
+    <Compile Include="Migrations\201711180857024_CourseModelClassUpdate.cs" />
+    <Compile Include="Migrations\201711180857024_CourseModelClassUpdate.Designer.cs">
+      <DependentUpon>201711180857024_CourseModelClassUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,17 +76,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710141648109_AddedStudentV1.resx">
-      <DependentUpon>201710141648109_AddedStudentV1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711180626361_Iniate-rasel-v1.resx">
+      <DependentUpon>201711180626361_Iniate-rasel-v1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710241551516_TeacherAdded.resx">
-      <DependentUpon>201710241551516_TeacherAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711180700468_TeacherModelClassModified.resx">
+      <DependentUpon>201711180700468_TeacherModelClassModified.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711041628446_AddedEmail.resx">
-      <DependentUpon>201711041628446_AddedEmail.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711180725345_TeacherModelClassModified2.resx">
+      <DependentUpon>201711180725345_TeacherModelClassModified2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711171609003_CourseAddedInitially.resx">
-      <DependentUpon>201711171609003_CourseAddedInitially.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711180857024_CourseModelClassUpdate.resx">
+      <DependentUpon>201711180857024_CourseModelClassUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

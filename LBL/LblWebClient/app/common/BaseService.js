@@ -4,6 +4,7 @@ var App;
         function UrlService() {
             this.student = "Student";
             this.teacher = "Teacher";
+            this.course = "Course";
         }
         return UrlService;
     }());
