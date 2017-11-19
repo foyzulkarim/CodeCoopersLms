@@ -17,8 +17,8 @@ var App;
             var successCallback = function (response) {
                 self.courses = response.data;
             };
-            var errorCallback = function (error) {
-                console.log(error);
+            var errorCallback = function (response) {
+                console.error(response);
             };
             self.requestModel.keyword = self.searchText;
             self.courseService.search(self.requestModel).then(successCallback, errorCallback);
