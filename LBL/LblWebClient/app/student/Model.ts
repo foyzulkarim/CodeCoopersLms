@@ -13,6 +13,7 @@
         orderBy: string;
         isAscending: boolean;
         page: number;
+        perPageCount: number;
         keyword: string;          
     }
 }
