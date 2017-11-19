@@ -4,11 +4,6 @@ var App;
         function HomeController(service) {
             var self = this;
             self.courseService = service;
-            self.requestModel = new App.BaseRequestModel();
-            self.requestModel.page = 1;
-            self.requestModel.orderBy = "Title";
-            self.requestModel.isAscending = true;
-            self.requestModel.perPageCount = 3;
             self.searchText = "";
             self.searchCourses();
         }
@@ -17,23 +12,15 @@ var App;
             var successCallback = function (response) {
                 self.courses = response.data;
             };
-            var errorCallback = function (response) {
-                console.error(response);
+            var errorCallback = function (error) {
+                console.log(error);
             };
-            self.requestModel.keyword = self.searchText;
-            self.courseService.search(self.requestModel).then(successCallback, errorCallback);
-        };
-        HomeController.prototype.next = function () {
-            var self = this;
-            self.requestModel.page = self.requestModel.page + 1;
-            self.searchCourses();
-        };
-        HomeController.prototype.previous = function () {
-            var self = this;
-            if (self.requestModel.page > 1) {
-                self.requestModel.page = self.requestModel.page - 1;
-                self.searchCourses();
-            }
+            var requestModel = new App.BaseRequestModel();
+            requestModel.page = 1;
+            requestModel.orderBy = "Title";
+            requestModel.isAscending = true;
+            requestModel.keyword = self.searchText;
+            self.courseService.search(requestModel).then(successCallback, errorCallback);
         };
         return HomeController;
     }());

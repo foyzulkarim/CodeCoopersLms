@@ -25,54 +25,6 @@
     }
     .list-group {
         margin-top: 20px;
-        margin-left: 2%
-    }
-    .courses-grid {
-        height: 200px;
-        position: relative;
-    }
-    .courses-list {
-        position: absolute;
-        top: 5px;
-    }
-    .btn-previous {
-        position: absolute;
-        left: -21px;
-        top: 37%;
-    }
-    .btn-next {
-        position: absolute;
-        right: -12px;
-        top: 37%;
-    }
-    .course {
-        padding-left: 0;
-        padding-right: 0;
-        box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
-        opacity: 1;
-        width: 350px;
-        height: 150px;
-        margin-left: 8px;
-    }
-    .caption {
-        padding: 10px;
-    }
-    .btn-circle {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        line-height: 1.428571429;
-        border-radius: 15px;
-    }
-    .btn-circle.btn-lg {
-        width: 50px;
-        height: 50px;
-        padding: 10px 16px;
-        font-size: 18px;
-        line-height: 1.33;
-        border-radius: 25px;
     }
 </style>
 <div class="container">
@@ -94,33 +46,28 @@
         <div class="col-sm-6 full-width">
             <div class="courses-container">
                 <h3>CodeCoopers Courses</h3><br />
-                <div class="courses-grid">
-                    <div class="list-group courses-list">
-                        <div class="course col-xs-4 col-lg-4" ng-repeat="course in vm.courses">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">
-                                    {{course.title}}
-                                </h4>
-                                <p class="group inner list-group-item-text">
-                                    {{course.courseSummary}}
-                                </p>
-                                <br />
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">
-                                            <b>{{course.price}}BDT</b>
-                                        </p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
+                <div id="courses" class="row list-group">
+                    <div class="item  col-xs-4 col-lg-4" ng-repeat="course in vm.courses">
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+                                {{course.title}}
+                            </h4>
+                            <p class="group inner list-group-item-text">
+                                {{course.courseSummary}}
+                            </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        {{course.price}}BDT
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="#">Add to cart</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-default btn-circle btn-lg btn-previous" ng-show="vm.requestModel.page > 1"  ng-click="vm.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button>
-                    <button type="button" class="btn btn-default btn-circle btn-lg btn-next" ng-show="vm.courses.length > 0 && vm.requestModel.page >= 1" ng-click="vm.next()"><i class="glyphicon glyphicon-chevron-right"></i></button>
-                </div>                
+                </div>
             </div>
         </div>
 
