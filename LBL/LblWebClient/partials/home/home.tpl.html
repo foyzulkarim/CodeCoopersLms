@@ -1,1 +1,75 @@
-﻿<h1 >{{vm.now}}</h1>
+﻿<style type="text/css">
+    .full-width {
+        width: 100%;
+    }
+    .stylish-input-group .input-group-addon {
+        background: white !important;
+    }
+
+    .stylish-input-group .form-control {
+        border-right: 0;
+        box-shadow: 0 0 0;
+        border-color: #ccc;
+    }
+
+    .stylish-input-group button {
+        border: 0;
+        background: transparent;
+    }
+    .search-box-container {
+        margin-top: 5%;
+        width: 50%;
+    }
+    .courses-container {
+        margin-top: 5%;
+    }
+    .list-group {
+        margin-top: 20px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 full-width">
+            <div class="search-box-container">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search Courses" ng-model="vm.searchText" 
+                           ng-keyup="$event.keyCode == 13 ? vm.searchCourses() : null"/>
+                    <span class="input-group-addon">
+                        <button type="button" ng-click="vm.searchCourses()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+         </div>
+
+        <div class="col-sm-6 full-width">
+            <div class="courses-container">
+                <h3>CodeCoopers Courses</h3><br />
+                <div id="courses" class="row list-group">
+                    <div class="item  col-xs-4 col-lg-4" ng-repeat="course in vm.courses">
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+                                {{course.title}}
+                            </h4>
+                            <p class="group inner list-group-item-text">
+                                {{course.courseSummary}}
+                            </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        {{course.price}}BDT
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="#">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,16 +1,35 @@
 ﻿module App {
     class HomeController {
+        courseService: CourseService;
+        searchText: string;
+        courses: Course[];
 
-        values: string[];
+        static $inject = ["CourseService"];
 
-        static $inject = [];
-        constructor() {
+        constructor(service: CourseService) {
             let self = this;
-            console.log("I am in home controller");
-            this.now = new Date().toString();            
+            self.courseService = service;
+            self.searchText = "";
+            self.searchCourses();
         }
 
-        now: string;
+        searchCourses(): void {
+            var self = this;
+
+            var successCallback = (response: any): void => {
+                self.courses = response.data;
+            };
+            var errorCallback = (error: any): void => {
+                console.log(error);
+            };
+
+            var requestModel = new BaseRequestModel();
+            requestModel.page = 1;
+            requestModel.orderBy = "Title";
+            requestModel.isAscending = true;
+            requestModel.keyword = self.searchText;
+            self.courseService.search(requestModel).then(successCallback, errorCallback);
+        }
     }
 
     angular.module("app").controller("HomeController", HomeController);

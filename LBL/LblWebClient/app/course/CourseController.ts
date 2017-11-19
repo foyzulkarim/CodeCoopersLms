@@ -2,16 +2,16 @@
     export class CourseController extends BaseController<Course> {
   
         levelOfAudiences: string[] = [];
-        teacherService : TeacherService;
+        teacherService: TeacherService;
+        selectedTeacher: Teacher;
        
         static $inject = ["CourseService","TeacherService"];
         constructor(service: CourseService, teacherService: TeacherService) {
             super(service);
             console.log("I am in Course Controller");
             this.teacherService = teacherService;
-            
-            this.model = new Course();
-            this.model.publishDate = new Date();
+
+            this.reset();
             this.loadTeachers();
         }
 
@@ -19,7 +19,6 @@
         loadTeachers(): void {
             var self = this;
             var successCallback = (response: any): void => {
-                console.log('teacher list - ',response.data);
                 self.teachers = response.data;
             };
             var errorCallback = (error: any): void => {
@@ -33,13 +32,26 @@
             self.teacherService.search(r).then(successCallback, errorCallback);
         }
 
-        //groupChanged(): void {
-        //    console.log(this.model.productGroupId);
-        //}
+        addCourse(): void {
+            var self = this;
+
+            let successCallback = (response: any): void => {
+                alert('Course added successfully');
+                self.reset();
+            };
+            let errorCallback = (error: any): void => {
+                console.log(error);
+            };
+
+            self.model.teacherId = self.selectedTeacher.id;
+            self.service.save(self.model).then(successCallback, errorCallback);
+        }
 
 
         reset(): void {
-            this.model = new Course();
+            var self = this;
+            self.model = new Course();
+            self.model.publishDate = new Date();
         }
     }
     angular.module('app').controller("CourseController", CourseController);

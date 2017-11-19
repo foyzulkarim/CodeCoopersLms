@@ -17,15 +17,13 @@ var App;
             _this.levelOfAudiences = [];
             console.log("I am in Course Controller");
             _this.teacherService = teacherService;
-            _this.model = new App.Course();
-            _this.model.publishDate = new Date();
+            _this.reset();
             _this.loadTeachers();
             return _this;
         }
         CourseController.prototype.loadTeachers = function () {
             var self = this;
             var successCallback = function (response) {
-                console.log('teacher list - ', response.data);
                 self.teachers = response.data;
             };
             var errorCallback = function (error) {
@@ -37,11 +35,22 @@ var App;
             r.isAscending = true;
             self.teacherService.search(r).then(successCallback, errorCallback);
         };
-        //groupChanged(): void {
-        //    console.log(this.model.productGroupId);
-        //}
+        CourseController.prototype.addCourse = function () {
+            var self = this;
+            var successCallback = function (response) {
+                alert('Course added successfully');
+                self.reset();
+            };
+            var errorCallback = function (error) {
+                console.log(error);
+            };
+            self.model.teacherId = self.selectedTeacher.id;
+            self.service.save(self.model).then(successCallback, errorCallback);
+        };
         CourseController.prototype.reset = function () {
-            this.model = new App.Course();
+            var self = this;
+            self.model = new App.Course();
+            self.model.publishDate = new Date();
         };
         return CourseController;
     }(App.BaseController));
