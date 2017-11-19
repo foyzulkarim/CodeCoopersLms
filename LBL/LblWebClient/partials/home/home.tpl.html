@@ -26,6 +26,18 @@
     .list-group {
         margin-top: 20px;
     }
+    .course {
+        padding-left: 0;
+        padding-right: 0;
+        box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+        opacity: 1;
+        width: 350px;
+        height: 150px;
+        margin: 3px;
+    }
+    .caption {
+        padding: 10px;
+    }
 </style>
 <div class="container">
     <div class="row">
@@ -47,7 +59,7 @@
             <div class="courses-container">
                 <h3>CodeCoopers Courses</h3><br />
                 <div id="courses" class="row list-group">
-                    <div class="item  col-xs-4 col-lg-4" ng-repeat="course in vm.courses">
+                    <div class="course col-xs-4 col-lg-4" ng-repeat="course in vm.courses">
                         <div class="caption">
                             <h4 class="group inner list-group-item-heading">
                                 {{course.title}}
@@ -55,10 +67,11 @@
                             <p class="group inner list-group-item-text">
                                 {{course.courseSummary}}
                             </p>
+                            <br />
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
                                     <p class="lead">
-                                        {{course.price}}BDT
+                                        <b>{{course.price}}BDT</b>
                                     </p>
                                 </div>
                                 <div class="col-xs-12 col-md-6">
