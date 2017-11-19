@@ -24,11 +24,11 @@
         searchCourses(): void {
             var self = this;
 
-            var successCallback = (response: any): void => {
+            var successCallback = function(response: any){
                 self.courses = response.data;
             };
-            var errorCallback = (error: any): void => {
-                console.log(error);
+            var errorCallback = function (response: any) {
+                console.error(response);
             };
 
             self.requestModel.keyword = self.searchText;
