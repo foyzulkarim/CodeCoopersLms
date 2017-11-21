@@ -20,7 +20,7 @@
     export class BaseService<T> {
         baseRepository: BaseRepository;
         q: angular.IQService;
-        commandUrl:string;
+        commandUrl: string;
 
         static $inject = ["BaseRepository", "$q"];
         constructor(baseRepository: BaseRepository, q: angular.IQService, url: string) {

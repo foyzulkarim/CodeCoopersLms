@@ -76,6 +76,7 @@
     <Content Include="Content\prism.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\text-rotator.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
     <Content Include="partials\course\course-entry.tpl.html" />
@@ -96,6 +97,9 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular-local-storage.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
