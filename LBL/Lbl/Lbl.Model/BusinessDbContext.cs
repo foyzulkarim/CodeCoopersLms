@@ -12,7 +12,7 @@ namespace Lbl.Model
     {
         public BusinessDbContext() : base("DefaultBusinessConnection")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Student> Students { get; set; }

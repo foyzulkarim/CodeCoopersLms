@@ -25,13 +25,10 @@ namespace Lbl.ViewModel
             Achieve = course.Achieve;
             Requirements = course.Requirements;
             FullDescription = course.FullDescription;
-
-
-
+            
             if (course.Teacher != null)
             {
                 this.Teacher = new TeacherViewModel(course.Teacher);
-
             }
         }
 

@@ -8,6 +8,8 @@
     using Lbl.Service;
     using Lbl.ViewModel;
 
+    using Microsoft.AspNet.Identity;
+
     public class BaseController<T, TR, TV> : ApiController where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
     {
         [HttpPost]
@@ -19,6 +21,9 @@
             {
                 return this.BadRequest(ModelState);
             }
+
+            //model.ModifiedBy = User.Identity.GetUserName();
+            //model.CreatedBy = User.Identity.GetUserName();
 
             model.Id = Guid.NewGuid().ToString();
             var service = new BaseService<T, TR, TV>();

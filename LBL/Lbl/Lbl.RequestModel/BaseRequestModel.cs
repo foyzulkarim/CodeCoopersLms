@@ -57,6 +57,11 @@
 
         public abstract Expression<Func<T, bool>> GetExpression();
 
+        public virtual IQueryable<T> IncludeParents(IQueryable<T> queryable)
+        {
+            return queryable;
+        }
+
 
         public DateTime Start { get; set; }
         public DateTime End { get; set; }

@@ -23,12 +23,13 @@
 
 
         public IQueryable<T> SearchQueryable(BaseRequestModel<T> request)
-        {
+        {          
             IQueryable<T> queryable = repository.Get();
             Expression<Func<T, bool>> expression = request.GetExpression();
             queryable = queryable.Where(expression);
             queryable = request.OrderByFunc()(queryable);
             queryable = request.SkipAndTake(queryable);
+            queryable = request.IncludeParents(queryable);
             return queryable;
         }
 
@@ -54,7 +55,8 @@
         public List<TV> Search(TR request)
         {
             var queryable = SearchQueryable(request);
-            var list = queryable.ToList().ConvertAll(CreateVmInstance);
+            List<T> list1 = queryable.ToList();
+            var list = list1.ConvertAll(CreateVmInstance);
             return list;
         }
 
