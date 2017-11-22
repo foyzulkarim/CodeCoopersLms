@@ -9,7 +9,7 @@ namespace Lbl.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    class Content : Entity
+    public class Content : Entity
     {
         [Required]
         public int Serial { get; set; }

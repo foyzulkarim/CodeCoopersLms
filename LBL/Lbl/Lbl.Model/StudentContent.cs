@@ -9,7 +9,7 @@ namespace Lbl.Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    class StudentContent : Entity
+    public class StudentContent : Entity
     {
         [Index]
         [MaxLength(128)]
