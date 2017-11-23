@@ -6,6 +6,7 @@
         selectedCourse: Course;
         courses: Course[];
         categoryList: Category[] = [];
+        selectedCategory: Category;
 
         static $inject = ["ContentService", "CourseService"];
         constructor(service: ContentService, courseService: CourseService) {
@@ -41,9 +42,28 @@
             self.categoryList.push(new Category(3, "Document"));
         }
 
+        addContent(): void {
+            var self = this;
+
+            let successCallback = (response: any): void => {
+                alert('Content added successfully');
+                self.reset();
+            };
+            let errorCallback = (error: any): void => {
+                console.log(error);
+            };
+
+            self.model.courseId = self.selectedCourse.id;
+            self.model.category = self.selectedCategory.id;
+            self.service.save(self.model).then(successCallback, errorCallback);
+        }
+
         reset() {
-            throw new Error("Method not implemented.");
+            var self = this;
+            self.model = new Content();
         }
 
     }
+
+    angular.module('app').controller('ContentController', ContentController);
 }

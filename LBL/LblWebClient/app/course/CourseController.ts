@@ -47,7 +47,6 @@
             self.service.save(self.model).then(successCallback, errorCallback);
         }
 
-
         reset(): void {
             var self = this;
             self.model = new Course();

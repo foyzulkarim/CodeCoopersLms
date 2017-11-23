@@ -1,1 +1,66 @@
-﻿
+﻿<div class="section section-signup mvl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add New Content</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="userForm" role="form" ng-submit="vm.addContent()" novalidate>
+
+                            <div class="form-group">
+                                <label for="name">Select Course</label>
+                                <select class="form-control" ng-options="item as item.title for item in vm.courses track by item.id" ng-model="vm.selectedCourse"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" class="form-control" id="serialNumber" placeholder="Serial Number" ng-model="vm.model.serial">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="Title" ng-model="vm.model.title">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" rows="5" id="description" name="description" ng-model="vm.model.description"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="url">Content Url</label>
+                                <input type="text" class="form-control" id="url" placeholder="Content Url" ng-model="vm.model.url">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contentDuration">Content Duraiton</label>
+                                <input type="text" class="form-control" id="totalSeconds" placeholder="Content Duration" ng-model="vm.model.totalSeconds">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <input type="text" class="form-control" id="tags" placeholder="Tags" ng-model="vm.model.tags">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select class="form-control" ng-options="item as item.catetoryType for item in vm.categoryList track by item.id" ng-model="vm.selectedCategory"></select>
+                            </div>
+
+                            <div class="row text-right">
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-success">Add Content</button>
+                                    <a class="btn btn-primary" href="#/">Basck to Courses</a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

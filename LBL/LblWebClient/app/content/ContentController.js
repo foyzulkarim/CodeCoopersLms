@@ -41,12 +41,27 @@ var App;
             self.categoryList.push(new App.Category(2, "Audio"));
             self.categoryList.push(new App.Category(3, "Document"));
         };
+        ContentController.prototype.addContent = function () {
+            var self = this;
+            var successCallback = function (response) {
+                alert('Content added successfully');
+                self.reset();
+            };
+            var errorCallback = function (error) {
+                console.log(error);
+            };
+            self.model.courseId = self.selectedCourse.id;
+            self.model.category = self.selectedCategory.id;
+            self.service.save(self.model).then(successCallback, errorCallback);
+        };
         ContentController.prototype.reset = function () {
-            throw new Error("Method not implemented.");
+            var self = this;
+            self.model = new App.Content();
         };
         return ContentController;
     }(App.BaseController));
     ContentController.$inject = ["ContentService", "CourseService"];
     App.ContentController = ContentController;
+    angular.module('app').controller('ContentController', ContentController);
 })(App || (App = {}));
 //# sourceMappingURL=ContentController.js.map
