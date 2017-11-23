@@ -10,23 +10,23 @@ namespace Lbl.RequestModel
     using System.Linq.Expressions;
     using Lbl.Model;
 
-    public class CourseRequestModel : BaseRequestModel<Course>
+    public class EnrollmentRequestModel : BaseRequestModel<Enrollment>
     {
-        public override Expression<Func<Course, bool>> GetExpression()
+        public override Expression<Func<Enrollment, bool>> GetExpression()
         {
             if (!string.IsNullOrWhiteSpace(Keyword))
             {
                 this.ExpressionObject = x =>
-                    x.Title.Contains(Keyword) || x.Tags.Contains(Keyword) || x.Teacher.Name.Contains(Keyword);
+                    x.Student.Name.Contains(Keyword) || x.Course.Title.Contains(Keyword);
             }
 
             this.ExpressionObject = this.ExpressionObject.And(this.GenerateBaseExpression());
             return this.ExpressionObject;
         }
 
-        public override IQueryable<Course> IncludeParents(IQueryable<Course> queryable)
+        public override IQueryable<Enrollment> IncludeParents(IQueryable<Enrollment> queryable)
         {
-            return queryable.Include(x => x.Teacher);
+            return queryable.Include(e => e.Student).Include(e => e.Course);
         }
     }
 }

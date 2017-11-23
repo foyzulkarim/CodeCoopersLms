@@ -4,12 +4,14 @@
 
         student: string;
         teacher: string;
-        course:string;
+        course: string;
+        content: string;
         
         constructor() {
             this.student = "Student";
             this.teacher = "Teacher";
             this.course = "Course";
+            this.content = "Content";
 
         }
     }
