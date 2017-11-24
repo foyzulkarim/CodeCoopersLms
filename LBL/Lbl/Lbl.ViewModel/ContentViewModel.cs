@@ -16,20 +16,22 @@ namespace Lbl.ViewModel
             this.Serial = content.Serial;
             this.Title = content.Title;
             this.Description = content.Description;
+            this.Url = content.Url;
             this.Tags = content.Tags;
             this.Category = content.Category;
 
             if(content.Course != null)
             {
-                this.Course = new CourseViewModel(content.Course);
+                this.CourseTitle = content.Course.Title;
             }
         }
 
         public int Serial { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Url { get; set; }
         public string Tags { get; set; }
         public int Category { get; set; }
-        public CourseViewModel Course { get; set; }
+        public string CourseTitle { get; set; }
     }
 }

@@ -64,16 +64,45 @@ var App;
     CourseController.$inject = ["CourseService", "TeacherService"];
     App.CourseController = CourseController;
     angular.module('app').controller("CourseController", CourseController);
-    var CourseDetailsController = (function (_super) {
-        __extends(CourseDetailsController, _super);
-        function CourseDetailsController() {
-            return _super !== null && _super.apply(this, arguments) || this;
+    var CourseContentsController = (function (_super) {
+        __extends(CourseContentsController, _super);
+        function CourseContentsController(service, $stateParams, $sce) {
+            var _this = _super.call(this, service) || this;
+            var self = _this;
+            self.stateParams = $stateParams;
+            self.sceService = $sce;
+            self.searchRequest.page = -1;
+            self.searchRequest.perPageCount = 100;
+            self.searchRequest.orderBy = "Serial";
+            self.searchRequest.isAscending = true;
+            self.searchRequest.keyword = self.stateParams["id"];
+            self.getCourseContents();
+            return _this;
         }
-        CourseDetailsController.prototype.reset = function () {
+        CourseContentsController.prototype.getCourseContents = function () {
+            var self = this;
+            var successCallBack = function (response) {
+                self.models = response.data;
+                self.courseTitle = self.models[0].courseTitle;
+                console.log(self.courseTitle);
+            };
+            var errorCallBack = function (response) {
+                console.error(response);
+            };
+            self.service.search(self.searchRequest).then(successCallBack, errorCallBack);
+        };
+        CourseContentsController.prototype.setActiveContent = function (content) {
+            var self = this;
+            self.activeContent = content;
+            self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
+        };
+        CourseContentsController.prototype.reset = function () {
             throw new Error("Method not implemented.");
         };
-        return CourseDetailsController;
+        return CourseContentsController;
     }(App.BaseController));
-    App.CourseDetailsController = CourseDetailsController;
+    CourseContentsController.$inject = ["ContentService", "$stateParams", "$sce"];
+    App.CourseContentsController = CourseContentsController;
+    angular.module('app').controller("CourseContentsController", CourseContentsController);
 })(App || (App = {}));
-//# sourceMappingURL=CourseController.js.map
+//# sourceMappingURL=CourseControllers.js.map

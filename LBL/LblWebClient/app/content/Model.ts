@@ -21,6 +21,7 @@
         totalSeconds: number;
         tags: string;
         category: number;
+        courseTitle: string;
         courseId: string;
     }
 }

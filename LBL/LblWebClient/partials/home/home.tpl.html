@@ -80,7 +80,7 @@
         <div class="col-sm-6 full-width">
             <div class="search-box-container">
                 <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control" placeholder="Search Courses" ng-model="vm.searchText" 
+                    <input type="text" class="form-control" placeholder="Search Courses" ng-model="vm.requestModel.keyword" 
                            ng-keyup="$event.keyCode == 13 ? vm.searchCourses() : null"/>
                     <span class="input-group-addon">
                         <button type="button" ng-click="vm.searchCourses()">
@@ -110,7 +110,7 @@
                                         <p class="lead">
                                             <b>{{course.price}}BDT</b>
                                         </p>
-                                        <a class="btn btn-link" href="#!/course-detail" ng-click="vm.setValue(course.id)">View Details</a>
+                                        <a class="btn btn-link" ui-sref="root.course-detail({id: course.id})" >View Details</a>
                                     </div>
                                     <div class="col-xs-12 col-md-6">
                                         <a class="btn btn-success" href="#">Add to cart</a>

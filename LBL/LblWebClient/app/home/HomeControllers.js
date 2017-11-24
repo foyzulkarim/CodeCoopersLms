@@ -9,7 +9,6 @@ var App;
             self.requestModel.orderBy = "Title";
             self.requestModel.isAscending = true;
             self.requestModel.perPageCount = 3;
-            self.searchText = "";
             self.searchCourses();
         }
         HomeController.prototype.searchCourses = function () {

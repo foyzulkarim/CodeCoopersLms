@@ -63,4 +63,59 @@
         }
     }
     angular.module('app').controller("CourseController", CourseController);
+
+    export class CourseContentsController extends BaseController<Content> {
+
+        stateParams: angular.ui.IStateService;
+        courseTitle: string;
+        activeContent: Content;
+        sceService: angular.ISCEService;
+
+        static $inject = ["ContentService", "$stateParams", "$sce"];
+
+        constructor(service: ContentService, $stateParams: angular.ui.IStateService, $sce: angular.ISCEService) {
+            super(service);
+            var self = this;
+            self.stateParams = $stateParams;
+            self.sceService = $sce;
+
+            self.searchRequest.page = -1;
+            self.searchRequest.perPageCount = 100;
+            self.searchRequest.orderBy = "Serial";
+            self.searchRequest.isAscending = true;
+            self.searchRequest.keyword = self.stateParams["id"];
+
+            self.getCourseContents();
+        }
+
+        getCourseContents(): void {
+            var self = this;
+
+            let successCallBack = function (response) {
+                self.models = response.data;
+                self.courseTitle = self.models[0].courseTitle;
+                console.log(self.courseTitle);
+            }
+            let errorCallBack = function (response) {
+                console.error(response);
+            }
+
+            self.service.search(self.searchRequest).then(successCallBack, errorCallBack);
+        }
+
+        setActiveContent(content: Content): void {
+            var self = this;
+
+            self.activeContent = content;
+            self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
+        }
+
+        reset() {
+            throw new Error("Method not implemented.");
+        }
+
+    }
+
+    angular.module('app').controller("CourseContentsController", CourseContentsController);
+
 }
