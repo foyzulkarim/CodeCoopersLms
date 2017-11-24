@@ -10,7 +10,10 @@
             super(service);
             console.log("I am in Course Controller");
             this.teacherService = teacherService;
-
+            if (this.value != null)
+            {
+                alert(this.value);
+            }
             this.reset();
             this.loadTeachers();
         }
@@ -45,6 +48,12 @@
 
             self.model.teacherId = self.selectedTeacher.id;
             self.service.save(self.model).then(successCallback, errorCallback);
+        }
+
+        value: string;
+        setValue(v): void {
+            var self = this;
+            self.value = v;
         }
 
         reset(): void {

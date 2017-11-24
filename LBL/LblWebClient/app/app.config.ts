@@ -59,6 +59,13 @@ module App {
                     controller: "CourseController",
                     controllerAs: "vm"
                 })
+                .state("root.course-detail",
+                {
+                    url: "/course-detail",
+                    templateUrl: "partials/course/course-detail.tpl.html",
+                    controller: "CourseController",
+                    controllerAs: "vm"
+                })
                 .state("root.content-entry",
                 {
                     url: "/content-entry",
