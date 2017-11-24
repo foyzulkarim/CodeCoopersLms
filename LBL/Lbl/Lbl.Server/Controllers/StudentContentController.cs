@@ -11,9 +11,9 @@ namespace Lbl.Server.Controllers
     using Lbl.RequestModel;
     using Lbl.ViewModel;
 
-    [RoutePrefix("api/EnrollmentQuery")]
+    [RoutePrefix("api/StudentContent")]
 
-    public class EnrollmentQueryController : BaseQueryController<Enrollment, EnrollmentRequestModel, EnrollmentViewModel>
+    public class StudentContentController : BaseController<StudentContent,StudentContentRequestModel,StudentContentViewModel>
     {
     }
 }

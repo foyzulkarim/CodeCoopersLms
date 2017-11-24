@@ -45,6 +45,7 @@
     <Compile Include="CourseViewModel.cs" />
     <Compile Include="EnrollmentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentContentViewModel.cs" />
     <Compile Include="StudentDetailViewModel.cs" />
     <Compile Include="StudentGridViewModel.cs" />
     <Compile Include="TeacherViewModel.cs" />

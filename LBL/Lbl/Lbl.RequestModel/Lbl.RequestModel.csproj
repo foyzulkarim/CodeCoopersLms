@@ -52,6 +52,7 @@
     <Compile Include="CourseRequestModel.cs" />
     <Compile Include="EnrollmentRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentContentRequestModel.cs" />
     <Compile Include="StudentRequestModel.cs" />
     <Compile Include="TeacherRequestModel.cs" />
   </ItemGroup>
