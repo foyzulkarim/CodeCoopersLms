@@ -69,16 +69,14 @@
         stateParams: angular.ui.IStateService;
         courseTitle: string;
         activeContent: Content;
-        sceService: angular.ISCEService;
 
-        static $inject = ["ContentService", "$stateParams", "$sce"];
+        static $inject = ["ContentService", "$stateParams"];
 
-        constructor(service: ContentService, $stateParams: angular.ui.IStateService, $sce: angular.ISCEService) {
+        constructor(service: ContentService, $stateParams: angular.ui.IStateService) {
             super(service);
+
             var self = this;
             self.stateParams = $stateParams;
-            self.sceService = $sce;
-
             self.searchRequest.page = -1;
             self.searchRequest.perPageCount = 100;
             self.searchRequest.orderBy = "Serial";
@@ -94,7 +92,6 @@
             let successCallBack = function (response) {
                 self.models = response.data;
                 self.courseTitle = self.models[0].courseTitle;
-                console.log(self.courseTitle);
             }
             let errorCallBack = function (response) {
                 console.error(response);
@@ -105,9 +102,7 @@
 
         setActiveContent(content: Content): void {
             var self = this;
-
             self.activeContent = content;
-            self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
         }
 
         reset() {

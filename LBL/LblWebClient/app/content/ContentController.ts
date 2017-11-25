@@ -1,7 +1,6 @@
 ﻿module App {
     export class ContentController extends BaseController<Content> {
 
-
         courseService: CourseService;
         selectedCourse: Course;
         courses: Course[];
@@ -55,6 +54,7 @@
 
             self.model.courseId = self.selectedCourse.id;
             self.model.category = self.selectedCategory.id;
+            self.model.url = self.model.url.replace('watch?v=', 'embed/');
             self.service.save(self.model).then(successCallback, errorCallback);
         }
 
