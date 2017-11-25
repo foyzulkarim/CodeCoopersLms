@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\home.css" />
     <Content Include="Content\prism.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\text-rotator.css" />

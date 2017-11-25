@@ -1,0 +1,94 @@
+﻿.full-width {
+    width: 100%;
+}
+
+.stylish-input-group .input-group-addon {
+    background: white !important;
+}
+
+.stylish-input-group .form-control {
+    border-right: 0;
+    box-shadow: 0 0 0;
+    border-color: #ccc;
+}
+
+.stylish-input-group button {
+    border: 0;
+    background: transparent;
+}
+
+.search-box-container {
+    margin-top: 5%;
+    width: 50%;
+}
+
+.courses-container {
+    margin-top: 5%;
+}
+
+.list-group {
+    margin-top: 20px;
+    margin-left: 2%
+}
+
+.courses-grid {
+    height: 200px;
+    position: relative;
+}
+
+.courses-list {
+    position: absolute;
+    top: 5px;
+}
+
+.btn-previous {
+    position: absolute;
+    left: -21px;
+    top: 37%;
+}
+
+.btn-next {
+    position: absolute;
+    right: -12px;
+    top: 37%;
+}
+
+.course {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    opacity: 1;
+    width: 350px;
+    height: 150px;
+    margin-left: 8px;
+}
+
+.caption {
+    padding: 10px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+p.lead {
+    margin-bottom: 0;
+}
+a.btn-link {
+    padding-top: 0;
+    padding-left: 0;
+}
