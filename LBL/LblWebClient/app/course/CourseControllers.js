@@ -66,10 +66,11 @@ var App;
     angular.module('app').controller("CourseController", CourseController);
     var CourseContentsController = (function (_super) {
         __extends(CourseContentsController, _super);
-        function CourseContentsController(service, $stateParams) {
+        function CourseContentsController(service, $stateParams, $sce) {
             var _this = _super.call(this, service) || this;
             var self = _this;
             self.stateParams = $stateParams;
+            self.sceService = $sce;
             self.searchRequest.page = -1;
             self.searchRequest.perPageCount = 100;
             self.searchRequest.orderBy = "Serial";
@@ -83,6 +84,7 @@ var App;
             var successCallBack = function (response) {
                 self.models = response.data;
                 self.courseTitle = self.models[0].courseTitle;
+                console.log(self.courseTitle);
             };
             var errorCallBack = function (response) {
                 console.error(response);
@@ -92,13 +94,14 @@ var App;
         CourseContentsController.prototype.setActiveContent = function (content) {
             var self = this;
             self.activeContent = content;
+            self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
         };
         CourseContentsController.prototype.reset = function () {
             throw new Error("Method not implemented.");
         };
         return CourseContentsController;
     }(App.BaseController));
-    CourseContentsController.$inject = ["ContentService", "$stateParams"];
+    CourseContentsController.$inject = ["ContentService", "$stateParams", "$sce"];
     App.CourseContentsController = CourseContentsController;
     angular.module('app').controller("CourseContentsController", CourseContentsController);
 })(App || (App = {}));

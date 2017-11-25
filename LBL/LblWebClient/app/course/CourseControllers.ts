@@ -1,17 +1,16 @@
 ﻿module App {
     export class CourseController extends BaseController<Course> {
-  
+
         levelOfAudiences: string[] = [];
         teacherService: TeacherService;
         selectedTeacher: Teacher;
-       
-        static $inject = ["CourseService","TeacherService"];
+
+        static $inject = ["CourseService", "TeacherService"];
         constructor(service: CourseService, teacherService: TeacherService) {
             super(service);
             console.log("I am in Course Controller");
             this.teacherService = teacherService;
-            if (this.value != null)
-            {
+            if (this.value != null) {
                 alert(this.value);
             }
             this.reset();
@@ -69,14 +68,16 @@
         stateParams: angular.ui.IStateService;
         courseTitle: string;
         activeContent: Content;
+        sceService: angular.ISCEService;
 
-        static $inject = ["ContentService", "$stateParams"];
+        static $inject = ["ContentService", "$stateParams", "$sce"];
 
-        constructor(service: ContentService, $stateParams: angular.ui.IStateService) {
+        constructor(service: ContentService, $stateParams: angular.ui.IStateService, $sce: angular.ISCEService) {
             super(service);
-
             var self = this;
             self.stateParams = $stateParams;
+            self.sceService = $sce;
+
             self.searchRequest.page = -1;
             self.searchRequest.perPageCount = 100;
             self.searchRequest.orderBy = "Serial";
@@ -92,6 +93,7 @@
             let successCallBack = function (response) {
                 self.models = response.data;
                 self.courseTitle = self.models[0].courseTitle;
+                console.log(self.courseTitle);
             }
             let errorCallBack = function (response) {
                 console.error(response);
@@ -102,7 +104,9 @@
 
         setActiveContent(content: Content): void {
             var self = this;
+
             self.activeContent = content;
+            self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
         }
 
         reset() {
