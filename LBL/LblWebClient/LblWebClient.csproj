@@ -111,6 +111,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="partials\enrollment\enrollment-entry.tpl.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,6 +139,9 @@
     <TypeScriptCompile Include="app\course\CourseControllers.ts" />
     <TypeScriptCompile Include="app\course\CourseService.ts" />
     <TypeScriptCompile Include="app\course\Model.ts" />
+    <TypeScriptCompile Include="app\enrollment\EnrollmentControllers.ts" />
+    <TypeScriptCompile Include="app\enrollment\EnrollmentService.ts" />
+    <TypeScriptCompile Include="app\enrollment\Model.ts" />
     <TypeScriptCompile Include="app\home\HomeControllers.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />
     <TypeScriptCompile Include="app\student\Model.ts" />

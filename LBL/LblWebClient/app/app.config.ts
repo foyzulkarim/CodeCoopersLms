@@ -72,6 +72,13 @@ module App {
                     templateUrl: "partials/content/content-entry.tpl.html",
                     controller: "ContentController",
                     controllerAs: "vm"
+                })
+                .state("root.enrollment-entry",
+                {
+                    url: "/enrollment-entry",
+                    templateUrl: "partials/enrollment/enrollment-entry.tpl.html",
+                    controller: "EnrollmentController",
+                    controllerAs: "vm"
                 });
         }
     }
