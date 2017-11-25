@@ -73,11 +73,14 @@
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\home.css" />
     <Content Include="Content\prism.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\text-rotator.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
+    <Content Include="partials\content\content-entry.tpl.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
     <Content Include="partials\course\course-entry.tpl.html" />
     <Content Include="partials\course\courses.tpl.html" />
@@ -100,8 +103,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="partials\enrollment\enrollment-entry.tpl.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -123,9 +133,15 @@
     <TypeScriptCompile Include="app\common\BaseController.ts" />
     <TypeScriptCompile Include="app\common\BaseRepository.ts" />
     <TypeScriptCompile Include="app\common\Entity.ts" />
-    <TypeScriptCompile Include="app\course\CourseController.ts" />
+    <TypeScriptCompile Include="app\content\ContentController.ts" />
+    <TypeScriptCompile Include="app\content\ContentService.ts" />
+    <TypeScriptCompile Include="app\content\Model.ts" />
+    <TypeScriptCompile Include="app\course\CourseControllers.ts" />
     <TypeScriptCompile Include="app\course\CourseService.ts" />
     <TypeScriptCompile Include="app\course\Model.ts" />
+    <TypeScriptCompile Include="app\enrollment\EnrollmentControllers.ts" />
+    <TypeScriptCompile Include="app\enrollment\EnrollmentService.ts" />
+    <TypeScriptCompile Include="app\enrollment\Model.ts" />
     <TypeScriptCompile Include="app\home\HomeControllers.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />
     <TypeScriptCompile Include="app\student\Model.ts" />

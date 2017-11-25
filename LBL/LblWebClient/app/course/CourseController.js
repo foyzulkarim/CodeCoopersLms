@@ -17,6 +17,9 @@ var App;
             _this.levelOfAudiences = [];
             console.log("I am in Course Controller");
             _this.teacherService = teacherService;
+            if (_this.value != null) {
+                alert(_this.value);
+            }
             _this.reset();
             _this.loadTeachers();
             return _this;
@@ -47,6 +50,10 @@ var App;
             self.model.teacherId = self.selectedTeacher.id;
             self.service.save(self.model).then(successCallback, errorCallback);
         };
+        CourseController.prototype.setValue = function (v) {
+            var self = this;
+            self.value = v;
+        };
         CourseController.prototype.reset = function () {
             var self = this;
             self.model = new App.Course();
@@ -57,5 +64,16 @@ var App;
     CourseController.$inject = ["CourseService", "TeacherService"];
     App.CourseController = CourseController;
     angular.module('app').controller("CourseController", CourseController);
+    var CourseDetailsController = (function (_super) {
+        __extends(CourseDetailsController, _super);
+        function CourseDetailsController() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        CourseDetailsController.prototype.reset = function () {
+            throw new Error("Method not implemented.");
+        };
+        return CourseDetailsController;
+    }(App.BaseController));
+    App.CourseDetailsController = CourseDetailsController;
 })(App || (App = {}));
 //# sourceMappingURL=CourseController.js.map

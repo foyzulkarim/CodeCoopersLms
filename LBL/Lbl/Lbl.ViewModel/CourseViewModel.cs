@@ -33,7 +33,6 @@ namespace Lbl.ViewModel
         }
 
         public string Title { get; set; }
-
         public double Price { get; set; }
         public string Tags { get; set; }
         public int TotalStudentsEnrolled { get; set; }

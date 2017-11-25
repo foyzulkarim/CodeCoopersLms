@@ -1,103 +1,38 @@
-﻿<section class="content content-course-details">
+﻿<style>
+    a[ng-click] {
+        cursor: pointer;
+    }
+</style>
+<section class="content content-course-details">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-3">
+                    <div class="col-md-8">
                         <ol class="breadcrumb pln mtl">
                             <li>
                                 <a href="#">Courses</a>
                             </li>
-                            <li class="active">Basic .NET</li>
+                            <li class="bold">{{vm.courseTitle}}</li>
                         </ol>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <ul class="list-unstyled mvl menu-secondary-course-details">
-                            <li class="active"><a href="#">Course Home</a></li>
-                            <li><a href="#">Help</a></li>
+                            <li ng-repeat="content in vm.models" ng-class="{active : vm.activeContent.title === content.title}">
+                                <a ng-click="vm.setActiveContent(content)">{{content.title}}</a>
+                            </li>
+                            
                         </ul>
                     </div>
-                    <div class="col-md-9">
-                        <h2>Basic .NET</h2>
-                        <p class="course-sprint-title">Sprint 1: Introduction to the world of C#</p>
-                        <ul class="list-unstyled course-class-list">
-                            <li>
-
-                                <a class="l-block pvm phs" href="#">
-                                    <div class="class-item-status-lc l-inline-block mrs text-center">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                    <span class="course-class-title mrm l-inline-block">1.1 Visual Studio</span> <span class="course-class-duration mrm"><i class="glyphicon glyphicon-time"></i> 1h</span>
-                                    <span class="label label-success">FREE</span>
-                                </a>
-
-
-
-                            </li>
-                            <li>
-
-                                <a class="l-block pvm phs" href="#">
-                                    <div class="class-item-status-lc l-inline-block mrs text-center">
-                                        <i class="fa fa-check"></i>
-                                    </div>
-                                    <span class="course-class-title mrm l-inline-block">
-                                        1.2 Console App
-                                    </span><span class="course-class-duration"><i class="glyphicon glyphicon-time"></i> 30m</span>
-                                </a>
-
-
-
-                            </li>
-
-                        </ul>
-                        <p class="course-sprint-title">Sprint 2: Introducing Desktop</p>
-                        <ul class="list-unstyled course-class-list">
-                            <li>
-
-                                <a class="l-block pvm phs" href="#">
-                                    <div class="class-item-status-lc l-inline-block mrs text-center">
-                                        <i class="fa fa-lock"></i>
-                                    </div>
-                                    <span class="course-class-title mrm l-inline-block">
-                                        2.1 Desktop App
-                                    </span><span class="course-class-duration"><i class="glyphicon glyphicon-time"></i> 30m</span>
-                                </a>
-                            </li>
-                            <li>
-
-                                <a class="l-block pvm phs" href="#">
-                                    <div class="class-item-status-lc l-inline-block mrs text-center">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                    <span class="course-class-title mrm l-inline-block">
-                                        2.2 Looping, Condition
-                                    </span><span class="course-class-duration"><i class="glyphicon glyphicon-time"></i> 30m</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="l-block pvm phs" href="#">
-                                    <div class="class-item-status-lc l-inline-block mrs text-center">
-                                        <i class="fa fa-code"></i>
-                                    </div>
-                                    <span class="course-class-title mrm l-inline-block">
-                                        2.2 Quiz: Basic Understanding of Visual Studio
-                                    </span><span class="course-class-duration"><i class="fa fa-file-text"></i> 10 questions</span>
-                                </a>
-                            </li>
-                            <a class="l-block pvm phs" href="#">
-                            </a>
-                        </ul><a class="l-block pvm phs" href="#">
-                        </a>
-                    </div><a class="l-block pvm phs" href="#">
-                    </a>
-                </div><a class="l-block pvm phs" href="#">
-                </a>
-            </div><a class="l-block pvm phs" href="#">
-            </a>
-        </div><a class="l-block pvm phs" href="#">
-        </a>
+                    <div ng-show="vm.activeContent.title != ''" class="col-md-9">
+                        <p class="course-sprint-title">{{vm.activeContent.title}}</p>
+                        <iframe width="560" height="315" src="{{vm.activeContent.url}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <a class="l-block pvm phs" href="#"></a>
 </section>

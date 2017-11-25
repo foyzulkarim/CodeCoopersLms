@@ -5,6 +5,8 @@ var App;
             this.student = "Student";
             this.teacher = "Teacher";
             this.course = "Course";
+            this.content = "Content";
+            this.enrollment = "Enrollment";
         }
         return UrlService;
     }());
@@ -27,7 +29,7 @@ var App;
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            //data.id = "1";
+            data.id = "1";
             data.created = new Date();
             data.modified = new Date();
             data.createdBy = "me";

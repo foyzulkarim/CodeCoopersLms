@@ -44,6 +44,24 @@ var App;
                 templateUrl: "partials/course/course-entry.tpl.html",
                 controller: "CourseController",
                 controllerAs: "vm"
+            })
+                .state("root.course-detail", {
+                url: "/course-detail/:id",
+                templateUrl: "partials/course/course-detail.tpl.html",
+                controller: "CourseContentsController",
+                controllerAs: "vm"
+            })
+                .state("root.content-entry", {
+                url: "/content-entry",
+                templateUrl: "partials/content/content-entry.tpl.html",
+                controller: "ContentController",
+                controllerAs: "vm"
+            })
+                .state("root.enrollment-entry", {
+                url: "/enrollment-entry",
+                templateUrl: "partials/enrollment/enrollment-entry.tpl.html",
+                controller: "EnrollmentController",
+                controllerAs: "vm"
             });
         }
         return Configuration;

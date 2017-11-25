@@ -16,8 +16,7 @@
             self.requestModel.orderBy = "Title";
             self.requestModel.isAscending = true;
             self.requestModel.perPageCount = 3;
-            self.searchText = "";
-
+            self.requestModel.keyword = "";
             self.searchCourses();
         }
 
@@ -31,7 +30,6 @@
                 console.error(response);
             };
 
-            self.requestModel.keyword = self.searchText;
             self.courseService.search(self.requestModel).then(successCallback, errorCallback);
         }
 

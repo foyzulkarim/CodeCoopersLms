@@ -8,7 +8,6 @@ namespace Lbl.RequestModel
 {
     using System.Data.Entity;
     using System.Linq.Expressions;
-
     using Lbl.Model;
 
     public class CourseRequestModel : BaseRequestModel<Course>
