@@ -52,6 +52,8 @@ module App {
                     controller: "TeachersController",
                     controllerAs: "vm"
                 })
+
+                // course
                 .state("root.course-entry",
                 {
                     url: "/course-entry",

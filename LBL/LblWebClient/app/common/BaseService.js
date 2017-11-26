@@ -1,17 +1,5 @@
 var App;
 (function (App) {
-    var UrlService = (function () {
-        function UrlService() {
-            this.student = "Student";
-            this.teacher = "Teacher";
-            this.course = "Course";
-            this.content = "Content";
-            this.enrollment = "Enrollment";
-        }
-        return UrlService;
-    }());
-    App.UrlService = UrlService;
-    angular.module('app').service('UrlService', UrlService);
     var BaseService = (function () {
         function BaseService(baseRepository, q, url) {
             this.baseRepository = baseRepository;

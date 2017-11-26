@@ -10,9 +10,11 @@ namespace Lbl.Server.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
+        [Authorize]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1-", "value2" + Guid.NewGuid() };
+            string name = this.User.Identity.Name;
+            return new string[] { "value1-" + name, "value2" + Guid.NewGuid() };
         }
 
         // GET api/values/5

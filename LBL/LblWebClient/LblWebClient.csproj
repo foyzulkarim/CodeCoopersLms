@@ -133,6 +133,7 @@
     <TypeScriptCompile Include="app\common\BaseController.ts" />
     <TypeScriptCompile Include="app\common\BaseRepository.ts" />
     <TypeScriptCompile Include="app\common\Entity.ts" />
+    <TypeScriptCompile Include="app\common\UrlService.ts" />
     <TypeScriptCompile Include="app\content\ContentController.ts" />
     <TypeScriptCompile Include="app\content\ContentService.ts" />
     <TypeScriptCompile Include="app\content\Model.ts" />

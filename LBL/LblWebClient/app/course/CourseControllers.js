@@ -76,6 +76,7 @@ var App;
             self.searchRequest.orderBy = "Serial";
             self.searchRequest.isAscending = true;
             self.searchRequest.keyword = self.stateParams["id"];
+            self.activeContent = new App.Content();
             self.getCourseContents();
             return _this;
         }
@@ -84,6 +85,7 @@ var App;
             var successCallBack = function (response) {
                 self.models = response.data;
                 self.courseTitle = self.models[0].courseTitle;
+                self.setActiveContent(self.models[0]);
                 console.log(self.courseTitle);
             };
             var errorCallBack = function (response) {

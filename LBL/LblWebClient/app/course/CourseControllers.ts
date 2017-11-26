@@ -84,6 +84,8 @@
             self.searchRequest.isAscending = true;
             self.searchRequest.keyword = self.stateParams["id"];
 
+            self.activeContent = new Content();
+
             self.getCourseContents();
         }
 
@@ -93,6 +95,7 @@
             let successCallBack = function (response) {
                 self.models = response.data;
                 self.courseTitle = self.models[0].courseTitle;
+                self.setActiveContent(self.models[0]);
                 console.log(self.courseTitle);
             }
             let errorCallBack = function (response) {
@@ -104,7 +107,6 @@
 
         setActiveContent(content: Content): void {
             var self = this;
-
             self.activeContent = content;
             self.activeContent.url = self.sceService.trustAsResourceUrl(content.url);
         }
