@@ -88,10 +88,13 @@ namespace Lbl.Server.Providers
 
         public static AuthenticationProperties CreateProperties(string userName)
         {
-            IDictionary<string, string> data = new Dictionary<string, string>
-            {
-                { "userName", userName }
-            };
+            IDictionary<string, string> data =
+                new Dictionary<string, string>
+                    {
+                        { "userName", userName },
+                        { "requestId", Guid.NewGuid().ToString() }
+                    };
+
             return new AuthenticationProperties(data);
         }
     }

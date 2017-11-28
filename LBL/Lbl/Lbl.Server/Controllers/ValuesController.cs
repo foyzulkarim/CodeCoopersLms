@@ -7,14 +7,21 @@ using System.Web.Http;
 
 namespace Lbl.Server.Controllers
 {
+    using System.Data.Entity;
+    using System.Threading.Tasks;
+
+    using Lbl.Model;
+    using Lbl.Server.Models;
+
+    using Microsoft.AspNet.Identity.Owin;
+
     public class ValuesController : ApiController
     {
         // GET api/values
-        [Authorize]
-        public IEnumerable<string> Get()
+        [AllowAnonymous]
+        public string Get()
         {
-            string name = this.User.Identity.Name;
-            return new string[] { "value1-" + name, "value2" + Guid.NewGuid() };
+            return Guid.NewGuid().ToString();
         }
 
         // GET api/values/5

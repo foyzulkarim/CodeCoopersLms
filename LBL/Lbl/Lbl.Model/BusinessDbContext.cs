@@ -15,6 +15,11 @@ namespace Lbl.Model
             this.Configuration.LazyLoadingEnabled = false;
         }
 
+        public static BusinessDbContext Create()
+        {
+            return new BusinessDbContext();
+        }
+
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Teacher> Teachers { get; set; }
