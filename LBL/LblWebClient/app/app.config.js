@@ -66,7 +66,7 @@ var App;
                 .state("root.SignUp", {
                 url: "/SignUp",
                 templateUrl: "partials/account/signUp.tpl.html",
-                controller: "AccountController",
+                controller: "NavController",
                 controllerAs: "vm"
             });
         }

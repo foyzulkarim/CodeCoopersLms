@@ -130,7 +130,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\account\AccountController.ts" />
+    <TypeScriptCompile Include="app\account\AccountService.ts" />
     <TypeScriptCompile Include="app\account\Model.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
     <TypeScriptCompile Include="app\common\BaseController.ts" />

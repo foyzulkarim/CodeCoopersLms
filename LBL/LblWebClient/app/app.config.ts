@@ -88,7 +88,7 @@ module App {
                 {
                     url: "/SignUp",
                     templateUrl: "partials/account/signUp.tpl.html",
-                    controller: "AccountController",
+                    controller: "NavController",
                     controllerAs: "vm"
                 });
         }

@@ -8,36 +8,45 @@ var App;
     ApiResponseStatus.statusOk = 200;
     ApiResponseStatus.statusBad = 400;
     App.ApiResponseStatus = ApiResponseStatus;
-    var AccountController = (function () {
-        function AccountController(baseRepository) {
+    var AccountService = (function () {
+        function AccountService(baseRepository, q) {
             this.baseRepository = baseRepository;
+            this.q = q;
             this.subUrl = new App.UrlService().account;
             this.reset();
         }
-        AccountController.prototype.register = function () {
+        AccountService.prototype.register = function () {
             var self = this;
+            var deferred = self.q.defer();
             var successCallback = function (response) {
-                if (response.status == ApiResponseStatus.statusOk) {
-                    alert("Sign up successfull");
-                }
-                else if (response.status == ApiResponseStatus.statusBad) {
-                    alert(response.modelState);
-                }
+                deferred.resolve(response);
             };
             var errorCallback = function (response) {
-                alert(response.modelState);
-                console.error(response);
+                deferred.reject(response);
             };
             self.baseRepository.post(self.subUrl + "/Register", self.user).then(successCallback, errorCallback);
+            return deferred.promise;
         };
-        AccountController.prototype.reset = function () {
+        AccountService.prototype.signin = function (username, password) {
+            var self = this;
+            var deferred = self.q.defer();
+            var successCallback = function (response) {
+                deferred.resolve(response);
+            };
+            var errorCallback = function (response) {
+                deferred.reject(response);
+            };
+            self.baseRepository.post(self.subUrl + "/SignIn?userName=" + username + "&password=" + password, null).then(successCallback, errorCallback);
+            return deferred.promise;
+        };
+        AccountService.prototype.reset = function () {
             var self = this;
             self.user = new App.User();
         };
-        return AccountController;
+        return AccountService;
     }());
-    AccountController.$inject = ["BaseRepository"];
-    App.AccountController = AccountController;
-    angular.module('app').controller('AccountController', AccountController);
+    AccountService.$inject = ["BaseRepository", "$q"];
+    App.AccountService = AccountService;
+    angular.module('app').service('AccountService', AccountService);
 })(App || (App = {}));
 //# sourceMappingURL=AccountController.js.map
