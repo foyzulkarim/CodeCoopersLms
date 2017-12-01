@@ -62,6 +62,12 @@ var App;
                 templateUrl: "partials/enrollment/enrollment-entry.tpl.html",
                 controller: "EnrollmentController",
                 controllerAs: "vm"
+            })
+                .state("root.register", {
+                url: "/register",
+                templateUrl: "partials/account/register.tpl.html",
+                controller: "RegisterController",
+                controllerAs: "vm"
             });
         }
         return Configuration;

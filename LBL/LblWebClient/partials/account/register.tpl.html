@@ -1,0 +1,40 @@
+﻿<section class="content content-enrollment">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-8 col-md-8 col-sm-8">
+                <h3>Enroll Student</h3><br />
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Email:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="text" class="form-control" id="email" name="email" ng-model="vm.model.email" required/>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Password:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="password" class="form-control" id="password" name="password" ng-model="vm.model.password" required />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Confirm Password:</label>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" ng-model="vm.model.confirmPassword" required />
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 text-left">
+                            <button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+                        </div>
+
+                        <div class="col-lg-7 col-md-7 col-sm-7"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

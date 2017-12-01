@@ -7,6 +7,7 @@ var App;
             this.course = "Course";
             this.content = "Content";
             this.enrollment = "Enrollment";
+            this.register = "Account/Register";
         }
         return UrlService;
     }());
