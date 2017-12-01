@@ -4,7 +4,7 @@ var Vta;
     var NavController = (function () {
         function NavController() {
             var self = this;
-            self.isSignedIn = true;
+            self.isSignedIn = false;
         }
         return NavController;
     }());

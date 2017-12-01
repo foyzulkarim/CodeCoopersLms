@@ -33,8 +33,8 @@
                     <div class="section-auth l-inline-block mvm">
                         <!-- if not signed in -->
                         <div ng-show="!vm.isSignedIn">
-                            <a class="mhm l-inline-block" href="/#/register">Register</a>
-                            <a class="mhm l-inline-block" href="/#/signin">Signin</a>
+                            <a class="mhm l-inline-block" href="/#!/SignUp">Sign Up</a>
+                            <a class="mhm l-inline-block" href="/#/signin">Log In</a>
                         </div>
                         <!-- /if not signed in -->
                         <div ng-show="vm.isSignedIn">
@@ -119,6 +119,7 @@
     <script src="app/course/Model.js"></script>
     <script src="app/content/Model.js"></script>
     <script src="app/enrollment/Model.js"></script>
+    <script src="app/account/Model.js"></script>
 
     <!--services-->
     <script src="app/student/StudentService.js"></script>
@@ -137,6 +138,6 @@
     <script src="app/course/CourseControllers.js"></script>
     <script src="app/content/ContentController.js"></script>
     <script src="app/enrollment/EnrollmentControllers.js"></script>
-
+    <script src="app/account/AccountController.js"></script>
 </body>
 </html>

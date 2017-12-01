@@ -11,7 +11,7 @@
 
         constructor() {
             var self = this;
-            self.isSignedIn = true;
+            self.isSignedIn = false;
         }
         
     }
