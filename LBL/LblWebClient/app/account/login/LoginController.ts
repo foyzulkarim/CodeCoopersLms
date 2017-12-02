@@ -18,8 +18,7 @@
             let errorCallback = (error: any): void => {
                 console.log(error);
             };
-
-            self.model.grant_type = "password";
+            
             var data = "username=" + self.model.username + "&password=" + self.model.password + "&grant_type=password";
             self.service.login(data).then(successCallback, errorCallback);
         }
