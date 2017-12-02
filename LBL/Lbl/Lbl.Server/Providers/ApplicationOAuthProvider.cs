@@ -32,7 +32,7 @@ namespace Lbl.Server.Providers
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
-
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");

@@ -80,6 +80,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
+    <Content Include="partials\account\login.tpl.html" />
     <Content Include="partials\account\register.tpl.html" />
     <Content Include="partials\content\content-entry.tpl.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
@@ -130,6 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\account\login\LoginController.ts" />
+    <TypeScriptCompile Include="app\account\login\LoginService.ts" />
+    <TypeScriptCompile Include="app\account\login\Model.ts" />
     <TypeScriptCompile Include="app\account\register\Model.ts" />
     <TypeScriptCompile Include="app\account\register\RegisterController.ts" />
     <TypeScriptCompile Include="app\account\register\RegisterService.ts" />

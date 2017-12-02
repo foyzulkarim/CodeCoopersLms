@@ -25,4 +25,4 @@ var App;
     RegisterController.$inject = ["RegisterService"];
     angular.module('app').controller("RegisterController", RegisterController);
 })(App || (App = {}));
-//# sourceMappingURL=registerController.js.map
+//# sourceMappingURL=RegisterController.js.map

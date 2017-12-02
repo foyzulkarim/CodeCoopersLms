@@ -68,6 +68,12 @@ var App;
                 templateUrl: "partials/account/register.tpl.html",
                 controller: "RegisterController",
                 controllerAs: "vm"
+            })
+                .state("root.login", {
+                url: "/login",
+                templateUrl: "partials/account/login.tpl.html",
+                controller: "LoginController",
+                controllerAs: "vm"
             });
         }
         return Configuration;
