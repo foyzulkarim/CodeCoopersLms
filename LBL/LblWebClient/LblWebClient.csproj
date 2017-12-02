@@ -71,6 +71,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\account.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\home.css" />
@@ -80,6 +81,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
+    <Content Include="partials\account\signin.tpl.html" />
     <Content Include="partials\account\signUp.tpl.html" />
     <Content Include="partials\content\content-entry.tpl.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
@@ -133,6 +135,7 @@
     <TypeScriptCompile Include="app\account\AccountService.ts" />
     <TypeScriptCompile Include="app\account\Model.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\common\AppConstants.ts" />
     <TypeScriptCompile Include="app\common\BaseController.ts" />
     <TypeScriptCompile Include="app\common\BaseRepository.ts" />
     <TypeScriptCompile Include="app\common\Entity.ts" />
@@ -172,7 +175,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

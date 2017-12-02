@@ -2,7 +2,7 @@
     
     export class BaseRepository {
 
-        baseUrl: string;
+        //baseUrl: string;
 
         http: angular.IHttpService;
         q: angular.IQService;
@@ -11,7 +11,7 @@
         constructor(http: angular.IHttpService, q: angular.IQService) {
             this.http = http;
             this.q = q;
-            this.baseUrl = "http://localhost:30285/api/";
+            //this.baseUrl = AppConstants.BaseApiUrl;
         }
 
         post(subUrl: string, data: any): angular.IPromise<any> {
@@ -28,7 +28,28 @@
                 deffered.reject(errorResponse);
             };
 
-            self.http.post(self.baseUrl + subUrl, data).then(successCallback, errorCallback);
+            self.http.post(AppConstants.BaseApiUrl + subUrl, data).then(successCallback, errorCallback);
+            return deffered.promise;
+        }
+
+        postUrlencodedForm(data: string): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.q.defer();
+            var config: angular.IRequestShortcutConfig = {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            };
+
+            var successCallback = function (successresponse) {
+                //console.log(successresponse);
+                deffered.resolve(successresponse);
+            };
+
+            var errorCallback = function (errorResponse) {
+                //console.log(errorResponse);
+                deffered.reject(errorResponse);
+            };
+
+            self.http.post(AppConstants.UserAuthenticationUrl, data, config).then(successCallback, errorCallback);
             return deffered.promise;
         }
     }

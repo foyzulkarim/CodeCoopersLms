@@ -1,13 +1,9 @@
 ﻿module App {
-    export class ApiResponseStatus {
-        static statusOk = 200;
-        static statusBad = 400;
-    }
+    
     export class AccountService {
         baseRepository: BaseRepository;
         q: angular.IQService;
         commandUrl: string;
-        user: User;
         subUrl: string;
 
         static $inject = ["BaseRepository", "$q"];
@@ -15,10 +11,9 @@
             this.baseRepository = baseRepository;
             this.q = q;
             this.subUrl = new UrlService().account;
-            this.reset();
         }
 
-        register(): angular.IPromise<any> {
+        register(user: User): angular.IPromise<any> {
             var self = this;
             var deferred = self.q.defer();
 
@@ -30,7 +25,7 @@
                 deferred.reject(response);
             }
 
-            self.baseRepository.post(self.subUrl + "/Register", self.user).then(successCallback, errorCallback);
+            self.baseRepository.post(self.subUrl + "/Register", user).then(successCallback, errorCallback);
             return deferred.promise;
         }
 
@@ -39,21 +34,23 @@
             var deferred = self.q.defer();
 
             let successCallback = function (response) {
+                if (response.status == AppConstants.StatusOk) {
+                    //localStorage.set('authorizationData', {
+                    //    token: response.data.access_token,
+                    //    tokenType: response.data.token_type,
+                    //    userName: response.data.userName
+                    //});
+                }
                 deferred.resolve(response);
-
             }
             let errorCallback = function (response) {
                 deferred.reject(response);
             }
 
-            self.baseRepository.post(self.subUrl + "/SignIn?userName=" + username + "&password=" + password, null).then(successCallback, errorCallback);
+            var data = "username=" + username + "&password=" + password + "&grant_type=password";
+            self.baseRepository.postUrlencodedForm(data).then(successCallback, errorCallback);
             return deferred.promise;
-        }
-
-        reset(): void {
-            var self = this;
-            self.user = new User();
-        }
+        }        
     }
 
     angular.module('app').service('AccountService', AccountService);

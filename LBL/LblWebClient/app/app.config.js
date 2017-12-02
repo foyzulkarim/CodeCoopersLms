@@ -68,6 +68,12 @@ var App;
                 templateUrl: "partials/account/signUp.tpl.html",
                 controller: "NavController",
                 controllerAs: "vm"
+            })
+                .state("root.SignIn", {
+                url: "/SignIn",
+                templateUrl: "partials/account/signin.tpl.html",
+                controller: "NavController",
+                controllerAs: "vm"
             });
         }
         return Configuration;

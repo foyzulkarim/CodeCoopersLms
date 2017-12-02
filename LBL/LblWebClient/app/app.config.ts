@@ -6,6 +6,7 @@ module App {
         static $inject = ["$stateProvider", "$urlRouterProvider"];
         constructor(stateProvider: angular.ui.IStateProvider, urlRouteProvider: angular.ui.IUrlRouterProvider) {
             urlRouteProvider.otherwise("/");
+            
             stateProvider
                 .state("root",
                 {
@@ -88,6 +89,13 @@ module App {
                 {
                     url: "/SignUp",
                     templateUrl: "partials/account/signUp.tpl.html",
+                    controller: "NavController",
+                    controllerAs: "vm"
+                })
+                .state("root.SignIn",
+                {
+                    url: "/SignIn",
+                    templateUrl: "partials/account/signin.tpl.html",
                     controller: "NavController",
                     controllerAs: "vm"
                 });

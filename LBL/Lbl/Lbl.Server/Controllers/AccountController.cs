@@ -114,19 +114,6 @@ namespace Lbl.Server.Controllers
             };
         }
 
-        [Route("SignIn")]
-        public async Task<IHttpActionResult> SignIn(string userName, string password)
-        {
-            var user = await UserManager.FindAsync(userName, password);
-
-            if(user == null)
-            {
-                return BadRequest("Invalid username or password");
-            }
-
-            return Ok();
-        }
-
         // POST api/Account/ChangePassword
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
