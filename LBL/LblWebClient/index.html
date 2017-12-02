@@ -18,12 +18,11 @@
             <div class="row">
                 <div class="col-xs-6 col-md-6">
                     <a class="logo" href="#">
-                        <img src="img/logo.svg">
                         Virtual Tech Academy
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm">
-                    <div class="links-header l-inline-block mvm">
+                    <div ng-show="vm.isSignedIn" class="links-header l-inline-block mvm">
                         <a href="#/student-list">Students</a>
                         <a href="#/teacher-list">Teachers</a>
                         <a href="#!/course-entry">Course</a>
@@ -33,8 +32,8 @@
                     <div class="section-auth l-inline-block mvm">
                         <!-- if not signed in -->
                         <div ng-show="!vm.isSignedIn">
-                            <a class="mhm l-inline-block" href="/#/register">Register</a>
-                            <a class="mhm l-inline-block" href="/#/signin">Signin</a>
+                            <a class="mhm l-inline-block" href="/#!/SignUp">Sign Up</a>
+                            <a class="mhm l-inline-block" href="/#!/SignIn">Log In</a>
                         </div>
                         <!-- /if not signed in -->
                         <div ng-show="vm.isSignedIn">
@@ -114,11 +113,13 @@
     <script src="app/common/BaseRepository.js"></script>
 
     <!--models-->
+    <script src="app/common/AppConstants.js"></script>
     <script src="app/student/Model.js"></script>
     <script src="app/teacher/Model.js"></script>
     <script src="app/course/Model.js"></script>
     <script src="app/content/Model.js"></script>
     <script src="app/enrollment/Model.js"></script>
+    <script src="app/account/Model.js"></script>
 
     <!--services-->
     <script src="app/student/StudentService.js"></script>
@@ -126,6 +127,7 @@
     <script src="app/course/CourseService.js"></script>
     <script src="app/content/ContentService.js"></script>
     <script src="app/enrollment/EnrollmentService.js"></script>
+    <script src="app/account/AccountService.js"></script>
 
     <!--controllers-->
     <script src="app/common/BaseController.js"></script>
@@ -137,6 +139,5 @@
     <script src="app/course/CourseControllers.js"></script>
     <script src="app/content/ContentController.js"></script>
     <script src="app/enrollment/EnrollmentControllers.js"></script>
-
 </body>
 </html>

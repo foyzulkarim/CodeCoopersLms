@@ -14,6 +14,7 @@ namespace Lbl.Server.Controllers
 
     public class BaseQueryController<T, TR, TV> : ApiController where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
     {
+        [AllowAnonymous]
         [Route("Search")]
         [ActionName("Search")]
         [HttpPost]

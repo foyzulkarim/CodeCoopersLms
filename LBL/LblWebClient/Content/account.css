@@ -1,0 +1,54 @@
+﻿.omb_login .omb_loginForm .input-group.i {
+    width: 2em;
+}
+
+.omb_login .omb_loginForm .help-block {
+    color: red;
+}
+
+h2 {
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #0077c8;
+}
+
+.first-time h2 {
+    margin-top: 0;
+}
+
+.first-time {
+    border-bottom: 1px solid #ccc;
+}
+
+    .tips *, .first-time * {
+        text-align: center;
+    }
+
+@media (min-width: 768px) {
+    .omb_login .omb_forgotPwd {
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .first-time {
+        border-bottom: 0;
+    }
+
+    .tips {
+        border-left: 1px solid #ccc;
+    }
+
+    .first-time h2, .first-time p {
+        text-align: center;
+    }
+
+    .tips h2, .tips p {
+        text-align: center;
+    }
+
+    .tips h2 {
+        margin-top: 0;
+    }
+}
