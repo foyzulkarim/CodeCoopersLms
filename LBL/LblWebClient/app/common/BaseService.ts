@@ -56,5 +56,23 @@
             self.baseRepository.post(self.commandUrl+"Query", request).then(successCallback, errorCallback);
             return deffered.promise;
         }
+
+        login(data: any): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.q.defer();
+
+            var successCallback = function (successresponse) {
+                console.log(successresponse);
+                deffered.resolve(successresponse);
+            };
+
+            var errorCallback = function (errorResponse) {
+                console.log(errorResponse);
+                deffered.reject(errorResponse);
+            };
+            
+            self.baseRepository.postUrlencodedForm(self.commandUrl, data).then(successCallback, errorCallback);
+            return deffered.promise;
+        }
     }
 }

@@ -39,6 +39,20 @@ var App;
             self.baseRepository.post(self.commandUrl + "Query", request).then(successCallback, errorCallback);
             return deffered.promise;
         };
+        BaseService.prototype.login = function (data) {
+            var self = this;
+            var deffered = self.q.defer();
+            var successCallback = function (successresponse) {
+                console.log(successresponse);
+                deffered.resolve(successresponse);
+            };
+            var errorCallback = function (errorResponse) {
+                console.log(errorResponse);
+                deffered.reject(errorResponse);
+            };
+            self.baseRepository.postUrlencodedForm(self.commandUrl, data).then(successCallback, errorCallback);
+            return deffered.promise;
+        };
         return BaseService;
     }());
     BaseService.$inject = ["BaseRepository", "$q"];
