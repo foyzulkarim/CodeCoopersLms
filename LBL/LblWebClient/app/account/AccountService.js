@@ -1,10 +1,17 @@
 var App;
 (function (App) {
+    var AuthData = (function () {
+        function AuthData() {
+        }
+        return AuthData;
+    }());
+    App.AuthData = AuthData;
     var AccountService = (function () {
         function AccountService(baseRepository, q) {
             this.baseRepository = baseRepository;
             this.q = q;
             this.subUrl = new App.UrlService().account;
+            this.authData = new AuthData();
         }
         AccountService.prototype.register = function (user) {
             var self = this;
@@ -23,11 +30,10 @@ var App;
             var deferred = self.q.defer();
             var successCallback = function (response) {
                 if (response.status == App.AppConstants.StatusOk) {
-                    //localStorage.set('authorizationData', {
-                    //    token: response.data.access_token,
-                    //    tokenType: response.data.token_type,
-                    //    userName: response.data.userName
-                    //});
+                    self.authData.token = response.data.access_token;
+                    self.authData.tokenType = response.data.token_type;
+                    self.authData.userName = response.data.userName;
+                    sessionStorage.AuthData = self.authData;
                 }
                 deferred.resolve(response);
             };

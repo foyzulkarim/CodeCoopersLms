@@ -5,6 +5,7 @@ module App {
 
         static $inject = ["$stateProvider", "$urlRouterProvider"];
         constructor(stateProvider: angular.ui.IStateProvider, urlRouteProvider: angular.ui.IUrlRouterProvider) {
+            
             urlRouteProvider.otherwise("/");
             
             stateProvider

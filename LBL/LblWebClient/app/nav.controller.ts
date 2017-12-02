@@ -45,9 +45,10 @@
             let successCallback = function (response) {
                 if (response.status == AppConstants.StatusOk) {
                     self.isSignedIn = true;
-                    self.stateService.go("root.home");
+                    alert("Sign in successfull")
+                    self.stateService.transitionTo("root.home");
                 } else {
-                    alert("Sign in failed")
+                    alert("Sign in failed");
                 }
             }
             let errorCallback = function (response) {
