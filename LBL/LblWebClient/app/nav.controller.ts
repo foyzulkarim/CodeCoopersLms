@@ -45,12 +45,15 @@
             let successCallback = function (response) {
                 if (response.status == AppConstants.StatusOk) {
                     self.isSignedIn = true;
-                    alert("Sign in successfull")
-                    self.stateService.transitionTo("root.home");
+                    alert("Sign in successfull");
+                    //let home = "root.home";
+                    let landingRoute = response.data.landingRoute;
+                    self.stateService.transitionTo(landingRoute);
                 } else {
                     alert("Sign in failed");
                 }
             }
+
             let errorCallback = function (response) {
                 console.error(response);
             }

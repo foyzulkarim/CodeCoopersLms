@@ -6,6 +6,8 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace Lbl.Server.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
@@ -18,6 +20,17 @@ namespace Lbl.Server.Models
         }
 
         // our own properties --> column 
-    }    
+    }
 
+    public class ApplicationRole : IdentityRole
+    {
+
+        [MaxLength(20)]
+        public string LandingRoute { get; set; }
+    }
+
+
+    // Resource 
+
+    // Permission
 }

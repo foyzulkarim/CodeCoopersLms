@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201711251622576_InitialDb.Designer.cs">
       <DependentUpon>201711251622576_InitialDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712021555575_AddedLandingRoute.cs" />
+    <Compile Include="Migrations\201712021555575_AddedLandingRoute.Designer.cs">
+      <DependentUpon>201712021555575_AddedLandingRoute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -347,6 +351,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711251622576_InitialDb.resx">
       <DependentUpon>201711251622576_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712021555575_AddedLandingRoute.resx">
+      <DependentUpon>201712021555575_AddedLandingRoute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

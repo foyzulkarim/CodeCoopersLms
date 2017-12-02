@@ -31,7 +31,9 @@ var App;
                 if (response.status == App.AppConstants.StatusOk) {
                     self.isSignedIn = true;
                     alert("Sign in successfull");
-                    self.stateService.transitionTo("root.home");
+                    //let home = "root.home";
+                    var landingRoute = response.data.landingRoute;
+                    self.stateService.transitionTo(landingRoute);
                 }
                 else {
                     alert("Sign in failed");

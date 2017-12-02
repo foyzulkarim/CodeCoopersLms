@@ -29,7 +29,9 @@ namespace Lbl.Server.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            context.OwinContext.Request.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
@@ -89,12 +91,12 @@ namespace Lbl.Server.Providers
 
         public static AuthenticationProperties CreateProperties(string userName)
         {
-            IDictionary<string, string> data =
-                new Dictionary<string, string>
-                    {
-                        { "userName", userName },
-                        { "requestId", Guid.NewGuid().ToString() }
-                    };
+            var data = new Dictionary<string, string>
+                           {
+                               { "userName", userName },
+                               { "requestId", Guid.NewGuid().ToString() },
+                               { "landingRoute", "root.home" }
+                           };
 
             return new AuthenticationProperties(data);
         }
