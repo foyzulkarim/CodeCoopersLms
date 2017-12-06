@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201712021555575_AddedLandingRoute.Designer.cs">
       <DependentUpon>201712021555575_AddedLandingRoute.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712051736512_ResourcePermissionAdded.cs" />
+    <Compile Include="Migrations\201712051736512_ResourcePermissionAdded.Designer.cs">
+      <DependentUpon>201712051736512_ResourcePermissionAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -354,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712021555575_AddedLandingRoute.resx">
       <DependentUpon>201712021555575_AddedLandingRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051736512_ResourcePermissionAdded.resx">
+      <DependentUpon>201712051736512_ResourcePermissionAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

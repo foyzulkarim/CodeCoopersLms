@@ -42,4 +42,18 @@ namespace Lbl.Server
             return manager;
         }
     }
+
+    public interface IRoleStore<TRole> where TRole : class
+    {
+        Task CreateAsync(TRole role);
+        Task DeleteAsync(TRole role);
+        Task<TRole> FindByIdAsync(string roleId);
+    }
+
+
+
+    //public class ApplicationRoleManager : UserManager<ApplicationRole>
+    //{
+
+    //}
 }

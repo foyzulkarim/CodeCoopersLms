@@ -37,6 +37,8 @@ namespace Lbl.Server.Controllers
             AccessTokenFormat = accessTokenFormat;
         }
 
+        
+
         public ApplicationUserManager UserManager
         {
             get

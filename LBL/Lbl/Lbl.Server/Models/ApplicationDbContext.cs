@@ -1,6 +1,7 @@
 ﻿namespace Lbl.Server.Models
 {
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.Data.Entity;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -13,5 +14,9 @@
         {
             return new ApplicationDbContext();
         }
+
+        public IDbSet<Resource> Resources { get; set; }
+
+        public IDbSet<Permission> Permissions { get; set; }
     }
 }
