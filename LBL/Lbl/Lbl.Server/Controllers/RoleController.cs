@@ -18,7 +18,7 @@ namespace Lbl.Server.Controllers
         [Route("CreateRole")]
         public IHttpActionResult CreateRole(RoleBindingModel role)
         {
-            var rm = new RoleManager<IdentityRole>(
+            var roleManager = new RoleManager<IdentityRole>(
                 new RoleStore<IdentityRole>(new IdentityModel.ApplicationDbContext()));
 
             var applicationUser = Request.GetOwinContext().Authentication.User.Identity;
@@ -31,7 +31,7 @@ namespace Lbl.Server.Controllers
             applicationRole.CreatedBy = applicationUser.Name;
 
 
-            var idResult = rm.Create(applicationRole);
+            var idResult = roleManager.Create(applicationRole);
             if (!idResult.Succeeded)
                 return BadRequest("Failed to add application role");
 

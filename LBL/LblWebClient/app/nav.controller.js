@@ -48,7 +48,7 @@ var App;
                     self.authData.landingRoute = response.data.landingRoute;
                     localStorage.setItem("AuthData", JSON.stringify(self.authData));
                     var landingRoute = response.data.landingRoute;
-                    self.stateService.transitionTo(landingRoute);
+                    self.stateService.go(landingRoute);
                 }
                 else {
                     alert("Sign in failed");
