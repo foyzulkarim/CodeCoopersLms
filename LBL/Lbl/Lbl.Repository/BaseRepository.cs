@@ -13,7 +13,7 @@
 
         public GenericRepository(DbContext dbContext)
         {
-            this.db = dbContext;//new BusinessDbContext();
+            this.db = dbContext;
         }
 
         public bool Add(T entity)
