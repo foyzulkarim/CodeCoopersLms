@@ -36,6 +36,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -47,11 +53,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseIdentityRequestModel.cs" />
     <Compile Include="BaseRequestModel.cs" />
     <Compile Include="ContentRequestModel.cs" />
     <Compile Include="CourseRequestModel.cs" />
     <Compile Include="EnrollmentRequestModel.cs" />
+    <Compile Include="PermissionRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceRequestModel.cs" />
+    <Compile Include="RoleRequestModel.cs" />
     <Compile Include="StudentContentRequestModel.cs" />
     <Compile Include="StudentRequestModel.cs" />
     <Compile Include="TeacherRequestModel.cs" />
@@ -61,6 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lbl.IdentityModel\Lbl.IdentityModel.csproj">
+      <Project>{577737d2-a3d4-456e-ab22-6de78cfe811a}</Project>
+      <Name>Lbl.IdentityModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
       <Project>{0745FFAF-85A6-471A-AF6A-4044D89EE72B}</Project>
       <Name>Lbl.Model</Name>

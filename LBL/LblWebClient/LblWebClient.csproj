@@ -88,6 +88,7 @@
     <Content Include="partials\course\course-entry.tpl.html" />
     <Content Include="partials\course\courses.tpl.html" />
     <Content Include="partials\home\home.tpl.html" />
+    <Content Include="partials\role\role-entry.tpl.html" />
     <Content Include="partials\student\student-list.tpl.html" />
     <Content Include="partials\teacher\teacher-entry.tpl.html" />
     <Content Include="partials\teacher\teacher-list.tpl.html" />
@@ -132,8 +133,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\account\AccountService.ts" />
-    <TypeScriptCompile Include="app\account\Model.ts" />
+    <TypeScriptCompile Include="app\user\account\AccountService.ts" />
+    <TypeScriptCompile Include="app\user\account\Model.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
     <TypeScriptCompile Include="app\common\AppConstants.ts" />
     <TypeScriptCompile Include="app\common\BaseController.ts" />
@@ -158,6 +159,9 @@
     <TypeScriptCompile Include="app\teacher\Model.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherControllers.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherService.ts" />
+    <TypeScriptCompile Include="app\user\role\Model.ts" />
+    <TypeScriptCompile Include="app\user\role\RoleController.ts" />
+    <TypeScriptCompile Include="app\user\role\RoleService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-local-storage\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

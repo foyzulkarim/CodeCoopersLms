@@ -2,10 +2,11 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+//using Microsoft.AspNet.Identity.Owin;
 
-namespace Lbl.Server.Models
+namespace Lbl.IdentityModel
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -25,43 +26,35 @@ namespace Lbl.Server.Models
 
     public class ApplicationRole : IdentityRole
     {
+        public ApplicationRole()
+        {
+
+        }
+
+        public ApplicationRole(string name) : base(name)
+        {
+
+        }
+
         [MaxLength(20)]
         public string LandingRoute { get; set; }
-    }
-
-    // Resource 
-    public class Resource : Lbl.Model.Entity
-    {
-        [Required]
-        public string Name { get; set; }
-
-        [Required]
-        public string Type { get; set; }
-
-        [Required]
-        public bool IsPublic { get; set; }
-    }
-
-    // Permission
-    public class Permission : Lbl.Model.Entity
-    {
-        [Index]
-        [MaxLength(128)]
-        public string RoleId { get; set; }
-
-        [ForeignKey("RoleId")]
-        public virtual ApplicationRole ApplicationRole { get; set; }
 
         [Index]
-        [MaxLength(128)]
-        public string ResourceId { get; set; }
+        [Required]
+        public DateTime Created { get; set; }
 
-        [ForeignKey("ResourceId")]
-        public virtual Resource Resource { get; set; }
+        [Index]
+        [Required]
+        [MaxLength(50)]
+        public string CreatedBy { get; set; }
 
-        public bool IsAllowed { get; set; }
+        [Index]
+        [Required]
+        public DateTime Modified { get; set; }
 
-        public bool IsDisabled { get; set; }
-
-    }
+        [Index]
+        [Required]
+        [MaxLength(50)]
+        public string ModifiedBy { get; set; }
+    }   
 }

@@ -6,19 +6,29 @@
         stateService: angular.ui.IStateService;
         isSignedIn: boolean;
         private rootScopeService: angular.IRootScopeService;
-        
-        
+        authData: AuthData;        
         accountService: AccountService;
         user: User;
 
         static $inject = ["AccountService", "$state"];
 
         constructor(accountService: AccountService, stateService: angular.ui.IStateService) {
-            var self = this;
+            var self = this;            
             self.accountService = accountService;
             self.stateService = stateService;
-            self.isSignedIn = false;
+            self.isUserSignedIn();
+            self.authData = new AuthData();
             self.reset();
+        }
+
+        isUserSignedIn(): void {
+            var self = this;
+            self.authData = JSON.parse(localStorage.getItem("AuthData"));
+            if (self.authData == null) {
+                self.isSignedIn = false;
+            } else {
+                self.isSignedIn = true;
+            }
         }
 
         signUpUser(): void {
@@ -44,9 +54,13 @@
 
             let successCallback = function (response) {
                 if (response.status == AppConstants.StatusOk) {
-                    self.isSignedIn = true;
                     alert("Sign in successfull");
                     //let home = "root.home";
+                    self.authData.token = response.data.access_token;
+                    self.authData.tokenType = response.data.token_type;
+                    self.authData.userName = response.data.userName;
+                    self.authData.landingRoute = response.data.landingRoute;
+                    localStorage.setItem("AuthData", JSON.stringify(self.authData));
                     let landingRoute = response.data.landingRoute;
                     self.stateService.transitionTo(landingRoute);
                 } else {

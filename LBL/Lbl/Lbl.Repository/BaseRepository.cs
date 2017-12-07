@@ -7,13 +7,13 @@
     using Lbl.Model;
 
     public class GenericRepository<T> : IGenericRepository<T>
-        where T : Entity
+        where T : class 
     {
-        protected BusinessDbContext db;
+        protected DbContext db;
 
-        public GenericRepository()
+        public GenericRepository(DbContext dbContext)
         {
-            this.db = new BusinessDbContext();
+            this.db = dbContext;//new BusinessDbContext();
         }
 
         public bool Add(T entity)

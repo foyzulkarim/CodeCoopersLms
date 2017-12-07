@@ -8,6 +8,7 @@ var App;
             this.content = "Content";
             this.enrollment = "Enrollment";
             this.account = "Account";
+            this.role = "Role";
         }
         return UrlService;
     }());

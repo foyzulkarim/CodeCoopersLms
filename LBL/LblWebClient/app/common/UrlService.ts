@@ -7,6 +7,7 @@
         content: string;
         enrollment: string;
         account: string;
+        role: string;
 
         constructor() {
             this.student = "Student";
@@ -15,6 +16,7 @@
             this.content = "Content";
             this.enrollment = "Enrollment";
             this.account = "Account";
+            this.role = "Role";
         }
     }
 
