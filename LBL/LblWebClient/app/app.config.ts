@@ -99,6 +99,24 @@ module App {
                     templateUrl: "partials/account/signin.tpl.html",
                     controller: "NavController",
                     controllerAs: "vm"
+                })
+
+                // Role
+                .state("root.role-entry",
+                {
+                    url: "/role-entry",
+                    templateUrl: "partials/role/role-entry.tpl.html",
+                    controller: "RoleController",
+                    controllerAs: "vm"
+                })
+
+                // Resource
+                .state("root.resource-entry",
+                {
+                    url: "/resource-entry",
+                    templateUrl: "partials/resource/resource-entry.tpl.html",
+                    controller: "ResourceController",
+                    controllerAs: "vm"
                 });
         }
     }

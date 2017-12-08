@@ -14,13 +14,19 @@ namespace Lbl.Server.Controllers
 
     public class BaseQueryController<T, TR, TV> : ApiController where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
     {
+        private BaseService<T, TR, TV> service;
+
+        public BaseQueryController(System.Data.Entity.DbContext dbContext)
+        {
+            service = new BaseService<T, TR, TV>(dbContext);
+        }
+
         [AllowAnonymous]
         [Route("Search")]
         [ActionName("Search")]
         [HttpPost]
         public IHttpActionResult Search(TR request)
         {
-            var service = new BaseService<T, TR, TV>();
             var students = service.Search(request);
             return this.Ok(students);
         }

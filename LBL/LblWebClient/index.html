@@ -55,16 +55,35 @@
     <!-- marketing msg -->
     <div class="section-promo-msg pvm">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row" ng-controller="NavController as vm">
                 <div class="col-md-12 text-center">
                     <p class="mbn">
                         Get practical end to end online training on <span class="rotate">SQL, Basic .NET, Web API, AngularJS</span> from professionals in Bangla
                     </p>
                 </div>
-            </div>
+                <div class="col-md-12 text-left">
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div ng-show="vm.isSignedIn" class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="">
+                            <li>
+                                <a href="/#!/role-entry"><i class="fa fa-fw fa-user-plus"></i> Role</a>
+                            </li>
+                            <li>
+                                <a href="/#!/resource-entry"><i class="fa fa-fw fa-file"></i> Resource</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa fa-question-circle"></i> Permission</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                    
+                </div>
         </div>
     </div>
     <!-- /marketing msg -->
+    
     <!--partial views will be loaded here-->
     <div ui-view>
 
@@ -119,7 +138,9 @@
     <script src="app/course/Model.js"></script>
     <script src="app/content/Model.js"></script>
     <script src="app/enrollment/Model.js"></script>
-    <script src="app/account/Model.js"></script>
+    <script src="app/user/account/Model.js"></script>
+    <script src="app/user/role/Model.js"></script>
+    <script src="app/resource/Model.js"></script>
 
     <!--services-->
     <script src="app/student/StudentService.js"></script>
@@ -127,7 +148,9 @@
     <script src="app/course/CourseService.js"></script>
     <script src="app/content/ContentService.js"></script>
     <script src="app/enrollment/EnrollmentService.js"></script>
-    <script src="app/account/AccountService.js"></script>
+    <script src="app/user/account/AccountService.js"></script>
+    <script src="app/user/role/RoleService.js"></script>
+    <script src="app/resource/ResourceService.js"></script>
 
     <!--controllers-->
     <script src="app/common/BaseController.js"></script>
@@ -139,5 +162,7 @@
     <script src="app/course/CourseControllers.js"></script>
     <script src="app/content/ContentController.js"></script>
     <script src="app/enrollment/EnrollmentControllers.js"></script>
+    <script src="app/user/role/RoleController.js"></script>
+    <script src="app/resource/ResourceController.js"></script>
 </body>
 </html>

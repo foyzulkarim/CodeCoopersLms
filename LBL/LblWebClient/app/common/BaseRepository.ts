@@ -6,6 +6,7 @@
 
         http: angular.IHttpService;
         q: angular.IQService;
+        authData: AuthData;
 
         static $inject = ["$http", "$q"];
         constructor(http: angular.IHttpService, q: angular.IQService) {
@@ -14,9 +15,10 @@
             //this.baseUrl = AppConstants.BaseApiUrl;
         }
 
-        post(subUrl: string, data: any): angular.IPromise<any> {
+        post(url: string, data: any): angular.IPromise<any> {
             var self = this;
             var deffered = self.q.defer();
+            var authorizationConfig: angular.IRequestShortcutConfig;
 
             var successCallback = function (successresponse) {
                 console.log(successresponse);
@@ -28,11 +30,20 @@
                 deffered.reject(errorResponse);
             };
 
-            self.http.post(AppConstants.BaseApiUrl + subUrl, data).then(successCallback, errorCallback);
+            self.authData = JSON.parse(localStorage.getItem("AuthData"));
+
+            if (self.authData != null) {
+                authorizationConfig = {
+                    headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
+                };
+            }
+
+
+            self.http.post(url, data, authorizationConfig).then(successCallback, errorCallback);
             return deffered.promise;
         }
 
-        postUrlencodedForm(data: string): angular.IPromise<any> {
+        postUrlencodedForm(url: string, data: string): angular.IPromise<any> {
             var self = this;
             var deffered = self.q.defer();
             var config: angular.IRequestShortcutConfig = {
@@ -49,7 +60,7 @@
                 deffered.reject(errorResponse);
             };
 
-            self.http.post(AppConstants.UserAuthenticationUrl, data, config).then(successCallback, errorCallback);
+            self.http.post(url, data, config).then(successCallback, errorCallback);
             return deffered.promise;
         }
     }

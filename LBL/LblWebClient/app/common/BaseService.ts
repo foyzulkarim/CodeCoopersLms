@@ -34,8 +34,8 @@
             data.modified = new Date();
             data.createdBy = "me";
             data.modifiedBy = "me";
-            
-            self.baseRepository.post(self.commandUrl, data).then(successCallback, errorCallback);
+            var url = AppConstants.BaseApiUrl + self.commandUrl;
+            self.baseRepository.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         }
 
@@ -52,8 +52,8 @@
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-
-            self.baseRepository.post(self.commandUrl+"Query", request).then(successCallback, errorCallback);
+            var url = AppConstants.BaseApiUrl + self.commandUrl + "Query";
+            self.baseRepository.post(url, request).then(successCallback, errorCallback);
             return deffered.promise;
         }
     }

@@ -14,8 +14,9 @@ namespace Lbl.Server.Controllers
 
     [RoutePrefix("api/TeacherQuery")]
     public class TeacherQueryController : BaseQueryController<Teacher, TeacherRequestModel, TeacherViewModel>
-    {
-     
-
+    {     
+        public TeacherQueryController() : base(new BusinessDbContext())
+        {
+        }
     }
 }

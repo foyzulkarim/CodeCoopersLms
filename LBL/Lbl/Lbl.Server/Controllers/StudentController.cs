@@ -15,6 +15,8 @@ namespace Lbl.Server.Controllers
     [RoutePrefix("api/Student")]
     public class StudentController : BaseController<Student, StudentRequestModel, StudentViewModel>
     {
-
+        public StudentController() : base(new BusinessDbContext())
+        {
+        }
     }
 } 

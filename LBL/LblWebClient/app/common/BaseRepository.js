@@ -6,9 +6,10 @@ var App;
             this.q = q;
             //this.baseUrl = AppConstants.BaseApiUrl;
         }
-        BaseRepository.prototype.post = function (subUrl, data) {
+        BaseRepository.prototype.post = function (url, data) {
             var self = this;
             var deffered = self.q.defer();
+            var authorizationConfig;
             var successCallback = function (successresponse) {
                 console.log(successresponse);
                 deffered.resolve(successresponse);
@@ -17,10 +18,16 @@ var App;
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            self.http.post(App.AppConstants.BaseApiUrl + subUrl, data).then(successCallback, errorCallback);
+            self.authData = JSON.parse(localStorage.getItem("AuthData"));
+            if (self.authData != null) {
+                authorizationConfig = {
+                    headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
+                };
+            }
+            self.http.post(url, data, authorizationConfig).then(successCallback, errorCallback);
             return deffered.promise;
         };
-        BaseRepository.prototype.postUrlencodedForm = function (data) {
+        BaseRepository.prototype.postUrlencodedForm = function (url, data) {
             var self = this;
             var deffered = self.q.defer();
             var config = {
@@ -34,7 +41,7 @@ var App;
                 //console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            self.http.post(App.AppConstants.UserAuthenticationUrl, data, config).then(successCallback, errorCallback);
+            self.http.post(url, data, config).then(successCallback, errorCallback);
             return deffered.promise;
         };
         return BaseRepository;

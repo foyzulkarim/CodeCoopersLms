@@ -6,9 +6,21 @@ var App;
             var self = this;
             self.accountService = accountService;
             self.stateService = stateService;
-            self.isSignedIn = false;
+            self.isUserSignedIn();
+            self.authData = new App.AuthData();
             self.reset();
         }
+        NavController.prototype.isUserSignedIn = function () {
+            var self = this;
+            self.authData = JSON.parse(localStorage.getItem("AuthData"));
+            if (self.authData == null) {
+                self.isSignedIn = false;
+            }
+            else {
+                self.isSignedIn = true;
+                self.stateService.go(self.authData.landingRoute);
+            }
+        };
         NavController.prototype.signUpUser = function () {
             var self = this;
             var successCallback = function (response) {
@@ -29,11 +41,14 @@ var App;
             var self = this;
             var successCallback = function (response) {
                 if (response.status == App.AppConstants.StatusOk) {
-                    self.isSignedIn = true;
-                    alert("Sign in successfull");
-                    //let home = "root.home";
-                    var landingRoute = response.data.landingRoute;
-                    self.stateService.transitionTo(landingRoute);
+                    self.authData.token = response.data.access_token;
+                    self.authData.tokenType = response.data.token_type;
+                    self.authData.userName = response.data.userName;
+                    self.authData.landingRoute = response.data.landingRoute;
+                    localStorage.setItem("AuthData", JSON.stringify(self.authData));
+                    //let landingRoute = response.data.landingRoute;
+                    location.reload();
+                    //self.stateService.go(landingRoute);
                 }
                 else {
                     alert("Sign in failed");

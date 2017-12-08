@@ -1,0 +1,37 @@
+﻿<style type="text/css">
+    .col-lg-2 {
+        width: 25.666667%;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-8 col-md-8 col-sm-8">
+            <h3>Create a new role</h3><br />
+            <form class="form-horizontal" ng-submit="vm.addRole()">
+                <div class="form-group row">
+                    <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Role Name:</label>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input type="text" class="form-control" id="name" name="name" ng-model="vm.model.name" required />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Landing Route:</label>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input type="text" class="form-control" id="landingRoute" name="landingRoute" ng-model="vm.model.landingRoute" required />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 text-left">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+
+                    <div class="col-lg-7 col-md-7 col-sm-7"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbl.RequestModel", "Lbl.Req
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbl.ViewModel", "Lbl.ViewModel\Lbl.ViewModel.csproj", "{52599BEA-5571-4B76-9B21-3CEF06B77302}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbl.IdentityModel", "Lbl.IdentityModel\Lbl.IdentityModel.csproj", "{577737D2-A3D4-456E-AB22-6DE78CFE811A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{52599BEA-5571-4B76-9B21-3CEF06B77302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52599BEA-5571-4B76-9B21-3CEF06B77302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52599BEA-5571-4B76-9B21-3CEF06B77302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577737D2-A3D4-456E-AB22-6DE78CFE811A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577737D2-A3D4-456E-AB22-6DE78CFE811A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577737D2-A3D4-456E-AB22-6DE78CFE811A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577737D2-A3D4-456E-AB22-6DE78CFE811A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{0745FFAF-85A6-471A-AF6A-4044D89EE72B} = {E12EC54F-D0C5-40FF-A2D1-C23AD0234C14}
 		{B4B6A0F6-2651-4CE2-BB42-4085F00E7DEB} = {E12EC54F-D0C5-40FF-A2D1-C23AD0234C14}
 		{52599BEA-5571-4B76-9B21-3CEF06B77302} = {E12EC54F-D0C5-40FF-A2D1-C23AD0234C14}
+		{577737D2-A3D4-456E-AB22-6DE78CFE811A} = {E12EC54F-D0C5-40FF-A2D1-C23AD0234C14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6304119-6CF2-4B91-8507-7E4AFF72BB7A}

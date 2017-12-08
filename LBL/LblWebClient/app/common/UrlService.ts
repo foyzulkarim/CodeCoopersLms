@@ -7,6 +7,9 @@
         content: string;
         enrollment: string;
         account: string;
+        role: string;
+        resource: string;
+        permission: string;
 
         constructor() {
             this.student = "Student";
@@ -15,6 +18,9 @@
             this.content = "Content";
             this.enrollment = "Enrollment";
             this.account = "Account";
+            this.role = "Role";
+            this.resource = "Resource";
+            this.permission = "Permission";
         }
     }
 

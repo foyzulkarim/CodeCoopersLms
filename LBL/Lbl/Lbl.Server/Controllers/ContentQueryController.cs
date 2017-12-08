@@ -14,5 +14,9 @@ namespace Lbl.Server.Controllers
     [RoutePrefix("api/ContentQuery")]
     public class ContentQueryController : BaseQueryController<Content, ContentRequestModel, ContentViewModel>
     {
+        public ContentQueryController() : base(new BusinessDbContext())
+        {
+
+        }
     }
 }

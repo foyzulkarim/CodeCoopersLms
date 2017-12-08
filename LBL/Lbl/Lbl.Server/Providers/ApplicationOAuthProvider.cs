@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Lbl.Server.Models;
+using Lbl.IdentityModel;
 
 namespace Lbl.Server.Providers
 {

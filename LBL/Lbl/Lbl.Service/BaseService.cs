@@ -4,6 +4,7 @@
     using System.CodeDom;
     using System.Collections.Generic;
     using System.Data;
+    using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
 
@@ -16,9 +17,9 @@
     {
         GenericRepository<T> repository;
 
-        public BaseService()
+        public BaseService(DbContext dbContext)
         {
-            repository = new GenericRepository<T>();
+            repository = new GenericRepository<T>(dbContext);
         }
 
 

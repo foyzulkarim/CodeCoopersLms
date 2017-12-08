@@ -32,6 +32,17 @@ namespace Lbl.Server.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class RoleBindingModel
+    {
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "LandingRoute")]
+        public string LandingRoute { get; set; }
+    }
+
     public class RegisterBindingModel
     {
         [Required]

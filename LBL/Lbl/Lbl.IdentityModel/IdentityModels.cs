@@ -2,11 +2,13 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
+//using Microsoft.AspNet.Identity.Owin;
 
-namespace Lbl.Server.Models
+namespace Lbl.IdentityModel
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -24,13 +26,35 @@ namespace Lbl.Server.Models
 
     public class ApplicationRole : IdentityRole
     {
+        public ApplicationRole()
+        {
+
+        }
+
+        public ApplicationRole(string name) : base(name)
+        {
+
+        }
 
         [MaxLength(20)]
         public string LandingRoute { get; set; }
-    }
 
+        [Index]
+        [Required]
+        public DateTime Created { get; set; }
 
-    // Resource 
+        [Index]
+        [Required]
+        [MaxLength(50)]
+        public string CreatedBy { get; set; }
 
-    // Permission
+        [Index]
+        [Required]
+        public DateTime Modified { get; set; }
+
+        [Index]
+        [Required]
+        [MaxLength(50)]
+        public string ModifiedBy { get; set; }
+    }   
 }

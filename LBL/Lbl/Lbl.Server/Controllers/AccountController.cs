@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using Lbl.Server.Models;
 using Lbl.Server.Providers;
 using Lbl.Server.Results;
+using Lbl.IdentityModel;
 
 namespace Lbl.Server.Controllers
 {
@@ -36,6 +37,8 @@ namespace Lbl.Server.Controllers
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
         }
+
+        
 
         public ApplicationUserManager UserManager
         {
