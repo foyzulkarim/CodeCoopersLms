@@ -18,6 +18,7 @@ var App;
             }
             else {
                 self.isSignedIn = true;
+                self.stateService.go(self.authData.landingRoute);
             }
         };
         NavController.prototype.signUpUser = function () {
@@ -40,15 +41,14 @@ var App;
             var self = this;
             var successCallback = function (response) {
                 if (response.status == App.AppConstants.StatusOk) {
-                    alert("Sign in successfull");
-                    //let home = "root.home";
                     self.authData.token = response.data.access_token;
                     self.authData.tokenType = response.data.token_type;
                     self.authData.userName = response.data.userName;
                     self.authData.landingRoute = response.data.landingRoute;
                     localStorage.setItem("AuthData", JSON.stringify(self.authData));
-                    var landingRoute = response.data.landingRoute;
-                    self.stateService.go(landingRoute);
+                    //let landingRoute = response.data.landingRoute;
+                    location.reload();
+                    //self.stateService.go(landingRoute);
                 }
                 else {
                     alert("Sign in failed");

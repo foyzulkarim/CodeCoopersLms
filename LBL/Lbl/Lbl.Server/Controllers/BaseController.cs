@@ -29,8 +29,8 @@
                 return this.BadRequest(ModelState);
             }
 
-            //model.ModifiedBy = User.Identity.GetUserName();
-            //model.CreatedBy = User.Identity.GetUserName();
+            model.ModifiedBy = User.Identity.GetUserName();
+            model.CreatedBy = User.Identity.GetUserName();
 
             model.Id = Guid.NewGuid().ToString();
             

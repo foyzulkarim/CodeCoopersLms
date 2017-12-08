@@ -108,6 +108,15 @@ module App {
                     templateUrl: "partials/role/role-entry.tpl.html",
                     controller: "RoleController",
                     controllerAs: "vm"
+                })
+
+                // Resource
+                .state("root.resource-entry",
+                {
+                    url: "/resource-entry",
+                    templateUrl: "partials/resource/resource-entry.tpl.html",
+                    controller: "ResourceController",
+                    controllerAs: "vm"
                 });
         }
     }
