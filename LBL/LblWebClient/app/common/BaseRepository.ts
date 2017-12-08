@@ -37,8 +37,7 @@
                     headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
                 };
             }
-
-
+            
             self.http.post(url, data, authorizationConfig).then(successCallback, errorCallback);
             return deffered.promise;
         }

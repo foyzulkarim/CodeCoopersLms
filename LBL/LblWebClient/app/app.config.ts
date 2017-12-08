@@ -126,5 +126,5 @@ module App {
     // register class - which and how
     angular.module('app').config(Configuration);
 
-
+   
 }
