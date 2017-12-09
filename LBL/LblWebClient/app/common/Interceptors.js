@@ -12,9 +12,10 @@
                 if (authData) {
                     config.headers.Authorization = authData.tokenType + " " + authData.token;
                 }
-
+                console.log('im in request http provider', config);
                 return config;
             };
+
             var responseError = function (rejection) {
                 if (rejection.status === 401 || rejection.status === 403) {
                     console.log('permission rejection');
@@ -38,4 +39,3 @@ angular.module("app").config([
         $httpProvider.interceptors.push("authInterceptorService");
     }
 ]);
-

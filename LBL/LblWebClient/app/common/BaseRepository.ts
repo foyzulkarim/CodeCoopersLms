@@ -32,13 +32,13 @@
 
             self.authData = JSON.parse(localStorage.getItem("AuthData"));
 
-            if (self.authData != null) {
-                authorizationConfig = {
-                    headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
-                };
-            }
+            //if (self.authData != null) {
+            //    authorizationConfig = {
+            //        headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
+            //    };
+            //}
             
-            self.http.post(url, data, authorizationConfig).then(successCallback, errorCallback);
+            self.http.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         }
 
@@ -58,6 +58,7 @@
                 //console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
+            console.log(data);
 
             self.http.post(url, data, config).then(successCallback, errorCallback);
             return deffered.promise;

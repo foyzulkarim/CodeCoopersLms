@@ -14,6 +14,8 @@ using Lbl.IdentityModel;
 
 namespace Lbl.Server
 {
+    using Microsoft.Owin.Cors;
+
     public partial class Startup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
@@ -27,6 +29,7 @@ namespace Lbl.Server
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
+            app.UseCors(CorsOptions.AllowAll);
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider

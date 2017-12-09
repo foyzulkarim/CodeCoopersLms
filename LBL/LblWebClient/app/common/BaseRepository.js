@@ -19,12 +19,12 @@ var App;
                 deffered.reject(errorResponse);
             };
             self.authData = JSON.parse(localStorage.getItem("AuthData"));
-            if (self.authData != null) {
-                authorizationConfig = {
-                    headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
-                };
-            }
-            self.http.post(url, data, authorizationConfig).then(successCallback, errorCallback);
+            //if (self.authData != null) {
+            //    authorizationConfig = {
+            //        headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
+            //    };
+            //}
+            self.http.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         };
         BaseRepository.prototype.postUrlencodedForm = function (url, data) {
@@ -41,6 +41,7 @@ var App;
                 //console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
+            console.log(data);
             self.http.post(url, data, config).then(successCallback, errorCallback);
             return deffered.promise;
         };

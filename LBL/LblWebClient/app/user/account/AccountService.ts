@@ -47,8 +47,8 @@
             let errorCallback = function (response) {
                 deferred.reject(response);
             }
-
-            var data = "username=" + username + "&password=" + password + "&grant_type=password";
+            var data = `username=${username}&password=${password}&grant_type=password`;
+            //var data = "username=" + username + "&password=" + password + "&grant_type=password";
             self.baseRepository.postUrlencodedForm(AppConstants.UserAuthenticationUrl, data).then(successCallback, errorCallback);
             return deferred.promise;
         }        
