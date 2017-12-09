@@ -21,7 +21,6 @@ namespace Lbl.Server.Controllers
             service = new BaseService<T, TR, TV>(dbContext);
         }
 
-        [AllowAnonymous]
         [Route("Search")]
         [ActionName("Search")]
         [HttpPost]

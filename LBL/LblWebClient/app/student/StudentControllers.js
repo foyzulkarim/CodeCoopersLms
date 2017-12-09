@@ -31,6 +31,7 @@ var App;
         function StudentsController(service) {
             var _this = _super.call(this, service) || this;
             console.log('i am in Students controller constructor');
+            _this.search();
             return _this;
         }
         StudentsController.prototype.reset = function () { };

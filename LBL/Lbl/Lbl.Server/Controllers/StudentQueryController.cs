@@ -16,7 +16,7 @@ namespace Lbl.Server.Controllers
     public class StudentQueryController : BaseQueryController<Student, StudentRequestModel, StudentViewModel>
     {
         public StudentQueryController() : base(new BusinessDbContext())
-        {
+        {            
         }
     }
 }

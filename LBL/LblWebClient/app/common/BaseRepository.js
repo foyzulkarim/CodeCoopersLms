@@ -9,7 +9,6 @@ var App;
         BaseRepository.prototype.post = function (url, data) {
             var self = this;
             var deffered = self.q.defer();
-            var authorizationConfig;
             var successCallback = function (successresponse) {
                 console.log(successresponse);
                 deffered.resolve(successresponse);
@@ -18,12 +17,6 @@ var App;
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            self.authData = JSON.parse(localStorage.getItem("AuthData"));
-            //if (self.authData != null) {
-            //    authorizationConfig = {
-            //        headers: { 'Authorization': self.authData.tokenType + ' ' + self.authData.token }
-            //    };
-            //}
             self.http.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         };

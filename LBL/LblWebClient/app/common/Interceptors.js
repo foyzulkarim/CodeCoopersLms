@@ -12,7 +12,7 @@
                 if (authData) {
                     config.headers.Authorization = authData.tokenType + " " + authData.token;
                 }
-                console.log('im in request http provider', config);
+                //console.log('im in request http provider', config);
                 return config;
             };
 
@@ -22,7 +22,7 @@
                     console.log(rejection);
 
                     var $state = $injector.get("$state");
-                    $state.go("root.signin");
+                    $state.go("root.SignIn");
                 }
                 return $q.reject(rejection);
             };
