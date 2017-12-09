@@ -76,6 +76,11 @@
             self.accountService.signin(self.user.email, self.user.password).then(successCallback, errorCallback);
         }
 
+        singout(): void {
+            localStorage.removeItem("AuthData");
+            this.stateService.go('root.SignIn');
+        }
+
         reset(): void {
             var self = this;
             self.user = new User();

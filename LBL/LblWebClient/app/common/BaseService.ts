@@ -1,18 +1,16 @@
 ﻿module App {
 
-   
-
-
     export class BaseService<T> {
         baseRepository: BaseRepository;
-        q: angular.IQService;
-        commandUrl: string;
+        q: angular.IQService;      
+        private baseApiUrl: string;
+        private modelUrl: string;
 
-        static $inject = ["BaseRepository", "$q"];
-        constructor(baseRepository: BaseRepository, q: angular.IQService, url: string) {
+        constructor(baseRepository: BaseRepository, q: angular.IQService, modelUrl: string) {
             this.baseRepository = baseRepository;
             this.q = q;
-            this.commandUrl = url;
+            this.baseApiUrl = AppConstants.BaseApiUrl;
+            this.modelUrl = modelUrl; // 'teacher' / 'student' etc
         }
 
         save(data: any): angular.IPromise<any> {
@@ -34,7 +32,7 @@
             data.modified = new Date();
             data.createdBy = "me";
             data.modifiedBy = "me";
-            var url = AppConstants.BaseApiUrl + self.commandUrl;
+            var url = self.baseApiUrl + self.modelUrl + "/Add";
             self.baseRepository.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         }
@@ -52,7 +50,8 @@
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            var url = AppConstants.BaseApiUrl + self.commandUrl + "Query";
+
+            var url = self.baseApiUrl + self.modelUrl+ "Query/Search";
             self.baseRepository.post(url, request).then(successCallback, errorCallback);
             return deffered.promise;
         }

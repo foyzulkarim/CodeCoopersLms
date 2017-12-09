@@ -11,6 +11,7 @@
         resource: string;
         permission: string;
 
+
         constructor() {
             this.student = "Student";
             this.teacher = "Teacher";
@@ -21,6 +22,7 @@
             this.role = "Role";
             this.resource = "Resource";
             this.permission = "Permission";
+
         }
     }
 

@@ -34,19 +34,10 @@
             self.teacherService.search(r).then(successCallback, errorCallback);
         }
 
-        addCourse(): void {
+        save(): void {
             var self = this;
-
-            let successCallback = (response: any): void => {
-                alert('Course added successfully');
-                self.reset();
-            };
-            let errorCallback = (error: any): void => {
-                console.log(error);
-            };
-
-            self.model.teacherId = self.selectedTeacher.id;
-            self.service.save(self.model).then(successCallback, errorCallback);
+          // do your all custom calculation and logic here and prepare the model accordingly
+            super.save();
         }
 
         value: string;
@@ -54,7 +45,7 @@
             var self = this;
             self.value = v;
         }
-
+         
         reset(): void {
             var self = this;
             self.model = new Course();

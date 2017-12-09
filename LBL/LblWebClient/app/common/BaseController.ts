@@ -1,6 +1,8 @@
 ﻿module App {
     export abstract class BaseController<T> {
 
+        controllerUrl: string;
+
         model: T;
         service: BaseService<T>;
 
@@ -26,7 +28,7 @@
             };
 
             console.log(self.model);
-            this.service.save(self.model).then(success, error);
+            self.service.save(self.model).then(success, error);
         }
 
         abstract reset();

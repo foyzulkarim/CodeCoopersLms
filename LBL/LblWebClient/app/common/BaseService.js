@@ -1,10 +1,11 @@
 var App;
 (function (App) {
     var BaseService = (function () {
-        function BaseService(baseRepository, q, url) {
+        function BaseService(baseRepository, q, modelUrl) {
             this.baseRepository = baseRepository;
             this.q = q;
-            this.commandUrl = url;
+            this.baseApiUrl = App.AppConstants.BaseApiUrl;
+            this.modelUrl = modelUrl; // 'teacher' / 'student' etc
         }
         BaseService.prototype.save = function (data) {
             var self = this;
@@ -22,7 +23,7 @@ var App;
             data.modified = new Date();
             data.createdBy = "me";
             data.modifiedBy = "me";
-            var url = App.AppConstants.BaseApiUrl + self.commandUrl;
+            var url = self.baseApiUrl + self.modelUrl + "/Add";
             self.baseRepository.post(url, data).then(successCallback, errorCallback);
             return deffered.promise;
         };
@@ -37,13 +38,12 @@ var App;
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-            var url = App.AppConstants.BaseApiUrl + self.commandUrl + "Query";
+            var url = self.baseApiUrl + self.modelUrl + "Query/Search";
             self.baseRepository.post(url, request).then(successCallback, errorCallback);
             return deffered.promise;
         };
         return BaseService;
     }());
-    BaseService.$inject = ["BaseRepository", "$q"];
     App.BaseService = BaseService;
 })(App || (App = {}));
 //# sourceMappingURL=BaseService.js.map

@@ -59,6 +59,10 @@ var App;
             };
             self.accountService.signin(self.user.email, self.user.password).then(successCallback, errorCallback);
         };
+        NavController.prototype.singout = function () {
+            localStorage.removeItem("AuthData");
+            this.stateService.go('root.SignIn');
+        };
         NavController.prototype.reset = function () {
             var self = this;
             self.user = new App.User();

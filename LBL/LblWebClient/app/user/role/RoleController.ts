@@ -17,7 +17,7 @@
             let errorCallback = (error: any): void => {
                 console.log(error);
             };
-            self.service.commandUrl = self.service.commandUrl + '/CreateRole'
+            
             self.service.save(self.model).then(successCallback, errorCallback);
         }
 

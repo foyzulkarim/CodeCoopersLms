@@ -38,17 +38,10 @@ var App;
             r.isAscending = true;
             self.teacherService.search(r).then(successCallback, errorCallback);
         };
-        CourseController.prototype.addCourse = function () {
+        CourseController.prototype.save = function () {
             var self = this;
-            var successCallback = function (response) {
-                alert('Course added successfully');
-                self.reset();
-            };
-            var errorCallback = function (error) {
-                console.log(error);
-            };
-            self.model.teacherId = self.selectedTeacher.id;
-            self.service.save(self.model).then(successCallback, errorCallback);
+            // do your all custom calculation and logic here and prepare the model accordingly
+            _super.prototype.save.call(this);
         };
         CourseController.prototype.setValue = function (v) {
             var self = this;

@@ -11,12 +11,12 @@ using Lbl.Server.Models;
 
 namespace Lbl.Server.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [RoutePrefix("api/Role")]
     public class RoleController : ApiController
     {
-        [Route("CreateRole")]
-        public IHttpActionResult CreateRole(RoleBindingModel role)
+        //[Route("CreateRole")]
+        public IHttpActionResult Post(RoleBindingModel role)
         {
             var roleManager = new RoleManager<IdentityRole>(
                 new RoleStore<IdentityRole>(new IdentityModel.ApplicationDbContext()));

@@ -26,7 +26,6 @@ var App;
             var errorCallback = function (error) {
                 console.log(error);
             };
-            self.service.commandUrl = self.service.commandUrl + '/CreateRole';
             self.service.save(self.model).then(successCallback, errorCallback);
         };
         RoleController.prototype.reset = function () {

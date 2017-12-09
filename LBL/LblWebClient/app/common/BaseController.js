@@ -20,7 +20,7 @@ var App;
                 console.error(errorReason);
             };
             console.log(self.model);
-            this.service.save(self.model).then(success, error);
+            self.service.save(self.model).then(success, error);
         };
         BaseController.prototype.search = function () {
             var self = this;
