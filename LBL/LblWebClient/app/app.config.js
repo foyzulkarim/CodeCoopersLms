@@ -67,13 +67,13 @@ var App;
                 url: "/SignUp",
                 templateUrl: "partials/account/signUp.tpl.html",
                 controller: "NavController",
-                controllerAs: "vm"
+                controllerAs: "vm1"
             })
                 .state("root.SignIn", {
                 url: "/SignIn",
                 templateUrl: "partials/account/signin.tpl.html",
                 controller: "NavController",
-                controllerAs: "vm"
+                controllerAs: "vm1"
             })
                 .state("root.role-entry", {
                 url: "/role-entry",

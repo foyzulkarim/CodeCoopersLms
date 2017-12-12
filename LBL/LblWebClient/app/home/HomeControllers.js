@@ -1,9 +1,10 @@
 var App;
 (function (App) {
     var HomeController = (function () {
-        function HomeController(service) {
+        function HomeController(service, scope) {
             var self = this;
             self.courseService = service;
+            this.$scope = scope;
             self.requestModel = new App.BaseRequestModel();
             self.requestModel.page = 1;
             self.requestModel.orderBy = "Title";
@@ -11,7 +12,12 @@ var App;
             self.requestModel.perPageCount = 3;
             self.requestModel.keyword = "";
             self.searchCourses();
+            self.$scope.$on("signedOut", this.signedOutSuccessfully2);
         }
+        HomeController.prototype.signedOutSuccessfully2 = function (p, q) {
+            console.log('HomeController signedOut: ');
+            console.log(p, q);
+        };
         HomeController.prototype.searchCourses = function () {
             var self = this;
             var successCallback = function (response) {
@@ -36,7 +42,7 @@ var App;
         };
         return HomeController;
     }());
-    HomeController.$inject = ["CourseService"];
+    HomeController.$inject = ["CourseService", "$scope"];
     angular.module("app").controller("HomeController", HomeController);
 })(App || (App = {}));
 //# sourceMappingURL=HomeControllers.js.map

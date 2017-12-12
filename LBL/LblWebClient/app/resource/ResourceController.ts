@@ -28,8 +28,7 @@
                 console.log(error);
             };
 
-            self.model.type = self.selectedResource.id;
-            self.service.commandUrl = self.service.commandUrl;
+            self.model.type = self.selectedResource.id;           
             self.service.save(self.model).then(successCallback, errorCallback);
         }
 

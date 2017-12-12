@@ -2,7 +2,7 @@
     export abstract class BaseController<T> {
 
         controllerUrl: string;
-
+        $scope: angular.IScope;
         model: T;
         service: BaseService<T>;
 
@@ -14,6 +14,7 @@
             this.searchRequest.page = 1;
             this.searchRequest.orderBy = "Modified";
             this.searchRequest.isAscending = false;
+
         }
 
         save(): void {

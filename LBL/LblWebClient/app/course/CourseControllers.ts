@@ -1,6 +1,7 @@
 ﻿module App {
     export class CourseController extends BaseController<Course> {
 
+
         levelOfAudiences: string[] = [];
         teacherService: TeacherService;
         selectedTeacher: Teacher;
@@ -10,11 +11,13 @@
             super(service);
             console.log("I am in Course Controller");
             this.teacherService = teacherService;
+           
             if (this.value != null) {
                 alert(this.value);
             }
             this.reset();
             this.loadTeachers();
+           
         }
 
         teachers: Teacher[];

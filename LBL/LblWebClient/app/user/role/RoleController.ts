@@ -2,6 +2,7 @@
     export class RoleController extends BaseController<Role> {
 
         static $inject = ["RoleService"];
+
         constructor(service: RoleService) {
             super(service);
             this.reset();
@@ -17,7 +18,7 @@
             let errorCallback = (error: any): void => {
                 console.log(error);
             };
-            
+
             self.service.save(self.model).then(successCallback, errorCallback);
         }
 

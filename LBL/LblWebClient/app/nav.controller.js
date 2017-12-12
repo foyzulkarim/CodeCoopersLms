@@ -2,14 +2,29 @@ var App;
 (function (App) {
     "use strict";
     var NavController = (function () {
-        function NavController(accountService, stateService) {
+        function NavController(accountService, stateService, scope) {
             var self = this;
             self.accountService = accountService;
             self.stateService = stateService;
+            self.$scope = scope;
             self.isUserSignedIn();
             self.authData = new App.AuthData();
             self.reset();
+            self.$scope.$on("signedIn", self.signedInSuccessfully);
+            self.$scope.$on("signedOut", self.signedOutSuccessfully);
         }
+        NavController.prototype.signedInSuccessfully = function (source, q) {
+            console.log('signedInSuccessfully: ');
+            console.log(source, q);
+            source.targetScope.vm1.isSignedIn = true;
+            source.currentScope.vm1.isSignedIn = true;
+        };
+        NavController.prototype.signedOutSuccessfully = function (source) {
+            console.log('signedOutSuccessfully: ');
+            //this.isSignedIn = false;
+            source.targetScope.vm1.isSignedIn = false;
+            source.currentScope.vm1.isSignedIn = false;
+        };
         NavController.prototype.isUserSignedIn = function () {
             var self = this;
             self.authData = JSON.parse(localStorage.getItem("AuthData"));
@@ -47,7 +62,9 @@ var App;
                     self.authData.landingRoute = response.data.landingRoute;
                     localStorage.setItem("AuthData", JSON.stringify(self.authData));
                     //let landingRoute = response.data.landingRoute;
-                    location.reload();
+                    //location.reload();
+                    self.$scope.$broadcast("signedIn", response.data);
+                    self.stateService.go('root.home');
                     //self.stateService.go(landingRoute);
                 }
                 else {
@@ -60,8 +77,10 @@ var App;
             self.accountService.signin(self.user.email, self.user.password).then(successCallback, errorCallback);
         };
         NavController.prototype.singout = function () {
+            var self = this;
             localStorage.removeItem("AuthData");
-            this.stateService.go('root.SignIn');
+            //this.stateService.go('root.SignIn');
+            self.$scope.$broadcast("signedOut");
         };
         NavController.prototype.reset = function () {
             var self = this;
@@ -69,7 +88,7 @@ var App;
         };
         return NavController;
     }());
-    NavController.$inject = ["AccountService", "$state"];
+    NavController.$inject = ["AccountService", "$state", "$scope"];
     App.NavController = NavController;
     angular.module("app").controller("NavController", NavController);
 })(App || (App = {}));

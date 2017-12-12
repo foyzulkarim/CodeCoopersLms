@@ -9,16 +9,34 @@
         authData: AuthData;        
         accountService: AccountService;
         user: User;
+        $scope : angular.IScope;
 
-        static $inject = ["AccountService", "$state"];
+        static $inject = ["AccountService", "$state", "$scope"];
 
-        constructor(accountService: AccountService, stateService: angular.ui.IStateService) {
+        constructor(accountService: AccountService, stateService: angular.ui.IStateService, scope: angular.IScope) {
             var self = this;            
             self.accountService = accountService;
             self.stateService = stateService;
+            self.$scope = scope;
             self.isUserSignedIn();
             self.authData = new AuthData();
             self.reset();
+            self.$scope.$on("signedIn", self.signedInSuccessfully);
+            self.$scope.$on("signedOut", self.signedOutSuccessfully);
+        }
+
+        signedInSuccessfully(source: any, q: any): void {
+            console.log('signedInSuccessfully: ');
+            console.log(source, q);
+            source.targetScope.vm1.isSignedIn = true;
+            source.currentScope.vm1.isSignedIn = true;
+        }
+
+        signedOutSuccessfully(source: any): void {
+            console.log('signedOutSuccessfully: ');
+            //this.isSignedIn = false;
+            source.targetScope.vm1.isSignedIn = false;
+            source.currentScope.vm1.isSignedIn = false;
         }
 
         isUserSignedIn(): void {
@@ -40,9 +58,10 @@
                     alert("Thank you for siging up to CodeCoopers");
                     self.reset();
                 } else if (response.status == AppConstants.StatusBad) {
-                    alert("Sign up failed")
+                    alert("Sign up failed");
                 }
             }
+
             let errorCallback = function (response) {
                 console.error(response);
             }
@@ -62,7 +81,9 @@
                     self.authData.landingRoute = response.data.landingRoute;
                     localStorage.setItem("AuthData", JSON.stringify(self.authData));
                     //let landingRoute = response.data.landingRoute;
-                    location.reload();
+                    //location.reload();
+                    self.$scope.$broadcast("signedIn", response.data);
+                    self.stateService.go('root.home');
                     //self.stateService.go(landingRoute);
                 } else {
                     alert("Sign in failed");
@@ -77,8 +98,10 @@
         }
 
         singout(): void {
+            var self = this;
             localStorage.removeItem("AuthData");
-            this.stateService.go('root.SignIn');
+            //this.stateService.go('root.SignIn');
+            self.$scope.$broadcast("signedOut");
         }
 
         reset(): void {

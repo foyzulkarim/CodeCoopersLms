@@ -4,10 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+
 using Lbl.IdentityModel;
+using Lbl.Server.Models;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Lbl.Server.Models;
 
 namespace Lbl.Server.Controllers
 {
@@ -15,11 +17,10 @@ namespace Lbl.Server.Controllers
     [RoutePrefix("api/Role")]
     public class RoleController : ApiController
     {
-        //[Route("CreateRole")]
+        // [Route("CreateRole")]
         public IHttpActionResult Post(RoleBindingModel role)
         {
-            var roleManager = new RoleManager<IdentityRole>(
-                new RoleStore<IdentityRole>(new IdentityModel.ApplicationDbContext()));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
 
             var applicationUser = User.Identity;
 
@@ -29,10 +30,9 @@ namespace Lbl.Server.Controllers
             applicationRole.ModifiedBy = applicationUser.Name;
             applicationRole.Created = DateTime.Now;
             applicationRole.CreatedBy = applicationUser.Name;
-            
+
             var idResult = roleManager.Create(applicationRole);
-            if (!idResult.Succeeded)
-                return BadRequest("Failed to add application role");
+            if (!idResult.Succeeded) return BadRequest("Failed to add application role");
 
             return Ok();
         }
