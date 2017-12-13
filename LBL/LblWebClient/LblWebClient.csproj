@@ -89,6 +89,7 @@
     <Content Include="partials\course\course-entry.tpl.html" />
     <Content Include="partials\course\courses.tpl.html" />
     <Content Include="partials\home\home.tpl.html" />
+    <Content Include="partials\permission\permission-entry.tpl.html" />
     <Content Include="partials\resource\resource-entry.tpl.html" />
     <Content Include="partials\role\role-entry.tpl.html" />
     <Content Include="partials\student\student-list.tpl.html" />
@@ -135,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\permission\Model.ts" />
+    <TypeScriptCompile Include="app\permission\PermissionController.ts" />
+    <TypeScriptCompile Include="app\permission\PermissionService.ts" />
     <TypeScriptCompile Include="app\resource\Model.ts" />
     <TypeScriptCompile Include="app\resource\ResourceController.ts" />
     <TypeScriptCompile Include="app\resource\ResourceService.ts" />
