@@ -11,12 +11,8 @@ namespace Lbl.Server.Controllers
     using Lbl.RequestModel;
     using Lbl.ViewModel;
 
-    [AllowAnonymous]
     [RoutePrefix("api/CourseQuery")]
-    public class CourseQueryController : BaseQueryController<Course, CourseRequestModel, CourseViewModel>
+    public class CourseQueryController : BaseQueryController<BusinessDbContext, Course, CourseRequestModel, CourseViewModel>
     {
-        public CourseQueryController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

@@ -13,10 +13,7 @@ namespace Lbl.Server.Controllers
 
     [RoutePrefix("api/StudentContent")]
 
-    public class StudentContentController : BaseController<StudentContent,StudentContentRequestModel,StudentContentViewModel>
+    public class StudentContentController : BaseController<BusinessDbContext, StudentContent, StudentContentRequestModel,StudentContentViewModel>
     {
-        public StudentContentController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

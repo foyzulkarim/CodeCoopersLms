@@ -53,15 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseIdentityRequestModel.cs" />
     <Compile Include="BaseRequestModel.cs" />
     <Compile Include="ContentRequestModel.cs" />
     <Compile Include="CourseRequestModel.cs" />
     <Compile Include="EnrollmentRequestModel.cs" />
-    <Compile Include="PermissionRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourceRequestModel.cs" />
-    <Compile Include="RoleRequestModel.cs" />
     <Compile Include="StudentContentRequestModel.cs" />
     <Compile Include="StudentRequestModel.cs" />
     <Compile Include="TeacherRequestModel.cs" />
@@ -71,10 +67,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lbl.IdentityModel\Lbl.IdentityModel.csproj">
-      <Project>{577737d2-a3d4-456e-ab22-6de78cfe811a}</Project>
-      <Name>Lbl.IdentityModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
       <Project>{0745FFAF-85A6-471A-AF6A-4044D89EE72B}</Project>
       <Name>Lbl.Model</Name>

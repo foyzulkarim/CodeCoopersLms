@@ -2,7 +2,7 @@
 {
     using System;
     using System.Web.Http;
-
+    using System.Data.Entity;
     using Lbl.Model;
     using Lbl.RequestModel;
     using Lbl.Service;
@@ -10,13 +10,13 @@
 
     using Microsoft.AspNet.Identity;
 
-    public class BaseController<T, TR, TV> : ApiController where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
+    public class BaseController<C, T, TR, TV> : ApiController where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T> where C : DbContext, new()
     {
-        private BaseService<T, TR, TV> service; 
+        private BaseService<C, T, TR, TV> service;
 
-        public BaseController(System.Data.Entity.DbContext dbContext)
+        public BaseController()
         {
-            service = new BaseService<T, TR, TV>(dbContext);
+            service = new BaseService<C, T, TR, TV>();
         }
 
         [HttpPost]
@@ -33,7 +33,7 @@
             model.CreatedBy = User.Identity.GetUserName();
 
             model.Id = Guid.NewGuid().ToString();
-            
+
             var add = service.Add(model);
             return this.Ok(add);
         }

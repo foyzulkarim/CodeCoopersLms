@@ -12,11 +12,7 @@ namespace Lbl.Server.Controllers
     using Lbl.ViewModel;
 
     [RoutePrefix("api/ContentQuery")]
-    public class ContentQueryController : BaseQueryController<Content, ContentRequestModel, ContentViewModel>
+    public class ContentQueryController : BaseQueryController<BusinessDbContext, Content, ContentRequestModel, ContentViewModel>
     {
-        public ContentQueryController() : base(new BusinessDbContext())
-        {
-
-        }
     }
 }

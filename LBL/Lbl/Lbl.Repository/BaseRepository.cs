@@ -6,14 +6,14 @@
 
     using Lbl.Model;
 
-    public class GenericRepository<T> : IGenericRepository<T>
-        where T : class 
+    public class GenericRepository<C, T> : IGenericRepository<T>
+        where T : Entity where C : DbContext, new()
     {
         protected DbContext db;
 
-        public GenericRepository(DbContext dbContext)
+        public GenericRepository()
         {
-            this.db = dbContext;
+            this.db = new C();
         }
 
         public bool Add(T entity)

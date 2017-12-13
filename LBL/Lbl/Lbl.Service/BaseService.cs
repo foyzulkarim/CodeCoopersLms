@@ -14,13 +14,14 @@
     using Lbl.RequestModel;
     using Lbl.ViewModel;
 
-    public class BaseService<T, TR, TV> where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
+    public class BaseService<C, T, TR, TV> where T : Entity where TR : BaseRequestModel<T> where TV : BaseViewModel<T>
+        where C : DbContext, new()
     {
-        GenericRepository<T> repository;
+        GenericRepository<C, T> repository;
 
-        public BaseService(DbContext dbContext)
+        public BaseService()
         {
-            repository = new GenericRepository<T>(dbContext);
+            repository = new GenericRepository<C, T>();
         }
 
 
