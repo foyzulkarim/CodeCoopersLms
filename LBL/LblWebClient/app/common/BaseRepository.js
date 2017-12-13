@@ -6,6 +6,18 @@ var App;
             this.q = q;
             //this.baseUrl = AppConstants.BaseApiUrl;
         }
+        BaseRepository.prototype.get = function (url) {
+            var self = this;
+            var deffered = self.q.defer();
+            var successCallback = function (successresponse) {
+                deffered.resolve(successresponse);
+            };
+            var errorCallback = function (errorResponse) {
+                deffered.reject(errorResponse);
+            };
+            self.http.get(url).then(successCallback, errorCallback);
+            return deffered.promise;
+        };
         BaseRepository.prototype.post = function (url, data) {
             var self = this;
             var deffered = self.q.defer();

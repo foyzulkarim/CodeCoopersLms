@@ -86,6 +86,12 @@ var App;
                 templateUrl: "partials/resource/resource-entry.tpl.html",
                 controller: "ResourceController",
                 controllerAs: "vm"
+            })
+                .state("root.permission-entry", {
+                url: "/permission-entry",
+                templateUrl: "partials/permission/permission-entry.tpl.html",
+                controller: "PermissionController",
+                controllerAs: "vm"
             });
         }
         return Configuration;

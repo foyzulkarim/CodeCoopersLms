@@ -17,8 +17,6 @@
 
         public IDbSet<AspNetResource> AspNetResources { get; set; }
 
-        public IDbSet<AspNetPermission> AspNetPermissions { get; set; }
-
-        
+        public IDbSet<AspNetPermission> AspNetPermissions { get; set; }        
     }
 }

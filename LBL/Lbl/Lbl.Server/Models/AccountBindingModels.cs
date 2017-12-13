@@ -32,6 +32,16 @@ namespace Lbl.Server.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class UserRoleBindingModel
+    {
+        [Required]
+        public string UserId { get; set; }
+
+        [Required]
+        public string RoleId { get; set; }
+    }
+
+
     public class RoleBindingModel
     {
         [Required]
