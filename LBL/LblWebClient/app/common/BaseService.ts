@@ -26,8 +26,7 @@
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-
-            data.id = "1";
+            
             data.created = new Date();
             data.modified = new Date();
             data.createdBy = "me";

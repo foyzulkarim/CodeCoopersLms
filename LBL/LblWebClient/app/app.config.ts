@@ -110,6 +110,15 @@ module App {
                     controllerAs: "vm"
                 })
 
+                // User
+                .state("root.user-role-entry",
+                {
+                    url: "/user-role-entry",
+                    templateUrl: "partials/user/user-role-entry.tpl.html",
+                    controller: "UserRoleController",
+                    controllerAs: "vm"
+                })
+
                 // Resource
                 .state("root.resource-entry",
                 {

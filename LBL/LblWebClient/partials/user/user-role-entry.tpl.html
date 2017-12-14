@@ -1,0 +1,42 @@
+﻿<style type="text/css">
+    .col-lg-2 {
+        width: 25.666667%;
+    }
+
+    .btn span.fa {
+        opacity: 0;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-8 col-md-8 col-sm-8">
+            <h3>Add permission</h3><br />
+            <form class="form-horizontal" ng-submit="vm.addUserRole()">
+                <div class="form-group row">
+                    <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">Role:</label>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <select class="form-control" ng-options="item.id as item.value for item in vm.roleSelectViewList track by item.id" ng-model="vm.model.roleId"></select>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-2 col-md-2 col-sm-2 form-control-label">User:</label>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <select class="form-control" ng-options="item.id as item.value for item in vm.userSelectViewList track by item.id" ng-model="vm.model.userId"></select>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 text-left">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+
+                    <div class="col-lg-7 col-md-7 col-sm-7"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

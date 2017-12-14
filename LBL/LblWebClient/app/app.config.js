@@ -81,6 +81,12 @@ var App;
                 controller: "RoleController",
                 controllerAs: "vm"
             })
+                .state("root.user-role-entry", {
+                url: "/user-role-entry",
+                templateUrl: "partials/user/user-role-entry.tpl.html",
+                controller: "UserRoleController",
+                controllerAs: "vm"
+            })
                 .state("root.resource-entry", {
                 url: "/resource-entry",
                 templateUrl: "partials/resource/resource-entry.tpl.html",

@@ -10,7 +10,7 @@
         role: string;
         resource: string;
         permission: string;
-        userRole: string;
+        user: string;
 
 
         constructor() {
@@ -23,7 +23,7 @@
             this.role = "Role";
             this.resource = "Resource";
             this.permission = "Permission";
-            this.userRole = "UserRole";
+            this.user = "User";
 
         }
     }

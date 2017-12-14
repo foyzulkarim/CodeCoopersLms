@@ -243,7 +243,7 @@
     <Compile Include="Controllers\Identity\RoleController.cs" />
     <Compile Include="Controllers\Identity\RoleQueryController.cs" />
     <Compile Include="Controllers\Identity\UserQueryController.cs" />
-    <Compile Include="Controllers\Identity\UserRoleController.cs" />
+    <Compile Include="Controllers\Identity\UserController.cs" />
     <Compile Include="Controllers\StudentContentController.cs" />
     <Compile Include="Controllers\StudentContentQueryController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
