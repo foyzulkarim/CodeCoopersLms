@@ -28,8 +28,8 @@
         signedInSuccessfully(source: any, q: any): void {
             console.log('signedInSuccessfully: ');
             console.log(source, q);
-            source.targetScope.vm1.isSignedIn = true;
-            source.currentScope.vm1.isSignedIn = true;
+            source.targetScope.vm3.isSignedIn = true;
+            source.currentScope.vm3.isSignedIn = true;
         }
 
         signedOutSuccessfully(source: any): void {

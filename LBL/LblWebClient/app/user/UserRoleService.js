@@ -13,7 +13,7 @@ var App;
     var UserRoleService = (function (_super) {
         __extends(UserRoleService, _super);
         function UserRoleService(url, baseRepository, q) {
-            return _super.call(this, baseRepository, q, url.user) || this;
+            return _super.call(this, baseRepository, q, url.userRole) || this;
         }
         return UserRoleService;
     }(App.BaseService));

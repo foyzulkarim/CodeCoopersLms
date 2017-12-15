@@ -12,6 +12,7 @@ var App;
             this.resource = "Resource";
             this.permission = "Permission";
             this.user = "User";
+            this.userRole = "UserRole";
         }
         return UrlService;
     }());

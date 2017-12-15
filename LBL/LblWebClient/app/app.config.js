@@ -63,17 +63,17 @@ var App;
                 controller: "EnrollmentController",
                 controllerAs: "vm"
             })
-                .state("root.SignUp", {
-                url: "/SignUp",
+                .state("root.signup", {
+                url: "/signup",
                 templateUrl: "partials/account/signUp.tpl.html",
                 controller: "NavController",
                 controllerAs: "vm1"
             })
-                .state("root.SignIn", {
-                url: "/SignIn",
+                .state("root.signin", {
+                url: "/signin",
                 templateUrl: "partials/account/signin.tpl.html",
                 controller: "NavController",
-                controllerAs: "vm1"
+                controllerAs: "vm2"
             })
                 .state("root.role-entry", {
                 url: "/role-entry",

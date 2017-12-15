@@ -86,19 +86,19 @@ module App {
                 })
 
                 // acount
-                .state("root.SignUp",
+                .state("root.signup",
                 {
-                    url: "/SignUp",
+                    url: "/signup",
                     templateUrl: "partials/account/signUp.tpl.html",
                     controller: "NavController",
                     controllerAs: "vm1"
                 })
-                .state("root.SignIn",
+                .state("root.signin",
                 {
-                    url: "/SignIn",
+                    url: "/signin",
                     templateUrl: "partials/account/signin.tpl.html",
                     controller: "NavController",
-                    controllerAs: "vm1"
+                    controllerAs: "vm2"
                 })
 
                 // Role

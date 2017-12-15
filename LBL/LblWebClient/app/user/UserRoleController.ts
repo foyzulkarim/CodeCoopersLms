@@ -50,8 +50,10 @@
                 alert('User assigned to the role successfully');
                 self.reset();
             };
-            let errorCallback = (error: any): void => {
-                console.log(error);
+            let errorCallback = (response: any): void => {
+                if (response.status == AppConstants.StatusBad) {
+                    alert(response.data.message);
+                }
             };
 
             //self.model.roleId = self.selectedRole.id;

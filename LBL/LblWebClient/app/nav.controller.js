@@ -16,8 +16,8 @@ var App;
         NavController.prototype.signedInSuccessfully = function (source, q) {
             console.log('signedInSuccessfully: ');
             console.log(source, q);
-            source.targetScope.vm1.isSignedIn = true;
-            source.currentScope.vm1.isSignedIn = true;
+            source.targetScope.vm3.isSignedIn = true;
+            source.currentScope.vm3.isSignedIn = true;
         };
         NavController.prototype.signedOutSuccessfully = function (source) {
             console.log('signedOutSuccessfully: ');

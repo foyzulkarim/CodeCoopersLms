@@ -50,8 +50,10 @@ var App;
                 alert('User assigned to the role successfully');
                 self.reset();
             };
-            var errorCallback = function (error) {
-                console.log(error);
+            var errorCallback = function (response) {
+                if (response.status == App.AppConstants.StatusBad) {
+                    alert(response.data.message);
+                }
             };
             //self.model.roleId = self.selectedRole.id;
             //self.model.resourceId = self.selectedResource.id;

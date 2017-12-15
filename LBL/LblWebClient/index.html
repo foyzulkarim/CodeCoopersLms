@@ -21,8 +21,8 @@
                         Virtual Tech Academy
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm1">
-                    <div ng-show="vm1.isSignedIn" class="links-header l-inline-block mvm">
+                <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm2">
+                    <div ng-show="vm2.isSignedIn" class="links-header l-inline-block mvm">
                         <a href="#/student-list">Students</a>
                         <a href="#/teacher-list">Teachers</a>
                         <a href="#!/course-entry">Course</a>
@@ -31,18 +31,18 @@
                     </div>
                     <div class="section-auth l-inline-block mvm">
                         <!-- if not signed in -->
-                        <div ng-show="!vm1.isSignedIn">
-                            <a class="mhm l-inline-block" href="/#!/SignUp">Sign Up</a>
-                            <a class="mhm l-inline-block" href="/#!/SignIn">Log In</a>
+                        <div ng-show="!vm2.isSignedIn">
+                            <a class="mhm l-inline-block" href="/#!/signup">Sign Up</a>
+                            <a class="mhm l-inline-block" href="/#!/signin">Log In</a>
                         </div>
                         <!-- /if not signed in -->
-                        <div ng-show="vm1.isSignedIn">
+                        <div ng-show="vm2.isSignedIn">
                             <!-- if signed in -->
                             <p class="text-justify">
                                 <span style="color: white; font-size: 1.2em">
-                                    <strong>{{vm1.user.userName}}</strong>
+                                    <strong>{{vm2.user.userName}}</strong>
                                 </span>
-                                <a class="mhm l-inline-block" href="javascript:void(0)" ng-click="vm1.singout()">Sign out</a>
+                                <a class="mhm l-inline-block" href="javascript:void(0)" ng-click="vm2.singout()">Sign out</a>
                             </p>
                             <!-- /if signed in -->
                         </div>

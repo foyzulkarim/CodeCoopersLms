@@ -22,7 +22,7 @@ var App;
             var self = this;
             var deffered = self.q.defer();
             var successCallback = function (successresponse) {
-                console.log(successresponse);
+                //console.log(successresponse);
                 deffered.resolve(successresponse);
             };
             var errorCallback = function (errorResponse) {

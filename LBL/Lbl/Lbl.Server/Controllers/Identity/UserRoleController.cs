@@ -9,14 +9,14 @@ using System.Web.Http;
 
 namespace Lbl.Server.Controllers.Identity
 {
-    [RoutePrefix("api/User")]
-    public class UserController : ApiController
+    [RoutePrefix("api/UserRole")]
+    public class UserRoleController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Route("AddUserRole")]
-        [ActionName("AddUserRole")]
-        public IHttpActionResult AddUserRole(UserRoleBindingModel model)
+        [Route("Add")]
+        [ActionName("Add")]
+        public IHttpActionResult Add(UserRoleBindingModel model)
         {
             try
             {

@@ -83,7 +83,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="partials\account\signin.tpl.html" />
-    <Content Include="partials\account\signUp.tpl.html" />
+    <Content Include="partials\account\signup.tpl.html" />
     <Content Include="partials\content\content-entry.tpl.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
     <Content Include="partials\course\course-entry.tpl.html" />
