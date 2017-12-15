@@ -12,157 +12,163 @@
     <link href="Content/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- header -->
-<header class="header pvm">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6 col-md-6">
-                <a class="logo" href="#">
-                    Virtual Tech Academy
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm1">
-                <div ng-show="vm1.isSignedIn" class="links-header l-inline-block mvm">
-                    <a href="#/student-list">Students</a>
-                    <a href="#/teacher-list">Teachers</a>
-                    <a href="#!/course-entry">Course</a>
-                    <a href="#!/content-entry">Content</a>
-                    <a href="#!/enrollment-entry">Enrollment</a>
+    <!-- header -->
+    <header class="header pvm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <a class="logo" href="#">
+                        Virtual Tech Academy
+                    </a>
                 </div>
-                <div class="section-auth l-inline-block mvm">
-                    <!-- if not signed in -->
-                    <div ng-show="!vm1.isSignedIn">
-                        <a class="mhm l-inline-block" href="/#!/SignUp">Sign Up</a>
-                        <a class="mhm l-inline-block" href="/#!/SignIn">Log In</a>
+                <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm2">
+                    <div ng-show="vm2.isSignedIn" class="links-header l-inline-block mvm">
+                        <a href="#/student-list">Students</a>
+                        <a href="#/teacher-list">Teachers</a>
+                        <a href="#!/course-entry">Course</a>
+                        <a href="#!/content-entry">Content</a>
+                        <a href="#!/enrollment-entry">Enrollment</a>
                     </div>
-                    <!-- /if not signed in -->
-                    <div ng-show="vm1.isSignedIn">
-                        <!-- if signed in -->
-                        <p class="text-justify">
-                            <span style="color: white; font-size: 1.2em">
-                                <strong>{{vm1.user.userName}}</strong>
-                            </span>
-                            <a class="mhm l-inline-block" href="javascript:void(0)" ng-click="vm1.singout()">Sign out</a>
-                        </p>
-                        <!-- /if signed in -->
+                    <div class="section-auth l-inline-block mvm">
+                        <!-- if not signed in -->
+                        <div ng-show="!vm2.isSignedIn">
+                            <a class="mhm l-inline-block" href="/#!/signup">Sign Up</a>
+                            <a class="mhm l-inline-block" href="/#!/signin">Log In</a>
+                        </div>
+                        <!-- /if not signed in -->
+                        <div ng-show="vm2.isSignedIn">
+                            <!-- if signed in -->
+                            <p class="text-justify">
+                                <span style="color: white; font-size: 1.2em">
+                                    <strong>{{vm2.user.userName}}</strong>
+                                </span>
+                                <a class="mhm l-inline-block" href="javascript:void(0)" ng-click="vm2.singout()">Sign out</a>
+                            </p>
+                            <!-- /if signed in -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- /header -->
-<!-- marketing msg -->
-<div class="section-promo-msg pvm">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <p class="mbn">
-                    Get practical end to end online training on <span class="rotate">SQL, Basic .NET, Web API, AngularJS</span> from professionals in Bangla
-                </p>
-            </div>
-            <div class="col-md-12 text-left">
-                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                <!--<div ng-show="vm.isSignedIn" class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="">
-                        <li>
-                            <a href="/#!/role-entry"><i class="fa fa-fw fa-user-plus"></i> Role</a>
-                        </li>
-                        <li>
-                            <a href="/#!/resource-entry"><i class="fa fa-fw fa-file"></i> Resource</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa fa-question-circle"></i> Permission</a>
-                        </li>
-                    </ul>
-                </div>-->
-                <!-- /.navbar-collapse -->
-            </div>
+    </header>
+    <!-- /header -->
+    <!-- marketing msg -->
+    <div class="section-promo-msg pvm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mbn">
+                        Get practical end to end online training on <span class="rotate">SQL, Basic .NET, Web API, AngularJS</span> from professionals in Bangla
+                    </p>
+                </div>
+                <div class="col-md-12 text-left">
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <!--<div ng-show="vm.isSignedIn" class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="">
+                            <li>
+                                <a href="/#!/role-entry"><i class="fa fa-fw fa-user-plus"></i> Role</a>
+                            </li>
+                            <li>
+                                <a href="/#!/resource-entry"><i class="fa fa-fw fa-file"></i> Resource</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa fa-question-circle"></i> Permission</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <!-- /.navbar-collapse -->
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
-<!-- /marketing msg -->
-<!--partial views will be loaded here-->
-<div ui-view>
+    <!-- /marketing msg -->
+    <!--partial views will be loaded here-->
+    <div ui-view>
 
-</div>
-<!--/ partial views will be loaded here-->
-<!-- footer -->
-<footer class="footer mvm pvl">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                &copy All rights reserved.
-                <div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-                    <a href="#">Courses</a>
-                    <a href="#">Support</a>
-                    <a href="#">FAQ</a>
+    </div>
+    <!--/ partial views will be loaded here-->
+    <!-- footer -->
+    <footer class="footer mvm pvl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy All rights reserved.
+                    <div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                        <a href="#">Courses</a>
+                        <a href="#">Support</a>
+                        <a href="#">FAQ</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- /footer -->
-<!-- jQuery -->
-<!--<script src="Scripts/jquery-2.1.4.min.js"></script>
-<script src="Scripts/text-rotator.min.js"></script>-->
-<!-- Bootstrap JavaScript -->
-<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-<!--<script>
-        $(".rotate").textrotator({
-            animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
-            separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
-            speed: 5000 // How many milliseconds until the next word show.
-        });
-    </script>-->
+    </footer>
+    <!-- /footer -->
+    <!-- jQuery -->
+    <!--<script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/text-rotator.min.js"></script>-->
+    <!-- Bootstrap JavaScript -->
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+    <!--<script>
+            $(".rotate").textrotator({
+                animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+                separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+                speed: 5000 // How many milliseconds until the next word show.
+            });
+        </script>-->
 
-<script src="Scripts/angular.min.js"></script>
-<script src="Scripts/angular-resource.min.js"></script>
-<script src="Scripts/angular-ui-router.min.js"></script>
-<script src="Scripts/angular-local-storage.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
 
-<script src="app/app.config.js"></script>
+    <script src="app/app.config.js"></script>
 
-<!--commons-->
-<script src="app/common/Entity.js"></script>
-<script src="app/common/BaseService.js"></script>
-<script src="app/common/UrlService.js"></script>
-<script src="app/common/BaseRepository.js"></script>
+    <!--commons-->
+    <script src="app/common/Entity.js"></script>
+    <script src="app/common/BaseService.js"></script>
+    <script src="app/common/UrlService.js"></script>
+    <script src="app/common/BaseRepository.js"></script>
 
-<!--models-->
-<script src="app/common/AppConstants.js"></script>
-<script src="app/student/Model.js"></script>
-<script src="app/teacher/Model.js"></script>
-<script src="app/course/Model.js"></script>
-<script src="app/content/Model.js"></script>
-<script src="app/enrollment/Model.js"></script>
-<script src="app/user/account/Model.js"></script>
-<script src="app/user/role/Model.js"></script>
-<script src="app/resource/Model.js"></script>
+    <!--models-->
+    <script src="app/common/AppConstants.js"></script>
+    <script src="app/student/Model.js"></script>
+    <script src="app/teacher/Model.js"></script>
+    <script src="app/course/Model.js"></script>
+    <script src="app/content/Model.js"></script>
+    <script src="app/enrollment/Model.js"></script>
+    <script src="app/account/Model.js"></script>
+    <script src="app/role/Model.js"></script>
+    <script src="app/resource/Model.js"></script>
+    <script src="app/permission/Model.js"></script>
+    <script src="app/user/Model.js"></script>
 
-<!--services-->
-<script src="app/student/StudentService.js"></script>
-<script src="app/teacher/TeacherService.js"></script>
-<script src="app/course/CourseService.js"></script>
-<script src="app/content/ContentService.js"></script>
-<script src="app/enrollment/EnrollmentService.js"></script>
-<script src="app/user/account/AccountService.js"></script>
-<script src="app/user/role/RoleService.js"></script>
-<script src="app/resource/ResourceService.js"></script>
-<script src="app/common/Interceptors.js"></script>
+    <!--services-->
+    <script src="app/student/StudentService.js"></script>
+    <script src="app/teacher/TeacherService.js"></script>
+    <script src="app/course/CourseService.js"></script>
+    <script src="app/content/ContentService.js"></script>
+    <script src="app/enrollment/EnrollmentService.js"></script>
+    <script src="app/account/AccountService.js"></script>
+    <script src="app/role/RoleService.js"></script>
+    <script src="app/resource/ResourceService.js"></script>
+    <script src="app/permission/PermissionService.js"></script>
+    <script src="app/user/UserRoleService.js"></script>
+    <script src="app/common/Interceptors.js"></script>
 
-<!--controllers-->
-<script src="app/common/BaseController.js"></script>
-<script src="app/nav.controller.js"></script>
-<script src="app/home/HomeControllers.js"></script>
+    <!--controllers-->
+    <script src="app/common/BaseController.js"></script>
+    <script src="app/nav.controller.js"></script>
+    <script src="app/home/HomeControllers.js"></script>
 
-<script src="app/teacher/TeacherControllers.js"></script>
-<script src="app/student/StudentControllers.js"></script>
-<script src="app/course/CourseControllers.js"></script>
-<script src="app/content/ContentController.js"></script>
-<script src="app/enrollment/EnrollmentControllers.js"></script>
-<script src="app/user/role/RoleController.js"></script>
-<script src="app/resource/ResourceController.js"></script>
+    <script src="app/teacher/TeacherControllers.js"></script>
+    <script src="app/student/StudentControllers.js"></script>
+    <script src="app/course/CourseControllers.js"></script>
+    <script src="app/content/ContentController.js"></script>
+    <script src="app/enrollment/EnrollmentControllers.js"></script>
+    <script src="app/role/RoleController.js"></script>
+    <script src="app/resource/ResourceController.js"></script>
+    <script src="app/user/UserRoleController.js"></script>
+    <script src="app/permission/PermissionController.js"></script>
 </body>
 </html>

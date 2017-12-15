@@ -236,9 +236,14 @@
     <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\EnrollmentQueryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PermissionController.cs" />
-    <Compile Include="Controllers\ResourceController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\Identity\PermissionController.cs" />
+    <Compile Include="Controllers\Identity\PermissionQueryController.cs" />
+    <Compile Include="Controllers\Identity\ResourceController.cs" />
+    <Compile Include="Controllers\Identity\ResourceQueryController.cs" />
+    <Compile Include="Controllers\Identity\RoleController.cs" />
+    <Compile Include="Controllers\Identity\RoleQueryController.cs" />
+    <Compile Include="Controllers\Identity\UserQueryController.cs" />
+    <Compile Include="Controllers\Identity\UserRoleController.cs" />
     <Compile Include="Controllers\StudentContentController.cs" />
     <Compile Include="Controllers\StudentContentQueryController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -249,8 +254,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712130310433_InitialDb.cs" />
+    <Compile Include="Migrations\201712130310433_InitialDb.Designer.cs">
+      <DependentUpon>201712130310433_InitialDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -320,10 +332,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lbl.IdentityModel\Lbl.IdentityModel.csproj">
-      <Project>{577737d2-a3d4-456e-ab22-6de78cfe811a}</Project>
-      <Name>Lbl.IdentityModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lbl.Model\Lbl.Model.csproj">
       <Project>{0745ffaf-85a6-471a-af6a-4044d89ee72b}</Project>
       <Name>Lbl.Model</Name>
@@ -344,6 +352,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712130310433_InitialDb.resx">
+      <DependentUpon>201712130310433_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

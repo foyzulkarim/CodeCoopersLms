@@ -13,10 +13,7 @@ namespace Lbl.Server.Controllers
     using Lbl.ViewModel;
 
     [RoutePrefix("api/TeacherQuery")]
-    public class TeacherQueryController : BaseQueryController<Teacher, TeacherRequestModel, TeacherViewModel>
+    public class TeacherQueryController : BaseQueryController<BusinessDbContext, Teacher, TeacherRequestModel, TeacherViewModel>
     {     
-        public TeacherQueryController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

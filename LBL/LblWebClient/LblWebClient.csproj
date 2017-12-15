@@ -83,12 +83,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="partials\account\signin.tpl.html" />
-    <Content Include="partials\account\signUp.tpl.html" />
+    <Content Include="partials\account\signup.tpl.html" />
     <Content Include="partials\content\content-entry.tpl.html" />
     <Content Include="partials\course\course-detail.tpl.html" />
     <Content Include="partials\course\course-entry.tpl.html" />
     <Content Include="partials\course\courses.tpl.html" />
     <Content Include="partials\home\home.tpl.html" />
+    <Content Include="partials\permission\permission-entry.tpl.html" />
     <Content Include="partials\resource\resource-entry.tpl.html" />
     <Content Include="partials\role\role-entry.tpl.html" />
     <Content Include="partials\student\student-list.tpl.html" />
@@ -96,6 +97,7 @@
     <Content Include="partials\teacher\teacher-list.tpl.html" />
     <Content Include="partials\student\student-entry.tpl.html" />
     <Content Include="partials\student\student-list-backup.tpl.html" />
+    <Content Include="partials\user\user-role-entry.tpl.html" />
     <Content Include="Scripts\angular-local-storage.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -135,11 +137,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\permission\Model.ts" />
+    <TypeScriptCompile Include="app\permission\PermissionController.ts" />
+    <TypeScriptCompile Include="app\permission\PermissionService.ts" />
     <TypeScriptCompile Include="app\resource\Model.ts" />
     <TypeScriptCompile Include="app\resource\ResourceController.ts" />
     <TypeScriptCompile Include="app\resource\ResourceService.ts" />
-    <TypeScriptCompile Include="app\user\account\AccountService.ts" />
-    <TypeScriptCompile Include="app\user\account\Model.ts" />
+    <TypeScriptCompile Include="app\account\AccountService.ts" />
+    <TypeScriptCompile Include="app\account\Model.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
     <TypeScriptCompile Include="app\common\AppConstants.ts" />
     <TypeScriptCompile Include="app\common\BaseController.ts" />
@@ -164,9 +169,12 @@
     <TypeScriptCompile Include="app\teacher\Model.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherControllers.ts" />
     <TypeScriptCompile Include="app\teacher\TeacherService.ts" />
-    <TypeScriptCompile Include="app\user\role\Model.ts" />
-    <TypeScriptCompile Include="app\user\role\RoleController.ts" />
-    <TypeScriptCompile Include="app\user\role\RoleService.ts" />
+    <TypeScriptCompile Include="app\role\Model.ts" />
+    <TypeScriptCompile Include="app\role\RoleController.ts" />
+    <TypeScriptCompile Include="app\role\RoleService.ts" />
+    <TypeScriptCompile Include="app\user\Model.ts" />
+    <TypeScriptCompile Include="app\user\UserRoleController.ts" />
+    <TypeScriptCompile Include="app\user\UserRoleService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-local-storage\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui-router\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

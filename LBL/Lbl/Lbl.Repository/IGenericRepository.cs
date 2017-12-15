@@ -5,7 +5,7 @@
     using Lbl.Model;
 
     public interface IGenericRepository<T>
-        where T : class
+        where T : Entity
     {
         bool Add(T entity);
 

@@ -13,10 +13,7 @@ namespace Lbl.Server.Controllers
 
     [RoutePrefix("api/StudentContentQuery")]
 
-    public class StudentContentQueryController : BaseQueryController<StudentContent,StudentContentRequestModel,StudentContentViewModel>
+    public class StudentContentQueryController : BaseQueryController<BusinessDbContext, StudentContent, StudentContentRequestModel,StudentContentViewModel>
     {
-        public StudentContentQueryController() : base(new BusinessDbContext())
-        {
-        }
     }    
 }

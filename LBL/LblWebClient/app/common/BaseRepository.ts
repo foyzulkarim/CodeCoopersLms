@@ -15,12 +15,28 @@
             //this.baseUrl = AppConstants.BaseApiUrl;
         }
 
+        get(url: string): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.q.defer();
+
+            var successCallback = function (successresponse) {
+                deffered.resolve(successresponse);
+            };
+
+            var errorCallback = function (errorResponse) {
+                deffered.reject(errorResponse);
+            };
+
+            self.http.get(url).then(successCallback, errorCallback);
+            return deffered.promise;
+        }
+
         post(url: string, data: any): angular.IPromise<any> {
             var self = this;
             var deffered = self.q.defer();
         
             var successCallback = function (successresponse) {
-                console.log(successresponse);
+                //console.log(successresponse);
                 deffered.resolve(successresponse);
             };
 

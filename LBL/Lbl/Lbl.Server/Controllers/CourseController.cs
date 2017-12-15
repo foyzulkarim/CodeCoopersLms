@@ -12,10 +12,7 @@ namespace Lbl.Server.Controllers
     using Lbl.ViewModel;
 
     [RoutePrefix("api/Course")]
-    public class CourseController : BaseController<Course, CourseRequestModel, CourseViewModel>
+    public class CourseController : BaseController<BusinessDbContext, Course, CourseRequestModel, CourseViewModel>
     {
-        public CourseController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

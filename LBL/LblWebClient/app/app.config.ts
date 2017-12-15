@@ -86,19 +86,19 @@ module App {
                 })
 
                 // acount
-                .state("root.SignUp",
+                .state("root.signup",
                 {
-                    url: "/SignUp",
+                    url: "/signup",
                     templateUrl: "partials/account/signUp.tpl.html",
                     controller: "NavController",
                     controllerAs: "vm1"
                 })
-                .state("root.SignIn",
+                .state("root.signin",
                 {
-                    url: "/SignIn",
+                    url: "/signin",
                     templateUrl: "partials/account/signin.tpl.html",
                     controller: "NavController",
-                    controllerAs: "vm1"
+                    controllerAs: "vm2"
                 })
 
                 // Role
@@ -110,12 +110,30 @@ module App {
                     controllerAs: "vm"
                 })
 
+                // User
+                .state("root.user-role-entry",
+                {
+                    url: "/user-role-entry",
+                    templateUrl: "partials/user/user-role-entry.tpl.html",
+                    controller: "UserRoleController",
+                    controllerAs: "vm"
+                })
+
                 // Resource
                 .state("root.resource-entry",
                 {
                     url: "/resource-entry",
                     templateUrl: "partials/resource/resource-entry.tpl.html",
                     controller: "ResourceController",
+                    controllerAs: "vm"
+                })
+
+                // Permission
+                .state("root.permission-entry",
+                {
+                    url: "/permission-entry",
+                    templateUrl: "partials/permission/permission-entry.tpl.html",
+                    controller: "PermissionController",
                     controllerAs: "vm"
                 });
         }

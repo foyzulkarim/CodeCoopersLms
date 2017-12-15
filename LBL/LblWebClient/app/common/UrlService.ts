@@ -10,6 +10,8 @@
         role: string;
         resource: string;
         permission: string;
+        user: string;
+        userRole: string;
 
 
         constructor() {
@@ -22,6 +24,8 @@
             this.role = "Role";
             this.resource = "Resource";
             this.permission = "Permission";
+            this.user = "User";
+            this.userRole = "UserRole";
 
         }
     }

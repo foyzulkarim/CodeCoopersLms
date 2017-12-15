@@ -26,8 +26,7 @@
                 console.log(errorResponse);
                 deffered.reject(errorResponse);
             };
-
-            data.id = "1";
+            
             data.created = new Date();
             data.modified = new Date();
             data.createdBy = "me";
@@ -37,12 +36,30 @@
             return deffered.promise;
         }
 
+        getSelectList(url: string): angular.IPromise<any> {
+            var self = this;
+            var deffered = self.q.defer();
+
+            var successCallback = function (successresponse) {
+                //console.log(successresponse);
+                deffered.resolve(successresponse);
+            };
+
+            var errorCallback = function (errorResponse) {
+                console.log(errorResponse);
+                deffered.reject(errorResponse);
+            };
+
+            self.baseRepository.get(url).then(successCallback, errorCallback);
+            return deffered.promise;
+        }
+
         search(request: any): angular.IPromise<any> {
             var self = this;
             var deffered = self.q.defer();
 
             var successCallback = function (successresponse) {
-                console.log(successresponse);
+                //console.log(successresponse);
                 deffered.resolve(successresponse);
             };
 
