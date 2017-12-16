@@ -19,8 +19,8 @@ module App {
                 .state("root.home",
                 {
                     url: "/",
-                    templateUrl: "partials/home/home.tpl.html",
-                    controller: "HomeController",
+                    templateUrl: "partials/home/home.tpl.html", 
+                    controller: "HomeController", // instance  name is 'vm'
                     controllerAs: "vm"
                 })
 

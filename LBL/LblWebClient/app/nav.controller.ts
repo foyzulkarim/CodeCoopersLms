@@ -80,6 +80,7 @@
                     self.authData.userName = response.data.userName;
                     self.authData.landingRoute = response.data.landingRoute;
                     localStorage.setItem("AuthData", JSON.stringify(self.authData));
+                    localStorage.setItem('allowed-resources',response.data.resources);
                     //let landingRoute = response.data.landingRoute;
                     //location.reload();
                     self.$scope.$broadcast("signedIn", response.data);
@@ -100,6 +101,7 @@
         singout(): void {
             var self = this;
             localStorage.removeItem("AuthData");
+            localStorage.removeItem('allowed-resources');
             //this.stateService.go('root.SignIn');
             self.$scope.$broadcast("signedOut");
         }

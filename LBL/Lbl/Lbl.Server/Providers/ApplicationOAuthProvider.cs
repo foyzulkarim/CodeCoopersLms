@@ -91,11 +91,14 @@ namespace Lbl.Server.Providers
 
         public static AuthenticationProperties CreateProperties(string userName)
         {
+            string resources = Newtonsoft.Json.JsonConvert.SerializeObject(
+                new List<string>() { "label-header" });
             var data = new Dictionary<string, string>
                            {
                                { "userName", userName },
                                { "requestId", Guid.NewGuid().ToString() },
-                               { "landingRoute", "root.home" }
+                               { "landingRoute", "root.home" },
+                               { "resources", resources }
                            };
 
             return new AuthenticationProperties(data);

@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\directive\Permission.ts" />
     <TypeScriptCompile Include="app\resource\Model.ts" />
     <TypeScriptCompile Include="app\resource\ResourceController.ts" />
     <TypeScriptCompile Include="app\resource\ResourceService.ts" />
