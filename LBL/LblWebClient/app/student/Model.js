@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var Student = (function (_super) {
+    var Student = /** @class */ (function (_super) {
         __extends(Student, _super);
         function Student() {
             return _super.call(this) || this;
@@ -18,7 +18,7 @@ var App;
         return Student;
     }(App.Entity));
     App.Student = Student;
-    var BaseRequestModel = (function () {
+    var BaseRequestModel = /** @class */ (function () {
         function BaseRequestModel() {
         }
         return BaseRequestModel;

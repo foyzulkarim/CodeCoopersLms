@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var BaseService = (function () {
+    var BaseService = /** @class */ (function () {
         function BaseService(baseRepository, q, modelUrl) {
             this.baseRepository = baseRepository;
             this.q = q;

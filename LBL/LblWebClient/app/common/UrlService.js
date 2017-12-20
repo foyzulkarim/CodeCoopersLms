@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var UrlService = (function () {
+    var UrlService = /** @class */ (function () {
         function UrlService() {
             this.student = "Student";
             this.teacher = "Teacher";

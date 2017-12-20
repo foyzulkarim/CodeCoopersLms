@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var User = (function () {
+    var User = /** @class */ (function () {
         function User() {
         }
         return User;

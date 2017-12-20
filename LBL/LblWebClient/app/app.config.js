@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var Configuration = (function () {
+    var Configuration = /** @class */ (function () {
         function Configuration(stateProvider, urlRouteProvider) {
             urlRouteProvider.otherwise("/");
             stateProvider
@@ -88,9 +88,9 @@ var App;
                 controllerAs: "vm"
             });
         }
+        Configuration.$inject = ["$stateProvider", "$urlRouterProvider"];
         return Configuration;
     }());
-    Configuration.$inject = ["$stateProvider", "$urlRouterProvider"];
     angular.module('app', ["ui.router"]);
     // register class - which and how
     angular.module('app').config(Configuration);

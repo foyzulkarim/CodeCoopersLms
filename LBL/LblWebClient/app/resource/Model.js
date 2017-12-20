@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var ResourceType = (function () {
+    var ResourceType = /** @class */ (function () {
         function ResourceType(id, value) {
             this.id = id;
             this.value = value;
@@ -18,7 +18,7 @@ var App;
         return ResourceType;
     }());
     App.ResourceType = ResourceType;
-    var Resource = (function (_super) {
+    var Resource = /** @class */ (function (_super) {
         __extends(Resource, _super);
         function Resource() {
             return _super.call(this) || this;

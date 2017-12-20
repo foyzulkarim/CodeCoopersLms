@@ -1,12 +1,12 @@
 var App;
 (function (App) {
-    var AuthData = (function () {
+    var AuthData = /** @class */ (function () {
         function AuthData() {
         }
         return AuthData;
     }());
     App.AuthData = AuthData;
-    var AccountService = (function () {
+    var AccountService = /** @class */ (function () {
         function AccountService(baseRepository, q) {
             this.baseRepository = baseRepository;
             this.q = q;
@@ -41,9 +41,9 @@ var App;
             self.baseRepository.postUrlencodedForm(App.AppConstants.UserAuthenticationUrl, data).then(successCallback, errorCallback);
             return deferred.promise;
         };
+        AccountService.$inject = ["BaseRepository", "$q"];
         return AccountService;
     }());
-    AccountService.$inject = ["BaseRepository", "$q"];
     App.AccountService = AccountService;
     angular.module('app').service('AccountService', AccountService);
 })(App || (App = {}));

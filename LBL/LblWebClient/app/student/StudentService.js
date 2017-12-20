@@ -10,14 +10,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var StudentService = (function (_super) {
+    var StudentService = /** @class */ (function (_super) {
         __extends(StudentService, _super);
         function StudentService(url, baseRepository, q) {
             return _super.call(this, baseRepository, q, url.student) || this;
         }
+        StudentService.$inject = ["UrlService", "BaseRepository", "$q"];
         return StudentService;
     }(App.BaseService));
-    StudentService.$inject = ["UrlService", "BaseRepository", "$q"];
     App.StudentService = StudentService;
     angular.module('app').service("StudentService", StudentService);
 })(App || (App = {}));

@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var Entity = (function () {
+    var Entity = /** @class */ (function () {
         function Entity() {
         }
         return Entity;

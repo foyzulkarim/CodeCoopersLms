@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var BaseRepository = (function () {
+    var BaseRepository = /** @class */ (function () {
         function BaseRepository(http, q) {
             this.http = http;
             this.q = q;
@@ -38,9 +38,9 @@ var App;
             self.http.post(url, data, config).then(successCallback, errorCallback);
             return deffered.promise;
         };
+        BaseRepository.$inject = ["$http", "$q"];
         return BaseRepository;
     }());
-    BaseRepository.$inject = ["$http", "$q"];
     App.BaseRepository = BaseRepository;
     angular.module('app').service('BaseRepository', BaseRepository);
 })(App || (App = {}));

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Coopers LMS</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="Content/style.css" rel="stylesheet">
+    <link href="Content/text-rotator.css" rel="stylesheet">
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- header -->
+    <header class="header pvm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <a class="logo" href="#">
+                        Code Coopers Training
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-6 text-right" ng-controller="NavController as vm">
+                    <div class="links-header l-inline-block mvm">
+                        <a href="javascript:void(0)" ui-sref="root.student-list">Students</a>
+                    </div>
+                    <div class="section-auth l-inline-block mvm">
+                        <!-- if not signed in -->
+                        <div ng-show="!vm.isSignedIn">
+                            <a class="mhm l-inline-block" ui-sref="root.register">Register</a>
+                            <a class="mhm l-inline-block" ui-sref="root.signin">Sign In</a>
+                        </div>
+                        <!-- /if not signed in -->
+                        <div ng-show="vm.isSignedIn">
+                            <!-- if signed in -->
+                            <p class="text-justify">
+                                <span style="color: white; font-size: 1.2em">
+                                    <strong>{{vm.user.userName}}</strong>
+                                </span>
+                                <a class="mhm l-inline-block" href="javascript:void(0)" ng-click="vm.singout()">Sign out</a>
+                            </p>
+                            <!-- /if signed in -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <!-- marketing msg -->
+    <div class="section-promo-msg pvm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mbn">
+                        Get practical end to end online training on <span class="rotate">SQL, Basic .NET, Web API, AngularJS</span> from professionals in Bangla
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /marketing msg -->
+    <!--partial views will be loaded here-->
+    <div ui-view>
+
+    </div>
+    <!--/ partial views will be loaded here-->
+    <!-- footer -->
+    <footer class="footer mvm pvl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy All rights reserved.
+                    <div class="visible-xs-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+                        <a href="javascript:void(0)">Courses</a>
+                        <a href="javascript:void(0)">Support</a>
+                        <a href="javascript:void(0)">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+
+
+    <script src="app/common/WebService.js"></script>
+
+
+    <script src="app/app.config.js"></script>
+    <script src="app/nav.controller.js"></script>
+    <script src="app/home/HomeController.js"></script>
+    <script src="app/account/AccountControllers.js"></script>
+
+    <script src="app/account/AccountService.js"></script>
+
+</body>
+</html>

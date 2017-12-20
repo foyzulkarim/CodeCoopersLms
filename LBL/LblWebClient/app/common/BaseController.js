@@ -1,6 +1,6 @@
 var App;
 (function (App) {
-    var BaseController = (function () {
+    var BaseController = /** @class */ (function () {
         function BaseController(baseService) {
             console.log('i m in base controller');
             this.service = baseService;
