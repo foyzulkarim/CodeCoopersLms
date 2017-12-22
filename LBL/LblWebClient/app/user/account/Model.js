@@ -1,10 +1,10 @@
 var App;
 (function (App) {
-    var User = /** @class */ (function () {
-        function User() {
+    var SigninRequest = /** @class */ (function () {
+        function SigninRequest() {
         }
-        return User;
+        return SigninRequest;
     }());
-    App.User = User;
+    App.SigninRequest = SigninRequest;
 })(App || (App = {}));
 //# sourceMappingURL=Model.js.map

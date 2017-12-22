@@ -3,6 +3,7 @@ var App;
     var HomeController = /** @class */ (function () {
         function HomeController() {
             console.log('i am in home');
+            this.message = new Date().toDateString();
         }
         return HomeController;
     }());

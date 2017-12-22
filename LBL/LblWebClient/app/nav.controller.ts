@@ -6,9 +6,9 @@
         stateService: angular.ui.IStateService;
         isSignedIn: boolean;
         private rootScopeService: angular.IRootScopeService;
-        authData: AuthData;        
+        authData: UserInfo;        
         accountService: AccountService;
-        user: User;
+        user: RegisterRequest;
         $scope : angular.IScope;
 
         static $inject = ["AccountService", "$state", "$scope"];
@@ -19,7 +19,7 @@
             self.stateService = stateService;
             self.$scope = scope;
             self.isUserSignedIn();
-            self.authData = new AuthData();
+            self.authData = new UserInfo();
             self.reset();
             self.$scope.$on("signedIn", self.signedInSuccessfully);
             self.$scope.$on("signedOut", self.signedOutSuccessfully);
@@ -108,7 +108,7 @@
 
         reset(): void {
             var self = this;
-            self.user = new User();
+            self.user = new RegisterRequest();
         }
         
     }

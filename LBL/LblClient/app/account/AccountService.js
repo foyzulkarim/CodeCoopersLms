@@ -1,21 +1,22 @@
 var App;
 (function (App) {
-    var AuthData = /** @class */ (function () {
-        function AuthData() {
+    var UserInfo = /** @class */ (function () {
+        function UserInfo() {
         }
-        return AuthData;
+        return UserInfo;
     }());
-    App.AuthData = AuthData;
-    var User = /** @class */ (function () {
-        function User() {
+    App.UserInfo = UserInfo;
+    var RegisterRequest = /** @class */ (function () {
+        function RegisterRequest() {
         }
-        return User;
+        return RegisterRequest;
     }());
-    App.User = User;
+    App.RegisterRequest = RegisterRequest;
     var AccountService = /** @class */ (function () {
-        function AccountService(baseRepository, q) {
+        function AccountService(baseRepository, q, storageService) {
             this.baseRepository = baseRepository;
             this.q = q;
+            this.storageService = storageService;
             // this.subUrl = new UrlService().account;            
         }
         //register(user: User): angular.IPromise<any> {
@@ -35,19 +36,22 @@ var App;
             var self = this;
             var deferred = self.q.defer();
             var successCallback = function (response) {
-                if (response.status == "Ok") {
-                    //console.log(response);
-                    deferred.resolve(response);
-                }
+                console.log('AccountService successCallback');
+                var info = new UserInfo();
+                info.landingRoute = response.data.landingRoute;
+                info.userName = response.data.userName;
+                self.storageService.save(App.LocalStorageKeys.UserInfo, info);
+                deferred.resolve(response.data);
             };
             var errorCallback = function (response) {
                 deferred.reject(response);
             };
             var data = "username=" + username + "&password=" + password + "&grant_type=password";
+            console.log('AccountService signin');
             self.baseRepository.postUrlencodedForm("http://localhost:30285/token", data).then(successCallback, errorCallback);
             return deferred.promise;
         };
-        AccountService.$inject = ["WebService", "$q"];
+        AccountService.$inject = ["WebService", "$q", "LocalStorageService"];
         return AccountService;
     }());
     App.AccountService = AccountService;

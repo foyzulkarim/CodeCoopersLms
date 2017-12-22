@@ -2,28 +2,37 @@
     "use strict";
 
     class NavController {
-        
+
         stateService: angular.ui.IStateService;
         isSignedIn: boolean;
-        private rootScopeService: angular.IRootScopeService;
-        $scope : angular.IScope;
+        $rootScope: angular.IRootScopeService;
+        $scope: angular.IScope;
 
-        static $inject = [  "$state", "$scope"];
+        storageService: LocalStorageService;
 
-        constructor(  stateService: angular.ui.IStateService, scope: angular.IScope) {
-            var self = this;            
-             
+        static $inject = ["$state", "$scope", "$rootScope", "LocalStorageService"];
+
+        constructor(stateService: angular.ui.IStateService, scope: angular.IScope, rootScope: angular.IRootScopeService, storageService: LocalStorageService) {
+            var self = this;
             self.stateService = stateService;
             self.$scope = scope;
-            self.isUserSignedIn();        
-            self.$scope.$on("signedin", self.signedInSuccessfully);
-            self.$scope.$on("signedout", self.signedOutSuccessfully);
+            self.$rootScope = rootScope;
+            self.storageService = storageService;
+            self.isUserSignedIn();
+
+            //self.$rootScope.$on("signedin", self.signedInSuccessfully);
+            self.$rootScope.$on("signedin", () => { self.signedInSuccessfully(); });
+            self.$rootScope.$on("signedout", self.signedOutSuccessfully);
         }
 
-        signedInSuccessfully(source: any, q: any): void {
+        signedInSuccessfully(): void {
             console.log('signedInSuccessfully: ');
-            console.log(source, q);
-             
+            // get user data from local storage
+            let userInfo = this.storageService.get(LocalStorageKeys.UserInfo) as UserInfo;
+            if (userInfo) {
+                console.log(userInfo);
+            }
+            // set the data to variable , that will automatically display the data to view. 
         }
 
         signedOutSuccessfully(source: any): void {
@@ -33,15 +42,15 @@
 
         isUserSignedIn(): void {
             var self = this;
-            
+
         }
-        
+
 
         singout(): void {
             var self = this;
-            self.$scope.$broadcast("signedOut");
+            self.$scope.$broadcast("signedout");
         }
-         
+
     }
 
     angular.module("app").controller("NavController", NavController as any);

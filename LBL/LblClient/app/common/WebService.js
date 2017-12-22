@@ -43,7 +43,6 @@ var App;
                 headers: {}
             };
             config.headers["Content-Type"] = "application/x-www-form-urlencoded";
-            console.log(config);
             self.httpService.post(url, data, config).then(function (result) {
                 if (result.status === 200) {
                     deffered.resolve(result);

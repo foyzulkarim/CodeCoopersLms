@@ -12,15 +12,19 @@
 
         web: WebService;
         account: AccountService;
-        user: User;
-        $scope : angular.IScope;
+        user: RegisterRequest;
+        $scope: angular.IScope;
+        $rootScope: angular.IRootScopeService;
 
-        static $inject = ["$state", "$scope","AccountService","WebService"];
-        constructor(state: angular.ui.IStateService, scope: angular.IScope, account: AccountService, web : WebService) {
+        static $inject = ["$state", "$scope","$rootScope", "AccountService","WebService"];
+        constructor(state: angular.ui.IStateService, scope: angular.IScope,
+            rootScope: angular.IRootScopeService, account: AccountService, web: WebService) {
             console.log('i am in signin');
             this.web = web;
+            this.$scope = scope;
+            this.$rootScope = rootScope;
             this.account = account;
-            this.user = new User();
+            this.user = new RegisterRequest();
         }
 
         signin(): void {
@@ -31,10 +35,13 @@
                 console.error(response);
             };
 
-            let successCallback = function(response) {
-                self.$scope.$broadcast("signedin", response.data);
+            let successCallback = function (response) {
+                console.log('successCallback fired. ', response);
+                //self.$scope.$broadcast("signedin", response.data);                
+                self.$rootScope.$broadcast("signedin");
             };
 
+            console.log('signin fired. ', self);
             self.account.signin(self.user.email, self.user.password).then(successCallback,errorCallback);
         }
     }

@@ -113,6 +113,7 @@
     <TypeScriptCompile Include="app\account\AccountControllers.ts" />
     <TypeScriptCompile Include="app\account\AccountService.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
+    <TypeScriptCompile Include="app\common\LocalStorageService.ts" />
     <TypeScriptCompile Include="app\common\WebService.ts" />
     <TypeScriptCompile Include="app\home\HomeController.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />

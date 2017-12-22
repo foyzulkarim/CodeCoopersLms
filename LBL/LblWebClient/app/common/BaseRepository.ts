@@ -6,7 +6,7 @@
 
         http: angular.IHttpService;
         q: angular.IQService;
-        authData: AuthData;
+        authData: UserInfo;
 
         static $inject = ["$http", "$q"];
         constructor(http: angular.IHttpService, q: angular.IQService) {

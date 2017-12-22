@@ -1,5 +1,5 @@
 ﻿module App {
-    export class User {
+    export class RegisterRequest {
         email: string;
         password: string;
         confirmPassword: string;

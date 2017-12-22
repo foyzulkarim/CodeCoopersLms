@@ -1,5 +1,5 @@
 ﻿module App {
-    export class AuthData {
+    export class UserInfo {
         token: string;
         tokenType: string;
         userName: string;
@@ -19,7 +19,7 @@
             this.subUrl = new UrlService().account;            
         }
 
-        register(user: User): angular.IPromise<any> {
+        register(user: RegisterRequest): angular.IPromise<any> {
             var self = this;
             var deferred = self.q.defer();
 
