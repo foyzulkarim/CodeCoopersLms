@@ -31,9 +31,9 @@ namespace Lbl.Server.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             context.OwinContext.Request.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
-            
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            var dbContext = context.OwinContext.Get<ApplicationDbContext>();
 
+            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             if (user == null)
@@ -47,7 +47,7 @@ namespace Lbl.Server.Providers
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            AuthenticationProperties properties = CreateProperties(user, dbContext);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -89,15 +89,21 @@ namespace Lbl.Server.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
+        public static AuthenticationProperties CreateProperties(ApplicationUser user, ApplicationDbContext dbContext)
         {
             string resources = Newtonsoft.Json.JsonConvert.SerializeObject(
                 new List<string>() { "label-header" });
+            // get landing route from datbase table
+            // steps : 1. get userid 2. get role id (from user roles table) 3. get role detail 
+            var userRole = user.Roles.FirstOrDefault();
+            var role = dbContext.Roles.FirstOrDefault(x => x.Id == userRole.RoleId) as ApplicationRole;
+
+            string landingRoute = role.LandingRoute; // db table by role
             var data = new Dictionary<string, string>
                            {
-                               { "userName", userName },
+                               { "userName", user.UserName },
                                { "requestId", Guid.NewGuid().ToString() },
-                               { "landingRoute", "root.home" },
+                               { "landingRoute", landingRoute },
                                { "resources", resources }
                            };
 

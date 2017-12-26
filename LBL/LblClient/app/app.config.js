@@ -39,6 +39,12 @@ var App;
                 controller: "TeachersController",
                 controllerAs: "vm"
             })
+                .state("root.course-list", {
+                url: "/course-list",
+                templateUrl: "partials/course/course-list.tpl.html",
+                controller: "CoursesController",
+                controllerAs: "vm"
+            })
                 .state("root.course-entry", {
                 url: "/course-entry",
                 templateUrl: "partials/course/course-entry.tpl.html",

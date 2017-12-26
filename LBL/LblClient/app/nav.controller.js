@@ -8,30 +8,46 @@ var App;
             self.$scope = scope;
             self.$rootScope = rootScope;
             self.storageService = storageService;
-            self.isUserSignedIn();
+            var signedIn = self.isUserSignedIn();
+            if (signedIn) {
+                self.signedInSuccessfully();
+            }
             //self.$rootScope.$on("signedin", self.signedInSuccessfully);
             self.$rootScope.$on("signedin", function () { self.signedInSuccessfully(); });
-            self.$rootScope.$on("signedout", self.signedOutSuccessfully);
+            self.$rootScope.$on("signedout", function () { self.signedOutSuccessfully(); });
         }
         NavController.prototype.signedInSuccessfully = function () {
+            var self = this;
             console.log('signedInSuccessfully: ');
             // get user data from local storage
-            var userInfo = this.storageService.get(App.LocalStorageKeys.UserInfo);
+            var userInfo = this.loadUserInfo();
             if (userInfo) {
                 console.log(userInfo);
+                self.user = userInfo;
             }
             // set the data to variable , that will automatically display the data to view. 
+            self.isSignedIn = true;
+            self.stateService.go(userInfo.landingRoute);
         };
-        NavController.prototype.signedOutSuccessfully = function (source) {
-            console.log('signedOutSuccessfully: ', source);
-            //this.isSignedIn = false;           
+        NavController.prototype.signedOutSuccessfully = function () {
+            console.log('signedOutSuccessfully: ');
+            var self = this;
+            self.isSignedIn = false;
+            self.storageService.remove(App.LocalStorageKeys.UserInfo);
+            self.stateService.go('root.signin');
         };
         NavController.prototype.isUserSignedIn = function () {
             var self = this;
+            var userInfo = self.loadUserInfo();
+            return userInfo != null;
         };
         NavController.prototype.singout = function () {
             var self = this;
-            self.$scope.$broadcast("signedout");
+            self.$rootScope.$broadcast("signedout");
+        };
+        NavController.prototype.loadUserInfo = function () {
+            var userInfo = this.storageService.get(App.LocalStorageKeys.UserInfo);
+            return userInfo;
         };
         NavController.$inject = ["$state", "$scope", "$rootScope", "LocalStorageService"];
         return NavController;

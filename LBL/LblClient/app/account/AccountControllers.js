@@ -8,12 +8,17 @@ var App;
     }());
     angular.module('app').controller('RegistrationController', (RegistrationController));
     var SigninController = /** @class */ (function () {
-        function SigninController(state, scope, rootScope, account, web) {
+        function SigninController(state, scope, rootScope, localStorageService, account, web) {
             console.log('i am in signin');
             this.web = web;
             this.$scope = scope;
             this.$rootScope = rootScope;
+            this.localStorage = localStorageService;
             this.account = account;
+            var signedIn = this.localStorage.get(App.LocalStorageKeys.UserInfo);
+            if (signedIn) {
+                state.go('root.home');
+            }
             this.user = new App.RegisterRequest();
         }
         SigninController.prototype.signin = function () {
@@ -30,7 +35,7 @@ var App;
             console.log('signin fired. ', self);
             self.account.signin(self.user.email, self.user.password).then(successCallback, errorCallback);
         };
-        SigninController.$inject = ["$state", "$scope", "$rootScope", "AccountService", "WebService"];
+        SigninController.$inject = ["$state", "$scope", "$rootScope", "LocalStorageService", "AccountService", "WebService"];
         return SigninController;
     }());
     App.SigninController = SigninController;

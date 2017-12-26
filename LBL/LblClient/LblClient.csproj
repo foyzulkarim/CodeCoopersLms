@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="partials\course\course-list.tpl.html" />
     <Content Include="Scripts\angular-local-storage.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
@@ -106,15 +107,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\course\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="app\account\AccountControllers.ts" />
     <TypeScriptCompile Include="app\account\AccountService.ts" />
     <TypeScriptCompile Include="app\app.config.ts" />
     <TypeScriptCompile Include="app\common\LocalStorageService.ts" />
     <TypeScriptCompile Include="app\common\WebService.ts" />
+    <TypeScriptCompile Include="app\course\CourseController.ts" />
     <TypeScriptCompile Include="app\home\HomeController.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-local-storage\index.d.ts" />
