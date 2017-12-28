@@ -43,6 +43,15 @@ namespace Lbl.Server.Models
         public string LandingRoute { get; set; }
     }
 
+    public class UserRoleBindingModel
+    {
+        [Required]
+        public string UserId { get; set; }
+
+        [Required]
+        public string RoleId { get; set; }
+    }
+
     public class RegisterBindingModel
     {
         [Required]

@@ -15,8 +15,5 @@ namespace Lbl.Server.Controllers
 
     public class EnrollmentController : BaseController<Enrollment,EnrollmentRequestModel,EnrollmentViewModel>
     {
-        public EnrollmentController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

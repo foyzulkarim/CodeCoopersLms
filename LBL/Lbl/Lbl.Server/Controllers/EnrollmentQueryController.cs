@@ -15,8 +15,5 @@ namespace Lbl.Server.Controllers
 
     public class EnrollmentQueryController : BaseQueryController<Enrollment, EnrollmentRequestModel, EnrollmentViewModel>
     {
-        public EnrollmentQueryController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

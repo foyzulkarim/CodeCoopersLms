@@ -18,9 +18,9 @@
     {
         GenericRepository<T> repository;
 
-        public BaseService(DbContext dbContext)
+        public BaseService()
         {
-            repository = new GenericRepository<T>(dbContext);
+            repository = new GenericRepository<T>();
         }
 
 
