@@ -16,9 +16,9 @@ namespace Lbl.Server.Controllers
     {
         private BaseService<T, TR, TV> service;
 
-        public BaseQueryController(System.Data.Entity.DbContext dbContext)
+        public BaseQueryController()
         {
-            service = new BaseService<T, TR, TV>(dbContext);
+            service = new BaseService<T, TR, TV>();
         }
 
         [Route("Search")]

@@ -15,8 +15,5 @@ namespace Lbl.Server.Controllers
 
     public class StudentContentController : BaseController<StudentContent,StudentContentRequestModel,StudentContentViewModel>
     {
-        public StudentContentController() : base(new BusinessDbContext())
-        {
-        }
     }
 }

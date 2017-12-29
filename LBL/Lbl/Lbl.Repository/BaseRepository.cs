@@ -11,9 +11,9 @@
     {
         protected DbContext db;
 
-        public GenericRepository(DbContext dbContext)
+        public GenericRepository()
         {
-            this.db = dbContext;
+            this.db = new BusinessDbContext();
         }
 
         public bool Add(T entity)

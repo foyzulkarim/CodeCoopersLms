@@ -13,9 +13,6 @@ namespace Lbl.Server.Controllers
     [RoutePrefix("api/Content")]
     public class ContentController : BaseController<Content, ContentRequestModel, ContentViewModel>
     {
-        public ContentController() : base(new BusinessDbContext())
-        {
 
-        }
     }
 }

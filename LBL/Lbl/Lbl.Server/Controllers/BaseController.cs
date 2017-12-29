@@ -14,9 +14,9 @@
     {
         private BaseService<T, TR, TV> service; 
 
-        public BaseController(System.Data.Entity.DbContext dbContext)
+        public BaseController()
         {
-            service = new BaseService<T, TR, TV>(dbContext);
+            service = new BaseService<T, TR, TV>();
         }
 
         [HttpPost]
