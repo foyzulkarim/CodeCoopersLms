@@ -5,6 +5,7 @@ var App;
             console.log('hi. i am in CourseController');
             this.message = "hi.hi.hi.";
         }
+        CoursesController.prototype.$onInit = function () { };
         return CoursesController;
     }());
     App.CoursesController = CoursesController;

@@ -1,5 +1,8 @@
 ﻿module App {
-    export class EnrollmentController extends BaseController<Enrollment> {
+    export class EnrollmentController extends BaseController<Enrollment> implements angular.IController {
+        $onInit(): void { }
+
+
 
         studentService: StudentService;
         selectedStudent: Student;

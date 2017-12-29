@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var EnrollmentController = (function (_super) {
+    var EnrollmentController = /** @class */ (function (_super) {
         __extends(EnrollmentController, _super);
         function EnrollmentController(service, studentService, courseService) {
             var _this = _super.call(this, service) || this;
@@ -25,6 +25,7 @@ var App;
             _this.loadCourses();
             return _this;
         }
+        EnrollmentController.prototype.$onInit = function () { };
         EnrollmentController.prototype.loadStudent = function () {
             var self = this;
             var successCallback = function (response) {
@@ -80,9 +81,9 @@ var App;
             var self = this;
             self.model = new App.Enrollment();
         };
+        EnrollmentController.$inject = ["EnrollmentService", "StudentService", "CourseService"];
         return EnrollmentController;
     }(App.BaseController));
-    EnrollmentController.$inject = ["EnrollmentService", "StudentService", "CourseService"];
     App.EnrollmentController = EnrollmentController;
     angular.module('app').controller("EnrollmentController", EnrollmentController);
 })(App || (App = {}));

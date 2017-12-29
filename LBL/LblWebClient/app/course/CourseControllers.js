@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var CourseController = (function (_super) {
+    var CourseController = /** @class */ (function (_super) {
         __extends(CourseController, _super);
         function CourseController(service, teacherService) {
             var _this = _super.call(this, service) || this;
@@ -24,6 +24,7 @@ var App;
             _this.loadTeachers();
             return _this;
         }
+        CourseController.prototype.$onInit = function () { };
         CourseController.prototype.loadTeachers = function () {
             var self = this;
             var successCallback = function (response) {
@@ -52,12 +53,12 @@ var App;
             self.model = new App.Course();
             self.model.publishDate = new Date();
         };
+        CourseController.$inject = ["CourseService", "TeacherService"];
         return CourseController;
     }(App.BaseController));
-    CourseController.$inject = ["CourseService", "TeacherService"];
     App.CourseController = CourseController;
     angular.module('app').controller("CourseController", CourseController);
-    var CourseContentsController = (function (_super) {
+    var CourseContentsController = /** @class */ (function (_super) {
         __extends(CourseContentsController, _super);
         function CourseContentsController(service, $stateParams, $sce) {
             var _this = _super.call(this, service) || this;
@@ -73,6 +74,7 @@ var App;
             self.getCourseContents();
             return _this;
         }
+        CourseContentsController.prototype.$onInit = function () { };
         CourseContentsController.prototype.getCourseContents = function () {
             var self = this;
             var successCallBack = function (response) {
@@ -94,9 +96,9 @@ var App;
         CourseContentsController.prototype.reset = function () {
             throw new Error("Method not implemented.");
         };
+        CourseContentsController.$inject = ["ContentService", "$stateParams", "$sce"];
         return CourseContentsController;
     }(App.BaseController));
-    CourseContentsController.$inject = ["ContentService", "$stateParams", "$sce"];
     App.CourseContentsController = CourseContentsController;
     angular.module('app').controller("CourseContentsController", CourseContentsController);
 })(App || (App = {}));

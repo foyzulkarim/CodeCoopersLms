@@ -1,5 +1,8 @@
 ﻿module App {
-    export class CourseController extends BaseController<Course> {
+    export class CourseController extends BaseController<Course> implements angular.IController {
+        $onInit(): void { }
+
+
 
 
         levelOfAudiences: string[] = [];
@@ -57,7 +60,10 @@
     }
     angular.module('app').controller("CourseController", CourseController);
 
-    export class CourseContentsController extends BaseController<Content> {
+    export class CourseContentsController extends BaseController<Content> implements angular.IController {
+        $onInit(): void { }
+
+
 
         stateParams: angular.ui.IStateService;
         courseTitle: string;
