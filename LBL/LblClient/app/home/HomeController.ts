@@ -21,10 +21,11 @@
             }
 
             rootScope.$on("signedout", () => { self.signedOutSuccessfully(); });
-            
+
         }
 
         message: string;
+        values: number[] = [];
 
         signedOutSuccessfully(): void {
             this.isSignedIn = false;
@@ -35,6 +36,9 @@
             let self = this;
             self.isSignedIn = true;
             this.message = new Date().toDateString();
+            for (let i = 0; i < 10; i++) {
+                self.values.push(i);
+            }
         }
     }
 

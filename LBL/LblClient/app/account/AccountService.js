@@ -19,19 +19,19 @@ var App;
             this.storageService = storageService;
             // this.subUrl = new UrlService().account;            
         }
-        //register(user: User): angular.IPromise<any> {
-        //    var self = this;
-        //    var deferred = self.q.defer();
-        //    let successCallback = function (response) {
-        //        deferred.resolve(response);
-        //    }
-        //    let errorCallback = function (response) {
-        //        deferred.reject(response);
-        //    }
-        //    var url = AppConstants.BaseApiUrl + self.subUrl + "/Register";
-        //    self.baseRepository.post(url, user).then(successCallback, errorCallback);
-        //    return deferred.promise;
-        //}
+        AccountService.prototype.register = function (user) {
+            var self = this;
+            var deferred = self.q.defer();
+            var successCallback = function (response) {
+                deferred.resolve(response);
+            };
+            var errorCallback = function (response) {
+                deferred.reject(response);
+            };
+            var url = App.AppConstants.BaseApiUrl + App.AppConstants.Account + "Register";
+            self.baseRepository.post(url, user).then(successCallback, errorCallback);
+            return deferred.promise;
+        };
         AccountService.prototype.signin = function (username, password) {
             var self = this;
             var deferred = self.q.defer();
@@ -40,6 +40,7 @@ var App;
                 var info = new UserInfo();
                 info.landingRoute = response.data.landingRoute;
                 info.userName = response.data.userName;
+                info.resources = response.data.resources;
                 self.storageService.save(App.LocalStorageKeys.UserInfo, info);
                 deferred.resolve(response.data);
             };

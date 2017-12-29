@@ -2,6 +2,7 @@ var App;
 (function (App) {
     var HomeController = /** @class */ (function () {
         function HomeController(stateService, scope, rootScope, storageService) {
+            this.values = [];
             console.log('i am in home');
             var self = this;
             var userInfo = storageService.get(App.LocalStorageKeys.UserInfo);
@@ -21,6 +22,9 @@ var App;
             var self = this;
             self.isSignedIn = true;
             this.message = new Date().toDateString();
+            for (var i = 0; i < 10; i++) {
+                self.values.push(i);
+            }
         };
         HomeController.$inject = ["$state", "$scope", "$rootScope", "LocalStorageService"];
         return HomeController;

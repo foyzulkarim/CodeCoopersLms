@@ -35,6 +35,20 @@ var App;
             console.log('signin fired. ', self);
             self.account.signin(self.user.email, self.user.password).then(successCallback, errorCallback);
         };
+        SigninController.prototype.register = function () {
+            // call web service 
+            var self = this;
+            var errorCallback = function (response) {
+                console.error(response);
+            };
+            var successCallback = function (response) {
+                console.log('successCallback fired. ', response);
+                //self.$scope.$broadcast("signedin", response.data);                
+                self.$rootScope.$broadcast("signedin");
+            };
+            console.log('register fired. ', self);
+            self.account.register(self.user).then(successCallback, errorCallback);
+        };
         SigninController.$inject = ["$state", "$scope", "$rootScope", "LocalStorageService", "AccountService", "WebService"];
         return SigninController;
     }());

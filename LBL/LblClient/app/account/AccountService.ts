@@ -29,21 +29,21 @@
             // this.subUrl = new UrlService().account;            
         }
 
-        //register(user: User): angular.IPromise<any> {
-        //    var self = this;
-        //    var deferred = self.q.defer();
+        register(user: RegisterRequest): angular.IPromise<any> {
+            var self = this;
+            var deferred = self.q.defer();
 
-        //    let successCallback = function (response) {
-        //        deferred.resolve(response);
+            let successCallback = function (response) {
+                deferred.resolve(response);
 
-        //    }
-        //    let errorCallback = function (response) {
-        //        deferred.reject(response);
-        //    }
-        //    var url = AppConstants.BaseApiUrl + self.subUrl + "/Register";
-        //    self.baseRepository.post(url, user).then(successCallback, errorCallback);
-        //    return deferred.promise;
-        //}
+            }
+            let errorCallback = function (response) {
+                deferred.reject(response);
+            }
+            var url = AppConstants.BaseApiUrl + AppConstants.Account + "Register";
+            self.baseRepository.post(url, user).then(successCallback, errorCallback);
+            return deferred.promise;
+        }
 
         signin(username: string, password: string): angular.IPromise<any> {
             var self = this;
@@ -54,7 +54,9 @@
                 let info: UserInfo = new UserInfo();
                 info.landingRoute = response.data.landingRoute;
                 info.userName = response.data.userName;
+                info.resources = response.data.resources;
                 self.storageService.save(LocalStorageKeys.UserInfo, info);
+                
                 deferred.resolve(response.data);
             }
 

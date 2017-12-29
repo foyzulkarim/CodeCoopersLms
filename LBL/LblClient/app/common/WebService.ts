@@ -1,4 +1,16 @@
 module App {
+
+    export class AppConstants {
+        static BaseUrl = "http://localhost:30285/";
+        static StatusOk = 200;
+        static StatusBad = 400;
+        static BaseApiUrl = AppConstants.BaseUrl + "api/";
+        static UserAuthenticationUrl = AppConstants.BaseUrl + "token";
+
+        static Account = "Account/";
+    }
+
+
   export class WebService {
 
         private qService: angular.IQService;

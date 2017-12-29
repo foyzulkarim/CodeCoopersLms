@@ -91,20 +91,20 @@ namespace Lbl.Server.Providers
 
         public static AuthenticationProperties CreateProperties(ApplicationUser user, ApplicationDbContext dbContext)
         {
-            string resources = Newtonsoft.Json.JsonConvert.SerializeObject(
-                new List<string>() { "label-header" });
+            string permittedResources = Newtonsoft.Json.JsonConvert.SerializeObject(
+                new List<string>() { "label-header", "ul-repeat" });
             // get landing route from datbase table
             // steps : 1. get userid 2. get role id (from user roles table) 3. get role detail 
-            var userRole = user.Roles.FirstOrDefault();
-            var role = dbContext.Roles.FirstOrDefault(x => x.Id == userRole.RoleId) as ApplicationRole;
+            //var userRole = user.Roles.FirstOrDefault();
+            //var role = dbContext.Roles.FirstOrDefault(x => x.Id == userRole.RoleId) as ApplicationRole;
 
-            string landingRoute = role.LandingRoute; // db table by role
+            string landingRoute = "root.home"; // db table by role
             var data = new Dictionary<string, string>
                            {
                                { "userName", user.UserName },
                                { "requestId", Guid.NewGuid().ToString() },
                                { "landingRoute", landingRoute },
-                               { "resources", resources }
+                               { "resources", permittedResources }
                            };
 
             return new AuthenticationProperties(data);

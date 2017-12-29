@@ -65,6 +65,18 @@
   <ItemGroup>
     <Content Include="partials\course\course-list.tpl.html" />
     <None Include="packages.config" />
+    <Content Include="Scripts\angular-local-storage.js" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-local-storage.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -97,6 +109,7 @@
     <TypeScriptCompile Include="app\common\LocalStorageService.ts" />
     <TypeScriptCompile Include="app\common\WebService.ts" />
     <TypeScriptCompile Include="app\course\CourseController.ts" />
+    <TypeScriptCompile Include="app\directive\Permission.ts" />
     <TypeScriptCompile Include="app\home\HomeController.ts" />
     <TypeScriptCompile Include="app\nav.controller.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-router.d.ts" />
