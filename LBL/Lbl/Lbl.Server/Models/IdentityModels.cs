@@ -22,6 +22,13 @@ namespace Lbl.Server.Models
         }
 
         // our own properties --> column 
+
+
+        //[Required]
+        //public string RoleId { get; set; }
+
+        //[ForeignKey("RoleId")]
+        //public virtual IdentityRole Role { get; set; }
     }
 
     public class ApplicationRole : IdentityRole
