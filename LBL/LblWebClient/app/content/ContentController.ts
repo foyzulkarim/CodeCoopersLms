@@ -1,5 +1,5 @@
 ﻿module App {
-    export class ContentController extends BaseController<Content> {
+    export class ContentController extends BaseController<Content> implements angular.IController {
 
         courseService: CourseService;
         selectedCourse: Course;
@@ -7,6 +7,7 @@
         categoryList: Category[] = [];
         selectedCategory: Category;
 
+        $onInit(): void { }
         static $inject = ["ContentService", "CourseService"];
         constructor(service: ContentService, courseService: CourseService) {
             super(service);

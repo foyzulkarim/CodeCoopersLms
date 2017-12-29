@@ -1,11 +1,11 @@
 var App;
 (function (App) {
-    var AuthData = /** @class */ (function () {
-        function AuthData() {
+    var UserInfo = /** @class */ (function () {
+        function UserInfo() {
         }
-        return AuthData;
+        return UserInfo;
     }());
-    App.AuthData = AuthData;
+    App.UserInfo = UserInfo;
     var AccountService = /** @class */ (function () {
         function AccountService(baseRepository, q) {
             this.baseRepository = baseRepository;

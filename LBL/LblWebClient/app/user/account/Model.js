@@ -1,10 +1,10 @@
 var App;
 (function (App) {
-    var SigninRequest = /** @class */ (function () {
-        function SigninRequest() {
+    var RegisterRequest = /** @class */ (function () {
+        function RegisterRequest() {
         }
-        return SigninRequest;
+        return RegisterRequest;
     }());
-    App.SigninRequest = SigninRequest;
+    App.RegisterRequest = RegisterRequest;
 })(App || (App = {}));
 //# sourceMappingURL=Model.js.map

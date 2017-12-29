@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var App;
 (function (App) {
-    var ContentController = (function (_super) {
+    var ContentController = /** @class */ (function (_super) {
         __extends(ContentController, _super);
         function ContentController(service, courseService) {
             var _this = _super.call(this, service) || this;
@@ -21,6 +21,7 @@ var App;
             _this.loadCategoryList();
             return _this;
         }
+        ContentController.prototype.$onInit = function () { };
         ContentController.prototype.loadCourses = function () {
             var self = this;
             var successCallBack = function (response) {
@@ -59,9 +60,9 @@ var App;
             var self = this;
             self.model = new App.Content();
         };
+        ContentController.$inject = ["ContentService", "CourseService"];
         return ContentController;
     }(App.BaseController));
-    ContentController.$inject = ["ContentService", "CourseService"];
     App.ContentController = ContentController;
     angular.module('app').controller('ContentController', ContentController);
 })(App || (App = {}));
